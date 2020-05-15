@@ -130,6 +130,10 @@ public class Admin extends javax.swing.JFrame {
 
         BtBuscar.setText("Buscar");
 
+        jDFecha_fab.setDateFormatString("yyyy-MM-dd");
+
+        jDFecha_venc.setDateFormatString("yyyy-MM-dd");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(

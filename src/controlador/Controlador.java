@@ -115,8 +115,9 @@ public class Controlador implements ActionListener{
             admin.jTextFieldNombre.setText(prod.getNombre());
             admin.jTextFieldMarca.setText(prod.getMarca());
             admin.jTextFieldPrecio.setText(String.valueOf(prod.getValor_peso()));
-            admin.jDFecha_fab.setDateFormatString(prod.getFecha_fabri());
-            admin.jDFecha_venc.setDateFormatString(prod.getFecha_venc());
+            SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");  
+            admin.jDFecha_fab.setDate(formato.parse(prod.getFecha_fabri()));
+            admin.jDFecha_venc.setDate(formato.parse(prod.getFecha_venc()));
             admin.jTextFieldDosis.setText(prod.getDosis());
             
             
