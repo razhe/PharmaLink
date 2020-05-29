@@ -94,6 +94,11 @@ public class Admin extends javax.swing.JFrame {
         );
 
         BTModificar.setText("Modificar");
+        BTModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTModificarActionPerformed(evt);
+            }
+        });
 
         BTEliminar.setText("Eliminar");
         BTEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -174,10 +179,10 @@ public class Admin extends javax.swing.JFrame {
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(BTAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(BTModificar)
-                        .addGap(50, 50, 50))))
+                        .addComponent(BTAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BTModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,6 +241,10 @@ public class Admin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BTEliminarActionPerformed
 
+    private void BTModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTModificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BTModificarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -243,7 +252,8 @@ public class Admin extends javax.swing.JFrame {
         //Mostrar los datos en la tabla.
             CuidadoPersonal cp = new CuidadoPersonal();
             Admin ad = new Admin();
-            Controlador c = new Controlador(cp,ad);
+            IniciarSesion lg = new IniciarSesion();
+            Controlador c = new Controlador(cp,ad,lg);
             ad.setVisible(true);
             ad.setLocationRelativeTo(ad);
     }

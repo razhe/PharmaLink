@@ -5,20 +5,21 @@
  */
 package vista;
 
+import controlador.ControladorUsuario;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import modelo.UsuarioDAO;
 
 /**
  *
  * @author Eduardo
  */
-public class IniciarSesion extends javax.swing.JFrame {
-
-    /**
-     * Creates new form IniciarSesion
-     */
+public class IniciarSesion extends javax.swing.JFrame {    
+    UsuarioDAO daoU = new UsuarioDAO();
+    
     public IniciarSesion() {
         initComponents();
         
@@ -53,8 +54,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        BTLogin = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         Prevencion = new javax.swing.JMenuItem();
@@ -83,11 +83,13 @@ public class IniciarSesion extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/login.png"))); // NOI18N
-        jButton1.setText("Iniciar sesión");
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/add_user.png"))); // NOI18N
-        jButton2.setText("Registrarse");
+        BTLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/login.png"))); // NOI18N
+        BTLogin.setText("Iniciar sesión");
+        BTLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTLoginActionPerformed(evt);
+            }
+        });
 
         jMenuBar2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 2, true));
         jMenuBar2.setName(""); // NOI18N
@@ -226,24 +228,22 @@ public class IniciarSesion extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addGap(213, 213, 213)
+                .addComponent(jLabel3)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addGap(239, 239, 239))
-            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(236, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(213, 213, 213)
-                        .addComponent(jLabel3)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(182, 182, 182)
-                        .addComponent(jButton1)
-                        .addGap(45, 45, 45)
-                        .addComponent(jButton2)))
-                .addContainerGap(166, Short.MAX_VALUE))
+                        .addComponent(jLabel1)
+                        .addGap(239, 239, 239))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(BTLogin)
+                        .addGap(254, 254, 254))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,11 +260,9 @@ public class IniciarSesion extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addComponent(BTLogin)
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         pack();
@@ -362,43 +360,23 @@ public class IniciarSesion extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void BTLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTLoginActionPerformed
+        
+    }//GEN-LAST:event_BTLoginActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(IniciarSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(IniciarSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(IniciarSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(IniciarSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new IniciarSesion().setVisible(true);
-            }
-        });
+       IniciarSesion lg = new IniciarSesion();
+       ControladorUsuario c = new ControladorUsuario(lg);
+       lg.setVisible(true);
+       lg.setLocationRelativeTo(lg);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AdultoMayor;
+    public javax.swing.JButton BTLogin;
     private javax.swing.JMenuItem Belleza;
     private javax.swing.JMenu Carrito;
     private javax.swing.JMenuItem CuidadoPersonal;
@@ -410,14 +388,12 @@ public class IniciarSesion extends javax.swing.JFrame {
     private javax.swing.JMenu Ofertas;
     private javax.swing.JMenuItem Prevencion;
     private javax.swing.JMenuItem Sexualidad;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JTextField jTextField1;
+    public javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

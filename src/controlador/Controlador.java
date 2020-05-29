@@ -8,6 +8,7 @@ package controlador;
 import com.sun.corba.se.impl.orbutil.CorbaResourceUtil;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.logging.Level;
@@ -34,7 +35,7 @@ public class Controlador implements ActionListener{
     
     
 //Constructor para instanciar funciones de las vitas(botones de ejecucion de formularios).
-    public Controlador(CuidadoPersonal CuidP,Admin ad) {
+    public Controlador(CuidadoPersonal CuidP,Admin ad,IniciarSesion lg) {
         //listar cuidado personal
         this.cp = CuidP; 
         this.cp.BTListarProdCuidado.addActionListener(this);
@@ -43,7 +44,7 @@ public class Controlador implements ActionListener{
         this.admin.BTAgregar.addActionListener(this);
         this.admin.BTEliminar.addActionListener(this);
         this.admin.BTModificar.addActionListener(this);
-        this.admin.BtBuscar.addActionListener(this);
+        this.admin.BtBuscar.addActionListener(this);       
     }
 
     //Ejecucion de los metodos
@@ -168,8 +169,8 @@ public class Controlador implements ActionListener{
         }
         cp.JTCuidadoPersonal.setModel(modelo);
     }
-    //Limpiar cajas de texto
     
+    //Limpiar cajas de texto   
     public void limpiar(){
          admin.jTextFieldCodigo.setText(null);
          admin.jTextFieldNombre.setText(null);

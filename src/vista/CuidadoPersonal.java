@@ -359,7 +359,8 @@ public class CuidadoPersonal extends javax.swing.JFrame {
         //Mostrar los datos en la tabla.
             CuidadoPersonal cp = new CuidadoPersonal();
             Admin ad = new Admin();
-            Controlador c = new Controlador(cp,ad);
+            IniciarSesion lg = new IniciarSesion();
+            Controlador c = new Controlador(cp,ad,lg);
             cp.setVisible(true);
             cp.setLocationRelativeTo(cp);
     }
