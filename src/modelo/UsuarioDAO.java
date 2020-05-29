@@ -22,7 +22,6 @@ public class UsuarioDAO {
     PreparedStatement ps;
     ResultSet rs;
     
-    
     public Usuario login(String usr) throws ClassNotFoundException{
         String sql = ("Select IDUSUARIO,RUNUSUARIO,IDTIPOUSUARIO from USUARIO where RUNUSUARIO = ? ");
         Usuario usuario = null;
