@@ -5,6 +5,8 @@
  */
 package vista;
 
+import controlador.ControladorOferta;
+import controlador.ControladorProducto;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
@@ -271,57 +273,165 @@ public class IniciarSesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PrevencionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrevencionActionPerformed
-        Prevencion vista3 = new Prevencion();
-        vista3.setVisible(true);
-        dispose();
+        //Mostrar los datos en la tabla.
+            CuidadoPersonal cp = new CuidadoPersonal();
+            Admin ad = new Admin();           
+            AdultoMayor adul = new AdultoMayor();
+            Belleza be = new Belleza();
+            Dermocosmetica der = new Dermocosmetica();
+            Infantil inf = new Infantil();
+            Medicamentos med = new Medicamentos();
+            Nutricion nut = new Nutricion();
+            Prevencion prev = new Prevencion();
+            Sexualidad sex = new Sexualidad();
+            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+            prev.setVisible(true);
+            prev.setLocationRelativeTo(prev);
+            dispose();
     }//GEN-LAST:event_PrevencionActionPerformed
 
     private void MedicamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MedicamentosActionPerformed
-        Medicamentos vista2 = new Medicamentos();
-        vista2.setVisible(true);
-        dispose();
+        //Mostrar los datos en la tabla.
+            CuidadoPersonal cp = new CuidadoPersonal();
+            Admin ad = new Admin();           
+            AdultoMayor adul = new AdultoMayor();
+            Belleza be = new Belleza();
+            Dermocosmetica der = new Dermocosmetica();
+            Infantil inf = new Infantil();
+            Medicamentos med = new Medicamentos();
+            Nutricion nut = new Nutricion();
+            Prevencion prev = new Prevencion();
+            Sexualidad sex = new Sexualidad();
+            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+            med.setVisible(true);
+            med.setLocationRelativeTo(med);
+            dispose();
     }//GEN-LAST:event_MedicamentosActionPerformed
 
     private void DermocosmeticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DermocosmeticaActionPerformed
-        Dermocosmetica vista4 = new Dermocosmetica();
-        vista4.setVisible(true);
-        dispose();
+        //Mostrar los datos en la tabla.
+            CuidadoPersonal cp = new CuidadoPersonal();
+            Admin ad = new Admin();           
+            AdultoMayor adul = new AdultoMayor();
+            Belleza be = new Belleza();
+            Dermocosmetica der = new Dermocosmetica();
+            Infantil inf = new Infantil();
+            Medicamentos med = new Medicamentos();
+            Nutricion nut = new Nutricion();
+            Prevencion prev = new Prevencion();
+            Sexualidad sex = new Sexualidad();
+            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+            der.setVisible(true);
+            der.setLocationRelativeTo(der);
+            dispose();
     }//GEN-LAST:event_DermocosmeticaActionPerformed
 
     private void InfantilMaternidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InfantilMaternidadActionPerformed
-        Infantil vista5 = new Infantil();
-        vista5.setVisible(true);
-        dispose();
+        //Mostrar los datos en la tabla.
+            CuidadoPersonal cp = new CuidadoPersonal();
+            Admin ad = new Admin();           
+            AdultoMayor adul = new AdultoMayor();
+            Belleza be = new Belleza();
+            Dermocosmetica der = new Dermocosmetica();
+            Infantil inf = new Infantil();
+            Medicamentos med = new Medicamentos();
+            Nutricion nut = new Nutricion();
+            Prevencion prev = new Prevencion();
+            Sexualidad sex = new Sexualidad();
+            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+            inf.setVisible(true);
+            inf.setLocationRelativeTo(inf);
+            dispose();
     }//GEN-LAST:event_InfantilMaternidadActionPerformed
 
     private void CuidadoPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuidadoPersonalActionPerformed
-        CuidadoPersonal vista6 = new CuidadoPersonal();
-        vista6.setVisible(true);
-        dispose();
+        //Mostrar los datos en la tabla.
+            CuidadoPersonal cp = new CuidadoPersonal();
+            Admin ad = new Admin();           
+            AdultoMayor adul = new AdultoMayor();
+            Belleza be = new Belleza();
+            Dermocosmetica der = new Dermocosmetica();
+            Infantil inf = new Infantil();
+            Medicamentos med = new Medicamentos();
+            Nutricion nut = new Nutricion();
+            Prevencion prev = new Prevencion();
+            Sexualidad sex = new Sexualidad();
+            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+            cp.setVisible(true);
+            cp.setLocationRelativeTo(cp);
+            dispose();
     }//GEN-LAST:event_CuidadoPersonalActionPerformed
 
     private void SexualidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SexualidadActionPerformed
-        Sexualidad vista7 = new Sexualidad();
-        vista7.setVisible(true);
-        dispose();
+        //Mostrar los datos en la tabla.
+            CuidadoPersonal cp = new CuidadoPersonal();
+            Admin ad = new Admin();           
+            AdultoMayor adul = new AdultoMayor();
+            Belleza be = new Belleza();
+            Dermocosmetica der = new Dermocosmetica();
+            Infantil inf = new Infantil();
+            Medicamentos med = new Medicamentos();
+            Nutricion nut = new Nutricion();
+            Prevencion prev = new Prevencion();
+            Sexualidad sex = new Sexualidad();
+            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+            sex.setVisible(true);
+            sex.setLocationRelativeTo(sex);
+            dispose();
     }//GEN-LAST:event_SexualidadActionPerformed
 
     private void BellezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BellezaActionPerformed
-        Belleza vista8 = new Belleza();
-        vista8.setVisible(true);
-        dispose();
+        //Mostrar los datos en la tabla.
+            CuidadoPersonal cp = new CuidadoPersonal();
+            Admin ad = new Admin();           
+            AdultoMayor adul = new AdultoMayor();
+            Belleza be = new Belleza();
+            Dermocosmetica der = new Dermocosmetica();
+            Infantil inf = new Infantil();
+            Medicamentos med = new Medicamentos();
+            Nutricion nut = new Nutricion();
+            Prevencion prev = new Prevencion();
+            Sexualidad sex = new Sexualidad();
+            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+            be.setVisible(true);
+            be.setLocationRelativeTo(be);
+            dispose();
     }//GEN-LAST:event_BellezaActionPerformed
 
     private void NutricionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NutricionActionPerformed
-        Nutricion vista9 = new Nutricion();
-        vista9.setVisible(true);
-        dispose();
+        //Mostrar los datos en la tabla.
+            CuidadoPersonal cp = new CuidadoPersonal();
+            Admin ad = new Admin();           
+            AdultoMayor adul = new AdultoMayor();
+            Belleza be = new Belleza();
+            Dermocosmetica der = new Dermocosmetica();
+            Infantil inf = new Infantil();
+            Medicamentos med = new Medicamentos();
+            Nutricion nut = new Nutricion();
+            Prevencion prev = new Prevencion();
+            Sexualidad sex = new Sexualidad();
+            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+            nut.setVisible(true);
+            nut.setLocationRelativeTo(nut);
+            dispose();
     }//GEN-LAST:event_NutricionActionPerformed
 
     private void AdultoMayorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdultoMayorActionPerformed
-        AdultoMayor vista10 = new AdultoMayor();
-        vista10.setVisible(true);
-        dispose();
+        //Mostrar los datos en la tabla.
+            CuidadoPersonal cp = new CuidadoPersonal();
+            Admin ad = new Admin();           
+            AdultoMayor adul = new AdultoMayor();
+            Belleza be = new Belleza();
+            Dermocosmetica der = new Dermocosmetica();
+            Infantil inf = new Infantil();
+            Medicamentos med = new Medicamentos();
+            Nutricion nut = new Nutricion();
+            Prevencion prev = new Prevencion();
+            Sexualidad sex = new Sexualidad();
+            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+            adul.setVisible(true);
+            adul.setLocationRelativeTo(adul);
+            dispose();
     }//GEN-LAST:event_AdultoMayorActionPerformed
 
     private void IniciarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IniciarSesionMouseClicked
@@ -343,9 +453,11 @@ public class IniciarSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_CarritoMouseClicked
 
     private void OfertasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OfertasMouseClicked
-        Ofertas vista12 = new Ofertas();
-        vista12.setVisible(true);
-        dispose();
+    Ofertas of = new Ofertas();
+    Admin adm = new Admin();
+    ControladorOferta controladorOfertas = new ControladorOferta(adm, of);
+    of.setVisible(true);
+    of.setLocationRelativeTo(of);
     }//GEN-LAST:event_OfertasMouseClicked
 
     private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked

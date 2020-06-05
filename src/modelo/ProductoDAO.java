@@ -31,10 +31,10 @@ public class ProductoDAO {
     
     //Agregar datos
     
-    public String agregar(Producto p) throws ClassNotFoundException {        
+    public void agregar(Producto p) throws ClassNotFoundException {        
         try {
             
-            String sql =("INSERT INTO PRODUCTO(CODPROD,NOMBRE,MARCA,PRECIO,FECHA_FAB,FECHA_VENCI,DOSIS) VALUES (?,?,?,?,?,?,?)");
+            String sql =("INSERT INTO PRODUCTO(CODPROD,NOMBRE,MARCA,PRECIO,FECHA_FAB,FECHA_VENCI,DOSIS,CODTIPOPRODUCTO,CODOFERTA) VALUES (?,?,?,?,?,?,?,?,?)");
                 con = conectar.getConnection();
                 ps = con.prepareStatement(sql);                
                 ps.setInt(1, p.getCodigo());
@@ -44,6 +44,8 @@ public class ProductoDAO {
                 ps.setString(5, p.getFecha_fabri());
                 ps.setString(6, p.getFecha_venc());
                 ps.setString(7, p.getDosis());
+                ps.setInt(8, p.getCodigocategoria());
+                ps.setInt(9, p.getCodigo_oferta());
                 ps.executeUpdate();
                 
                if(ps.executeUpdate() == 1){
@@ -56,11 +58,11 @@ public class ProductoDAO {
         catch (SQLException ex) {
             System.out.println("Error SQL: " + ex.getMessage());
         }
-        return null;
+        
     }
     //Actualizar datos
-    public void actualizar(Producto p) throws ClassNotFoundException {
-        String sql =("UPDATE PRODUCTO SET nombre = ?, marca = ?, precio = ?, fecha_fab = ?, fecha_venci= ?, dosis = ? where codigo = ?");
+    public int actualizar(Producto p) throws ClassNotFoundException {
+        String sql =("UPDATE PRODUCTO SET nombre = ?, marca = ?, precio = ?, fecha_fab = ?, fecha_venci= ?, dosis = ?, CODTIPOPRODUCTO = ?,CODOFERTA = ? where CODPROD = ?");
         try {           
             con= conectar.getConnection();
             ps=con.prepareStatement(sql);
@@ -71,6 +73,9 @@ public class ProductoDAO {
             ps.setString(4, p.getFecha_fabri());
             ps.setString(5, p.getFecha_venc());
             ps.setString(6, p.getDosis());
+            ps.setInt(7, p.getCodigocategoria());
+            ps.setInt(8, p.getCodigo());
+            ps.setInt(9, p.getCodigo_oferta());
             ps.executeUpdate();
             if (ps.executeUpdate() == 1) {
                 JOptionPane.showMessageDialog(null,"¡Actualización exitosa!");
@@ -81,6 +86,7 @@ public class ProductoDAO {
         } catch (SQLException ex) {
             System.out.println("Error SQL: " + ex.getMessage());
         }
+        return 1;
     }     
     //Eliminar datos
     public void eliminar(Producto p){
@@ -94,10 +100,202 @@ public class ProductoDAO {
         }
         
     }
-    //Listar
-    public List listar(){
+    //Listar cuidado personal
+    public List listarCuidadoPersonal(){
         List<Producto>datos = new ArrayList<>();
-        String sql = "select * from PRODUCTO";
+        String sql = "select * from PRODUCTO where CODTIPOPRODUCTO = 5";
+        try {
+            con=conectar.getConnection();
+            ps=con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while (rs.next()) {                
+                Producto p = new Producto();
+                p.setCodigo(rs.getInt(1));
+                p.setNombre(rs.getString(2));
+                p.setMarca(rs.getString(3));
+                p.setValor_peso(rs.getInt(4));
+                p.setFecha_fabri(rs.getString(5));
+                p.setFecha_venc(rs.getString(6));
+                p.setDosis(rs.getString(7));
+                
+                datos.add(p);
+            }
+        } catch (Exception e) {
+        }
+        return datos;
+    }
+    //Listar prevencion.
+            public List listarPrevencion(){
+        List<Producto>datos = new ArrayList<>();
+        String sql = "select * from PRODUCTO where CODTIPOPRODUCTO = 1";
+        try {
+            con=conectar.getConnection();
+            ps=con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while (rs.next()) {                
+                Producto p = new Producto();
+                p.setCodigo(rs.getInt(1));
+                p.setNombre(rs.getString(2));
+                p.setMarca(rs.getString(3));
+                p.setValor_peso(rs.getInt(4));
+                p.setFecha_fabri(rs.getString(5));
+                p.setFecha_venc(rs.getString(6));
+                p.setDosis(rs.getString(7));
+                
+                datos.add(p);
+            }
+        } catch (Exception e) {
+        }
+        return datos;
+    }
+    //Listar Medicamentos 
+        public List listarMedicamentos(){
+        List<Producto>datos = new ArrayList<>();
+        String sql = "select * from PRODUCTO where CODTIPOPRODUCTO = 2";
+        try {
+            con=conectar.getConnection();
+            ps=con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while (rs.next()) {                
+                Producto p = new Producto();
+                p.setCodigo(rs.getInt(1));
+                p.setNombre(rs.getString(2));
+                p.setMarca(rs.getString(3));
+                p.setValor_peso(rs.getInt(4));
+                p.setFecha_fabri(rs.getString(5));
+                p.setFecha_venc(rs.getString(6));
+                p.setDosis(rs.getString(7));
+                
+                datos.add(p);
+            }
+        } catch (Exception e) {
+        }
+        return datos;
+    }
+    //Listar dermocosmetica 
+        public List listarDermocosmetica(){
+        List<Producto>datos = new ArrayList<>();
+        String sql = "select * from PRODUCTO where CODTIPOPRODUCTO = 3";
+        try {
+            con=conectar.getConnection();
+            ps=con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while (rs.next()) {                
+                Producto p = new Producto();
+                p.setCodigo(rs.getInt(1));
+                p.setNombre(rs.getString(2));
+                p.setMarca(rs.getString(3));
+                p.setValor_peso(rs.getInt(4));
+                p.setFecha_fabri(rs.getString(5));
+                p.setFecha_venc(rs.getString(6));
+                p.setDosis(rs.getString(7));
+                
+                datos.add(p);
+            }
+        } catch (Exception e) {
+        }
+        return datos;
+    }
+    //Listar infantil y maternidad 
+        public List listarInfyMat(){
+        List<Producto>datos = new ArrayList<>();
+        String sql = "select * from PRODUCTO where CODTIPOPRODUCTO = 4";
+        try {
+            con=conectar.getConnection();
+            ps=con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while (rs.next()) {                
+                Producto p = new Producto();
+                p.setCodigo(rs.getInt(1));
+                p.setNombre(rs.getString(2));
+                p.setMarca(rs.getString(3));
+                p.setValor_peso(rs.getInt(4));
+                p.setFecha_fabri(rs.getString(5));
+                p.setFecha_venc(rs.getString(6));
+                p.setDosis(rs.getString(7));
+                
+                datos.add(p);
+            }
+        } catch (Exception e) {
+        }
+        return datos;
+    }
+    //Listar sexualidad 
+        public List listarSexualidad(){
+        List<Producto>datos = new ArrayList<>();
+        String sql = "select * from PRODUCTO where CODTIPOPRODUCTO = 6";
+        try {
+            con=conectar.getConnection();
+            ps=con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while (rs.next()) {                
+                Producto p = new Producto();
+                p.setCodigo(rs.getInt(1));
+                p.setNombre(rs.getString(2));
+                p.setMarca(rs.getString(3));
+                p.setValor_peso(rs.getInt(4));
+                p.setFecha_fabri(rs.getString(5));
+                p.setFecha_venc(rs.getString(6));
+                p.setDosis(rs.getString(7));
+                
+                datos.add(p);
+            }
+        } catch (Exception e) {
+        }
+        return datos;
+    }
+    //Listar belleza 
+        public List listarBelleza(){
+        List<Producto>datos = new ArrayList<>();
+        String sql = "select * from PRODUCTO where CODTIPOPRODUCTO = 7";
+        try {
+            con=conectar.getConnection();
+            ps=con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while (rs.next()) {                
+                Producto p = new Producto();
+                p.setCodigo(rs.getInt(1));
+                p.setNombre(rs.getString(2));
+                p.setMarca(rs.getString(3));
+                p.setValor_peso(rs.getInt(4));
+                p.setFecha_fabri(rs.getString(5));
+                p.setFecha_venc(rs.getString(6));
+                p.setDosis(rs.getString(7));
+                
+                datos.add(p);
+            }
+        } catch (Exception e) {
+        }
+        return datos;
+    }
+    //Listar nutricion y vitaminas 
+        public List listarnutri(){
+        List<Producto>datos = new ArrayList<>();
+        String sql = "select * from PRODUCTO where CODTIPOPRODUCTO = 8";
+        try {
+            con=conectar.getConnection();
+            ps=con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while (rs.next()) {                
+                Producto p = new Producto();
+                p.setCodigo(rs.getInt(1));
+                p.setNombre(rs.getString(2));
+                p.setMarca(rs.getString(3));
+                p.setValor_peso(rs.getInt(4));
+                p.setFecha_fabri(rs.getString(5));
+                p.setFecha_venc(rs.getString(6));
+                p.setDosis(rs.getString(7));
+                
+                datos.add(p);
+            }
+        } catch (Exception e) {
+        }
+        return datos;
+    }
+    //Listar Adulto mayor
+        public List listarAdultoMayor(){
+        List<Producto>datos = new ArrayList<>();
+        String sql = "select * from PRODUCTO where CODTIPOPRODUCTO = 9";
         try {
             con=conectar.getConnection();
             ps=con.prepareStatement(sql);
@@ -136,6 +334,8 @@ public class ProductoDAO {
                 p.setFecha_fabri(rs.getString("FECHA_FAB"));
                 p.setFecha_venc(rs.getString("FECHA_VENCI"));
                 p.setDosis(rs.getString("DOSIS"));
+                p.setCodigocategoria(rs.getInt("CODTIPOPRODUCTO"));
+                p.setCodigo_oferta(rs.getInt("CODOFERTA"));
                 return true;
             }
             return false;           
@@ -143,5 +343,8 @@ public class ProductoDAO {
             return false;
         }
         
+        
     }
+    
+    
 }

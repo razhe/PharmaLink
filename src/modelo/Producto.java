@@ -17,11 +17,13 @@ public class Producto {
     private String fecha_fabri;
     private String fecha_venc;   
     private String dosis;
+    private int codigocategoria;
+    private int codigo_oferta;
 
     public Producto() {
     }
 
-    public Producto(int codigo, String nombre, String marca, int valor_peso, String fecha_fabri, String fecha_venc, String dosis) {
+    public Producto(int codigo, String nombre, String marca, int valor_peso, String fecha_fabri, String fecha_venc, String dosis, int codigocategoria,int codigo_oferta) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.marca = marca;
@@ -29,6 +31,7 @@ public class Producto {
         this.fecha_fabri = fecha_fabri;
         this.fecha_venc = fecha_venc;
         this.dosis = dosis;
+        this.codigocategoria = codigocategoria;
     }
 
     public int getCodigo() {
@@ -86,6 +89,25 @@ public class Producto {
     public void setDosis(String dosis) {
         this.dosis = dosis;
     }
+
+    public int getCodigocategoria() {
+        return codigocategoria;
+    }
+
+    public void setCodigocategoria(int codigocategoria) {
+        this.codigocategoria = codigocategoria;
+    }
+
+    public void setCodigo_oferta(int codigo_oferta) {
+        this.codigo_oferta = codigo_oferta;
+    }
+
+    public int getCodigo_oferta() {
+        return codigo_oferta;
+    }
+    
+
+    
 
     
     

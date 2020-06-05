@@ -5,7 +5,9 @@
  */
 package vista;
 
-import controlador.Controlador;
+import controlador.ControladorOferta;
+import controlador.ControladorProducto;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -51,6 +53,27 @@ public class Admin extends javax.swing.JFrame {
         BtBuscar = new javax.swing.JButton();
         jDFecha_fab = new com.toedter.calendar.JDateChooser();
         jDFecha_venc = new com.toedter.calendar.JDateChooser();
+        jLabel7 = new javax.swing.JLabel();
+        jTCodCategoria = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jTOfertaCodigo = new javax.swing.JTextField();
+        jTOfertaDescuento = new javax.swing.JTextField();
+        jTOfertasCantidad = new javax.swing.JTextField();
+        jTOfertasCodigoProducto = new javax.swing.JTextField();
+        jDOfertaInicio = new com.toedter.calendar.JDateChooser();
+        jDOfertaFinal = new com.toedter.calendar.JDateChooser();
+        jBOfertaBuscar = new javax.swing.JButton();
+        jBOfertaEliminar = new javax.swing.JButton();
+        jBOfertaModificar = new javax.swing.JButton();
+        jBOfertaAgregar = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        jTCodOferta = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CrudAdmin");
@@ -82,7 +105,7 @@ public class Admin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(362, 362, 362)
                 .addComponent(jLabelTitAdmin)
-                .addContainerGap(368, Short.MAX_VALUE))
+                .addContainerGap(615, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,6 +137,30 @@ public class Admin extends javax.swing.JFrame {
             }
         });
 
+        jTextFieldCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldCodigoKeyTyped(evt);
+            }
+        });
+
+        jTextFieldNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldNombreKeyPressed(evt);
+            }
+        });
+
+        jTextFieldPrecio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldPrecioKeyTyped(evt);
+            }
+        });
+
+        jTextFieldMarca.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldMarcaKeyTyped(evt);
+            }
+        });
+
         jLabel1.setText("Código");
 
         jLabel2.setText("Nombre");
@@ -134,6 +181,140 @@ public class Admin extends javax.swing.JFrame {
 
         jDFecha_venc.setDateFormatString("yyyy-MM-dd");
 
+        jLabel7.setText("Codigo categoria");
+
+        jTCodCategoria.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTCodCategoriaKeyTyped(evt);
+            }
+        });
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Ofertas"));
+
+        jLabel8.setText("Código");
+
+        jLabel10.setText("Descuento");
+
+        jLabel11.setText("Inicio de la oferta:");
+
+        jLabel12.setText("Fin de la oferta:");
+
+        jLabel13.setText("Cantidad de productos:");
+
+        jLabel14.setText("Codigo del producto:");
+
+        jTOfertaCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTOfertaCodigoKeyTyped(evt);
+            }
+        });
+
+        jTOfertaDescuento.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTOfertaDescuentoKeyTyped(evt);
+            }
+        });
+
+        jTOfertasCantidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTOfertasCantidadKeyTyped(evt);
+            }
+        });
+
+        jTOfertasCodigoProducto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTOfertasCodigoProductoKeyTyped(evt);
+            }
+        });
+
+        jBOfertaBuscar.setText("Buscar");
+
+        jBOfertaEliminar.setText("Eliminar");
+
+        jBOfertaModificar.setText("Modificar");
+
+        jBOfertaAgregar.setText("Agregar");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTOfertasCodigoProducto)
+                    .addComponent(jTOfertasCantidad)
+                    .addComponent(jTOfertaDescuento)
+                    .addComponent(jTOfertaCodigo)
+                    .addComponent(jDOfertaFinal, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                    .addComponent(jDOfertaInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(jBOfertaBuscar)
+                .addGap(18, 18, 18)
+                .addComponent(jBOfertaEliminar)
+                .addContainerGap(130, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jBOfertaAgregar)
+                .addGap(18, 18, 18)
+                .addComponent(jBOfertaModificar)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jTOfertaCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBOfertaBuscar)
+                    .addComponent(jBOfertaEliminar))
+                .addGap(22, 22, 22)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(jTOfertaDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11)
+                    .addComponent(jDOfertaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel12))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jDOfertaFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jTOfertasCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(jTOfertasCodigoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBOfertaModificar)
+                    .addComponent(jBOfertaAgregar))
+                .addGap(29, 29, 29))
+        );
+
+        jLabel15.setText("Código oferta");
+
+        jTCodOferta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTCodOfertaKeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -142,6 +323,11 @@ public class Admin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BTAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(BTModificar)
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -154,75 +340,91 @@ public class Admin extends javax.swing.JFrame {
                                         .addComponent(jLabel6))
                                     .addGap(30, 30, 30)))
                             .addComponent(jLabel4)
-                            .addComponent(jLabel9))
-                        .addGap(94, 94, 94)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel15))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextFieldMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jDFecha_venc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jDFecha_fab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(jTextFieldPrecio, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextFieldDosis, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                             .addComponent(jTextFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(BtBuscar)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(BTEliminar))
-                                        .addComponent(jTextFieldNombre, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jDFecha_venc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                                        .addComponent(jDFecha_fab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(BTAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(BTModificar)
-                        .addGap(50, 50, 50))))
+                                        .addComponent(jTextFieldNombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jTextFieldMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldDosis, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTCodCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(19, 19, 19))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTCodOferta, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
-                            .addComponent(BtBuscar)
-                            .addComponent(BTEliminar))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(49, 49, 49)
-                        .addComponent(jLabel4))
-                    .addComponent(jDFecha_fab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5)
-                    .addComponent(jDFecha_venc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(40, 40, 40)
+                                .addComponent(jLabel6)
+                                .addGap(44, 44, 44)
+                                .addComponent(jLabel3)
+                                .addGap(52, 52, 52)
+                                .addComponent(jLabel4)
+                                .addGap(60, 60, 60)
+                                .addComponent(jLabel5)
+                                .addGap(48, 48, 48)
+                                .addComponent(jLabel9)
+                                .addGap(41, 41, 41)
+                                .addComponent(jLabel7))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jTextFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(BtBuscar)
+                                            .addComponent(BTEliminar)
+                                            .addComponent(jLabel1))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(34, 34, 34)
+                                        .addComponent(jTextFieldMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(38, 38, 38)
+                                        .addComponent(jTextFieldPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(63, 63, 63))
+                                    .addComponent(jDFecha_fab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(54, 54, 54)
+                                .addComponent(jDFecha_venc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(45, 45, 45)
+                                .addComponent(jTextFieldDosis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35)
+                                .addComponent(jTCodCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(149, 149, 149)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jTextFieldDosis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
+                    .addComponent(jLabel15)
+                    .addComponent(jTCodOferta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(68, 68, 68)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BTModificar)
-                    .addComponent(BTAgregar))
-                .addGap(45, 45, 45))
+                    .addComponent(BTAgregar)
+                    .addComponent(BTModificar))
+                .addGap(64, 64, 64))
         );
 
         pack();
@@ -240,6 +442,96 @@ public class Admin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BTEliminarActionPerformed
 
+    private void jTextFieldCodigoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCodigoKeyTyped
+        char validarNum = evt.getKeyChar();
+        if (Character.isLetter(validarNum)) {
+            getToolkit().beep();
+            evt.consume();
+        JOptionPane.showMessageDialog(null, "Solo puede ingresar numeros en esta casilla");
+        }
+    }//GEN-LAST:event_jTextFieldCodigoKeyTyped
+
+    private void jTextFieldNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldNombreKeyPressed
+        char validarNum = evt.getKeyChar();
+        if (Character.isDigit(validarNum)) {
+            getToolkit().beep();
+            evt.consume();
+        JOptionPane.showMessageDialog(null, "Solo puede ingresar letras en esta casilla");
+        }
+    }//GEN-LAST:event_jTextFieldNombreKeyPressed
+
+    private void jTextFieldMarcaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldMarcaKeyTyped
+        char validarNum = evt.getKeyChar();
+        if (Character.isDigit(validarNum)) {
+            getToolkit().beep();
+            evt.consume();
+        JOptionPane.showMessageDialog(null, "Solo puede ingresar letras en esta casilla");
+        }
+    }//GEN-LAST:event_jTextFieldMarcaKeyTyped
+
+    private void jTextFieldPrecioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPrecioKeyTyped
+        char validarNum = evt.getKeyChar();
+        if (Character.isLetter(validarNum)) {
+            getToolkit().beep();
+            evt.consume();
+        JOptionPane.showMessageDialog(null, "Solo puede ingresar numeros en esta casilla");
+        }
+    }//GEN-LAST:event_jTextFieldPrecioKeyTyped
+
+    private void jTCodCategoriaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTCodCategoriaKeyTyped
+        char validarNum = evt.getKeyChar();
+        if (Character.isLetter(validarNum)) {
+            getToolkit().beep();
+            evt.consume();
+        JOptionPane.showMessageDialog(null, "Solo puede ingresar numeros en esta casilla");
+        }
+    }//GEN-LAST:event_jTCodCategoriaKeyTyped
+
+    private void jTCodOfertaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTCodOfertaKeyTyped
+        char validarNum = evt.getKeyChar();
+        if (Character.isLetter(validarNum)) {
+            getToolkit().beep();
+            evt.consume();
+        JOptionPane.showMessageDialog(null, "Solo puede ingresar numeros en esta casilla");
+        }
+    }//GEN-LAST:event_jTCodOfertaKeyTyped
+
+    private void jTOfertaCodigoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTOfertaCodigoKeyTyped
+        char validarNum = evt.getKeyChar();
+        if (Character.isLetter(validarNum)) {
+            getToolkit().beep();
+            evt.consume();
+        JOptionPane.showMessageDialog(null, "Solo puede ingresar numeros en esta casilla");
+        }
+    }//GEN-LAST:event_jTOfertaCodigoKeyTyped
+
+    private void jTOfertaDescuentoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTOfertaDescuentoKeyTyped
+        char validarNum = evt.getKeyChar();
+        if (Character.isLetter(validarNum)) {
+            getToolkit().beep();
+            evt.consume();
+        JOptionPane.showMessageDialog(null, "Solo puede ingresar numeros en esta casilla");
+        }
+    }//GEN-LAST:event_jTOfertaDescuentoKeyTyped
+
+    private void jTOfertasCantidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTOfertasCantidadKeyTyped
+        char validarNum = evt.getKeyChar();
+        if (Character.isLetter(validarNum)) {
+            getToolkit().beep();
+            evt.consume();
+        JOptionPane.showMessageDialog(null, "Solo puede ingresar numeros en esta casilla");
+        }
+    }//GEN-LAST:event_jTOfertasCantidadKeyTyped
+
+    private void jTOfertasCodigoProductoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTOfertasCodigoProductoKeyTyped
+        char validarNum = evt.getKeyChar();
+        if (Character.isLetter(validarNum)) {
+            getToolkit().beep();
+            evt.consume();
+        JOptionPane.showMessageDialog(null, "Solo puede ingresar numeros en esta casilla");
+        }
+    }//GEN-LAST:event_jTOfertasCodigoProductoKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -247,9 +539,24 @@ public class Admin extends javax.swing.JFrame {
         //Mostrar los datos en la tabla.
             CuidadoPersonal cp = new CuidadoPersonal();
             Admin ad = new Admin();
-            Controlador c = new Controlador(cp,ad);
+            AdultoMayor adul = new AdultoMayor();
+            Belleza be = new Belleza();
+            Dermocosmetica der = new Dermocosmetica();
+            Infantil inf = new Infantil();
+            Medicamentos med = new Medicamentos();
+            Nutricion nut = new Nutricion();
+            Prevencion prev = new Prevencion();
+            Sexualidad sex = new Sexualidad();
+            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+            //
+            Ofertas of = new Ofertas();
+            ControladorOferta co = new ControladorOferta(ad, of);
+            //
             ad.setVisible(true);
             ad.setLocationRelativeTo(ad);
+        
+            
+            
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -257,18 +564,39 @@ public class Admin extends javax.swing.JFrame {
     public javax.swing.JButton BTEliminar;
     public javax.swing.JButton BTModificar;
     public javax.swing.JButton BtBuscar;
+    public javax.swing.JButton jBOfertaAgregar;
+    public javax.swing.JButton jBOfertaBuscar;
+    public javax.swing.JButton jBOfertaEliminar;
+    public javax.swing.JButton jBOfertaModificar;
     public com.toedter.calendar.JDateChooser jDFecha_fab;
     public com.toedter.calendar.JDateChooser jDFecha_venc;
+    public com.toedter.calendar.JDateChooser jDOfertaFinal;
+    public com.toedter.calendar.JDateChooser jDOfertaInicio;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelTitAdmin;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel4;
+    public javax.swing.JTextField jTCodCategoria;
+    public javax.swing.JTextField jTCodOferta;
+    public javax.swing.JTextField jTOfertaCodigo;
+    public javax.swing.JTextField jTOfertaDescuento;
+    public javax.swing.JTextField jTOfertasCantidad;
+    public javax.swing.JTextField jTOfertasCodigoProducto;
     public javax.swing.JTextField jTextFieldCodigo;
     public javax.swing.JTextField jTextFieldDosis;
     public javax.swing.JTextField jTextFieldMarca;
