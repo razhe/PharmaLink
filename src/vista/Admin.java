@@ -7,6 +7,7 @@ package vista;
 
 import controlador.ControladorOferta;
 import controlador.ControladorProducto;
+import controlador.ControladorUsuario;
 import javax.swing.JOptionPane;
 
 /**
@@ -571,9 +572,11 @@ public class Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldCodigoActionPerformed
 
     private void jBCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCerrarActionPerformed
-        IniciarSesion in = new IniciarSesion();
-        Admin ad = new Admin();
-        in.setVisible(true);
+
+        IniciarSesion lg = new IniciarSesion();
+        ControladorUsuario c = new ControladorUsuario(lg);
+        lg.setVisible(true);
+        lg.setLocationRelativeTo(lg);
         dispose();
         
     }//GEN-LAST:event_jBCerrarActionPerformed

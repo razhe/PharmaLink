@@ -7,6 +7,7 @@ package vista;
 
 import controlador.ControladorOferta;
 import controlador.ControladorProducto;
+import controlador.ControladorUsuario;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
@@ -241,14 +242,18 @@ public class Menú extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void IniciarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IniciarSesionMouseClicked
-        IniciarSesion vista1 = new IniciarSesion();
-        vista1.setVisible(true);
+        IniciarSesion lg = new IniciarSesion();
+        ControladorUsuario c = new ControladorUsuario(lg);
+        lg.setVisible(true);
+        lg.setLocationRelativeTo(lg);
         dispose();
     }//GEN-LAST:event_IniciarSesionMouseClicked
 
     private void IniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IniciarSesionActionPerformed
-        IniciarSesion vista1 = new IniciarSesion();
-        vista1.setVisible(true);
+        IniciarSesion lg = new IniciarSesion();
+        ControladorUsuario c = new ControladorUsuario(lg);
+        lg.setVisible(true);
+        lg.setLocationRelativeTo(lg);
         dispose();
         
     }//GEN-LAST:event_IniciarSesionActionPerformed

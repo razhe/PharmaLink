@@ -41,6 +41,8 @@ public class IniciarSesion extends javax.swing.JFrame {
         
         //        Centrar Jframe
         this.setLocationRelativeTo(null);
+        
+        
     }
 
     /**
@@ -451,9 +453,9 @@ public class IniciarSesion extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
        IniciarSesion lg = new IniciarSesion();
-       ControladorUsuario c = new ControladorUsuario(lg);
-       lg.setVisible(true);
-       lg.setLocationRelativeTo(lg);
+        ControladorUsuario c = new ControladorUsuario(lg);
+        lg.setVisible(true);
+        lg.setLocationRelativeTo(lg);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
