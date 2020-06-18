@@ -65,7 +65,6 @@ public class Ayuda extends javax.swing.JFrame {
         IniciarSesion = new javax.swing.JMenu();
         Carrito = new javax.swing.JMenu();
         Ofertas = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -189,15 +188,6 @@ public class Ayuda extends javax.swing.JFrame {
             }
         });
         jMenuBar2.add(Ofertas);
-
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/favorito.png"))); // NOI18N
-        jMenu1.setText("Favoritos");
-        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu1MouseClicked(evt);
-            }
-        });
-        jMenuBar2.add(jMenu1);
 
         setJMenuBar(jMenuBar2);
 
@@ -403,12 +393,6 @@ public class Ayuda extends javax.swing.JFrame {
     of.setLocationRelativeTo(of);
     }//GEN-LAST:event_OfertasMouseClicked
 
-    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
-        Favoritos vista13 = new Favoritos();
-        vista13.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jMenu1MouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -457,7 +441,6 @@ public class Ayuda extends javax.swing.JFrame {
     private javax.swing.JMenu Ofertas;
     private javax.swing.JMenuItem Prevencion;
     private javax.swing.JMenuItem Sexualidad;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar2;
     // End of variables declaration//GEN-END:variables

@@ -68,7 +68,6 @@ public class Menú extends javax.swing.JFrame {
         IniciarSesion = new javax.swing.JMenu();
         Carrito = new javax.swing.JMenu();
         Ofertas = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -207,15 +206,6 @@ public class Menú extends javax.swing.JFrame {
         });
         jMenuBar2.add(Ofertas);
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/favorito.png"))); // NOI18N
-        jMenu1.setText("Favoritos");
-        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu1MouseClicked(evt);
-            }
-        });
-        jMenuBar2.add(jMenu1);
-
         setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -260,6 +250,7 @@ public class Menú extends javax.swing.JFrame {
         IniciarSesion vista1 = new IniciarSesion();
         vista1.setVisible(true);
         dispose();
+        
     }//GEN-LAST:event_IniciarSesionActionPerformed
 
     private void MedicamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MedicamentosActionPerformed
@@ -276,6 +267,7 @@ public class Menú extends javax.swing.JFrame {
         ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
         med.setVisible(true);
         med.setLocationRelativeTo(med);
+        dispose();
     }//GEN-LAST:event_MedicamentosActionPerformed
 
     private void PrevencionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrevencionActionPerformed
@@ -292,6 +284,7 @@ public class Menú extends javax.swing.JFrame {
         ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
         prev.setVisible(true);
         prev.setLocationRelativeTo(prev);
+        dispose();
     }//GEN-LAST:event_PrevencionActionPerformed
 
     private void DermocosmeticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DermocosmeticaActionPerformed
@@ -308,6 +301,7 @@ public class Menú extends javax.swing.JFrame {
         ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
         der.setVisible(true);
         der.setLocationRelativeTo(der);
+        dispose();
     }//GEN-LAST:event_DermocosmeticaActionPerformed
 
     private void InfantilMaternidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InfantilMaternidadActionPerformed
@@ -345,6 +339,7 @@ public class Menú extends javax.swing.JFrame {
         ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
         cp.setVisible(true);
         cp.setLocationRelativeTo(cp);
+        dispose();
     }//GEN-LAST:event_CuidadoPersonalActionPerformed
 
     private void SexualidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SexualidadActionPerformed
@@ -361,6 +356,7 @@ public class Menú extends javax.swing.JFrame {
         ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
         sex.setVisible(true);
         sex.setLocationRelativeTo(sex);
+        dispose();
     }//GEN-LAST:event_SexualidadActionPerformed
 
     private void BellezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BellezaActionPerformed
@@ -377,6 +373,7 @@ public class Menú extends javax.swing.JFrame {
         ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
         be.setVisible(true);
         be.setLocationRelativeTo(be);
+        dispose();
     }//GEN-LAST:event_BellezaActionPerformed
 
     private void NutricionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NutricionActionPerformed
@@ -393,6 +390,7 @@ public class Menú extends javax.swing.JFrame {
         ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
         nut.setVisible(true);
         nut.setLocationRelativeTo(nut);
+        dispose();
     }//GEN-LAST:event_NutricionActionPerformed
 
     private void AdultoMayorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdultoMayorActionPerformed
@@ -409,6 +407,7 @@ public class Menú extends javax.swing.JFrame {
         ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
         adul.setVisible(true);
         adul.setLocationRelativeTo(adul);
+        dispose();
     }//GEN-LAST:event_AdultoMayorActionPerformed
 
     private void CarritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CarritoMouseClicked
@@ -423,13 +422,8 @@ public class Menú extends javax.swing.JFrame {
         ControladorOferta controladorOfertas = new ControladorOferta(adm, of);
         of.setVisible(true);
         of.setLocationRelativeTo(of);
-    }//GEN-LAST:event_OfertasMouseClicked
-
-    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
-        Favoritos vista13 = new Favoritos();
-        vista13.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jMenu1MouseClicked
+    }//GEN-LAST:event_OfertasMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         Ayuda vista14 = new Ayuda();
@@ -443,6 +437,7 @@ public class Menú extends javax.swing.JFrame {
         ControladorOferta controladorOfertas = new ControladorOferta(adm, of);
         of.setVisible(true);
         of.setLocationRelativeTo(of);
+        dispose();
     }//GEN-LAST:event_CarritoActionPerformed
 
     
@@ -473,7 +468,6 @@ public class Menú extends javax.swing.JFrame {
     private javax.swing.JMenuItem Sexualidad;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar2;
     // End of variables declaration//GEN-END:variables

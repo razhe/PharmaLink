@@ -11,9 +11,12 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.table.TableModel;
+import modelo.Producto;
+import modelo.ProductoDAO;
 
 /**
  *
@@ -78,7 +81,6 @@ public class AdultoMayor extends javax.swing.JFrame {
         IniciarSesion = new javax.swing.JMenu();
         Carrito = new javax.swing.JMenu();
         Ofertas = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -245,15 +247,6 @@ public class AdultoMayor extends javax.swing.JFrame {
             }
         });
         jMenuBar2.add(Ofertas);
-
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/favorito.png"))); // NOI18N
-        jMenu1.setText("Favoritos");
-        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu1MouseClicked(evt);
-            }
-        });
-        jMenuBar2.add(jMenu1);
 
         setJMenuBar(jMenuBar2);
 
@@ -471,12 +464,6 @@ public class AdultoMayor extends javax.swing.JFrame {
     of.setLocationRelativeTo(of);
     }//GEN-LAST:event_OfertasMouseClicked
 
-    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
-        Favoritos vista13 = new Favoritos();
-        vista13.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jMenu1MouseClicked
-
     private void jTaAdultoMayorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTaAdultoMayorMouseClicked
         // TODO add your handling code here:
         InformacionProducto vistaInfProd = new InformacionProducto();
@@ -491,12 +478,24 @@ public class AdultoMayor extends javax.swing.JFrame {
         String precio = tm.getValueAt(selectedRow, 3).toString();
         String dosis = tm.getValueAt(selectedRow, 6).toString();
         
-        vistaInfProd.jTCodigo.setText(codigo);
-        vistaInfProd.jTNomProductoInf.setText(nombre);
-        vistaInfProd.jTMarcaInf.setText(marca);
-        vistaInfProd.jTPrecioInf.setText(precio);
-        vistaInfProd.jTDosisInf.setText(dosis);
-        vistaInfProd.setVisible(true);
+        Producto prod = new Producto();
+        ProductoDAO pDAO = new ProductoDAO();
+        try {
+            prod.setCodigo(Integer.parseInt(codigo));
+            pDAO.buscarDescripcion(prod);  
+
+            vistaInfProd.jTCodigo.setText(codigo);
+            vistaInfProd.jTNomProductoInf.setText(nombre);
+            vistaInfProd.jTMarcaInf.setText(marca);
+            vistaInfProd.jTPrecioInf.setText(precio);
+            vistaInfProd.jTDosisInf.setText(dosis);
+            vistaInfProd.jTDescInfProd.setText(prod.getDescripcion_prod());
+            vistaInfProd.setVisible(true);
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        
     }//GEN-LAST:event_jTaAdultoMayorMouseClicked
 
     private void jTaAdultoMayorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTaAdultoMayorMouseEntered
@@ -546,7 +545,6 @@ public class AdultoMayor extends javax.swing.JFrame {
     private javax.swing.JMenuItem Prevencion;
     private javax.swing.JMenuItem Sexualidad;
     public javax.swing.JButton jBAdulto;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JScrollPane jScrollPane1;

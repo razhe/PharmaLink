@@ -15,8 +15,6 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import modelo.ListaCarrito;
 import vista.Carrito;
-
-
 /**
  *
  * @author Gustavo
@@ -36,8 +34,5 @@ public class ControladorCarrito {
         SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
         return formatoFecha.format(fechaActual);
     }
-    
-    
-
 
 }

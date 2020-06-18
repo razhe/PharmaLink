@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -76,56 +77,55 @@ public class ControladorOferta implements ActionListener  {
          
     }
     public void buscarOferta(){
-        oferta.setId(Integer.parseInt(admin.jTOfertaCodigo.getText()));
-        ofertaSql.buscarOferta(oferta);
+        
         try {
+            oferta.setId(Integer.parseInt(admin.jTOfertaCodigo.getText()));
+            ofertaSql.buscarOferta(oferta);
+            
             admin.jTOfertaDescuento.setText(String.valueOf(oferta.getDescuento()));
             SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd");
             admin.jDOfertaInicio.setDate(sd.parse(oferta.getFecha_inicio()));
             admin.jDOfertaFinal.setDate(sd.parse(oferta.getFecha_fin()));
-            admin.jTOfertasCantidad.setText(String.valueOf(oferta.getNum_producto()));
-            admin.jTOfertasCodigoProducto.setText(String.valueOf(oferta.getId_producto()));
-            
-            
-            
+            admin.jTOfertasCantidad.setText(String.valueOf(oferta.getNum_producto()));      
         } catch (Exception e) {
         }
     }
     public void actualizarOferta(){
-        oferta.setId(Integer.parseInt(admin.jTOfertaCodigo.getText()));
-        oferta.setDescuento(Double.parseDouble(admin.jTOfertaDescuento.getText()));
-        SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
-        oferta.setFecha_inicio(formatoFecha.format(admin.jDOfertaInicio.getDate()));
-        oferta.setFecha_fin(formatoFecha.format(admin.jDOfertaFinal.getDate()));
-        oferta.setNum_producto(Integer.parseInt(admin.jTOfertasCantidad.getText()));
-        oferta.setId_producto(Integer.parseInt(admin.jTOfertasCodigoProducto.getText()));
         try {
+            oferta.setId(Integer.parseInt(admin.jTOfertaCodigo.getText()));
+            oferta.setDescuento(Double.parseDouble(admin.jTOfertaDescuento.getText()));
+            SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
+            oferta.setFecha_inicio(formatoFecha.format(admin.jDOfertaInicio.getDate()));
+            oferta.setFecha_fin(formatoFecha.format(admin.jDOfertaFinal.getDate()));
+            oferta.setNum_producto(Integer.parseInt(admin.jTOfertasCantidad.getText()));
             ofertaSql.actualizarOferta(oferta);
             limpiar();
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }
-    public void eliminarProducto(){
-        oferta.setId(Integer.parseInt(admin.jTOfertaCodigo.getText()));
+    public void eliminarProducto(){     
         try {
+            oferta.setId(Integer.parseInt(admin.jTOfertaCodigo.getText()));
             ofertaSql.eliminar(oferta);
             limpiar();
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }
     
-    public void agregarOferta(){
-        oferta.setId(Integer.parseInt(admin.jTOfertaCodigo.getText()));
-        oferta.setDescuento(Double.parseDouble(admin.jTOfertaDescuento.getText()));
-        SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
-        oferta.setFecha_inicio(formatoFecha.format(admin.jDOfertaInicio.getDate()));
-        oferta.setFecha_fin(formatoFecha.format(admin.jDOfertaFinal.getDate()));
-        oferta.setNum_producto(Integer.parseInt(admin.jTOfertasCantidad.getText()));
-        oferta.setId_producto(Integer.parseInt(admin.jTOfertasCodigoProducto.getText()));
+    public void agregarOferta(){  
         try {
+            oferta.setId(Integer.parseInt(admin.jTOfertaCodigo.getText()));
+            oferta.setDescuento(Double.parseDouble(admin.jTOfertaDescuento.getText()));
+            SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
+            oferta.setFecha_inicio(formatoFecha.format(admin.jDOfertaInicio.getDate()));
+            oferta.setFecha_fin(formatoFecha.format(admin.jDOfertaFinal.getDate()));
+            oferta.setNum_producto(Integer.parseInt(admin.jTOfertasCantidad.getText()));
             ofertaSql.agregarOferta(oferta);
             limpiar();
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }
     

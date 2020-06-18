@@ -42,6 +42,7 @@ public class ControladorProducto implements ActionListener{
     Nutricion nut = new Nutricion();
     Prevencion prev = new Prevencion();
     Sexualidad sex = new Sexualidad();
+    InformacionProducto infProd = new InformacionProducto();
 
     
     
@@ -94,6 +95,39 @@ public class ControladorProducto implements ActionListener{
        
         //Agregar productos
         if (e.getSource()== admin.BTAgregar) {
+            try {
+              if (admin.jCCodCategoria.getSelectedItem() == "Seleccione") {
+                throw new Exception("~Error~ Debe ingresar una categoría");
+                }
+            if (admin.jCCodCategoria.getSelectedItem() == "Prevencion") {
+                prod.setCodigocategoria("1");
+            }
+            if (admin.jCCodCategoria.getSelectedItem() == "Medicamentos") {
+                prod.setCodigocategoria("2");
+            }
+            if (admin.jCCodCategoria.getSelectedItem() == "Dermocosmética") {
+                prod.setCodigocategoria("3");
+            }
+            if (admin.jCCodCategoria.getSelectedItem() == "Infantíl y maternidad") {
+                prod.setCodigocategoria("4");
+            }
+            if (admin.jCCodCategoria.getSelectedItem() == "Cuidado personal") {
+                prod.setCodigocategoria("5");
+            }
+            if (admin.jCCodCategoria.getSelectedItem() == "Sexualidad") {
+                prod.setCodigocategoria("6");
+            }
+            if (admin.jCCodCategoria.getSelectedItem() == "Belleza") {
+                prod.setCodigocategoria("7");
+            }
+            if (admin.jCCodCategoria.getSelectedItem() == "Nutrición y vitaminas") {
+                prod.setCodigocategoria("8");
+            }
+            if (admin.jCCodCategoria.getSelectedItem() == "Adulto mayor") {
+                prod.setCodigocategoria("9");
+            }  
+            } catch (Exception ex) {
+            }        
             agregar();
         }
         //Listar productos
@@ -139,47 +173,45 @@ public class ControladorProducto implements ActionListener{
       
     }
     //Actualizar registro de tabla.   
-    public void actualizar(){
-        prod.setCodigo(Integer.parseInt(admin.jTextFieldCodigo.getText()));
-        prod.setNombre(admin.jTextFieldNombre.getText());
-        prod.setMarca(admin.jTextFieldMarca.getText());
-        prod.setValor_peso(Integer.parseInt(admin.jTextFieldPrecio.getText()));
-        SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
-        prod.setFecha_fabri(formatoFecha.format(admin.jDFecha_fab.getDate()));
-        prod.setFecha_venc(formatoFecha.format(admin.jDFecha_venc.getDate()));
-        prod.setDosis(admin.jTextFieldDosis.getText());
-        prod.setCodigocategoria(Integer.parseInt(admin.jTCodCategoria.getText()));
-        prod.setCodigo_oferta(Integer.parseInt(admin.jTCodOferta.getText()));
+    public void actualizar(){       
+            
         try {
+            prod.setCodigo(Integer.parseInt(admin.jTextFieldCodigo.getText()));
+            prod.setNombre(admin.jTextFieldNombre.getText());
+            prod.setMarca(admin.jTextFieldMarca.getText());
+            prod.setValor_peso(Integer.parseInt(admin.jTextFieldPrecio.getText()));
+            SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
+            prod.setFecha_fabri(formatoFecha.format(admin.jDFecha_fab.getDate()));
+            prod.setFecha_venc(formatoFecha.format(admin.jDFecha_venc.getDate()));
+            prod.setDosis(admin.jTextFieldDosis.getText());            
+            prod.setCodigo_oferta(Integer.parseInt(admin.jTCodOferta.getText()));
             daoP.actualizar(prod);
             JOptionPane.showMessageDialog(null, "Registro modificado");
             //Limpiar casillas de texto
             limpiar();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ControladorProducto.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "Error al modificar el registro");
+        } catch (Exception e) {          
+            JOptionPane.showMessageDialog(null, e.getMessage());
             //Limpiar casillas de texto
             limpiar();
         }
     }
     //Eliminar registro de tabla.
-    public void eliminar(){
-        prod.setCodigo(Integer.parseInt(admin.jTextFieldCodigo.getText()));  
+    public void eliminar(){       
         try {
+            prod.setCodigo(Integer.parseInt(admin.jTextFieldCodigo.getText())); 
             daoP.eliminar(prod);          
             JOptionPane.showMessageDialog(null, "Registro eliminado");
             //Limpiar casillas de texto
             limpiar();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al eliminar registro");
+            JOptionPane.showMessageDialog(null, e.getMessage());
             //Limpiar casillas de texto
             limpiar();
         }
     }
-    public void buscar(){
-        prod.setCodigo(Integer.parseInt(admin.jTextFieldCodigo.getText()));  
+    public void buscar(){      
         try {
-            
+            prod.setCodigo(Integer.parseInt(admin.jTextFieldCodigo.getText()));  
             daoP.buscar(prod); 
             //De volviendo la información a las casillas
             admin.jTextFieldNombre.setText(prod.getNombre());
@@ -189,44 +221,72 @@ public class ControladorProducto implements ActionListener{
             admin.jDFecha_fab.setDate(formato.parse(prod.getFecha_fabri()));
             admin.jDFecha_venc.setDate(formato.parse(prod.getFecha_venc()));
             admin.jTextFieldDosis.setText(prod.getDosis());
-            admin.jTCodCategoria.setText(String.valueOf(prod.getCodigocategoria()));
+            if (prod.getCodigocategoria().equals("1")) {
+                admin.jCCodCategoria.setSelectedItem("Prevencion");
+            }
+            if (prod.getCodigocategoria().equals("2")) {
+                admin.jCCodCategoria.setSelectedItem("Medicamento");
+            }
+            if (prod.getCodigocategoria().equals("3")) {
+                admin.jCCodCategoria.setSelectedItem("Dermocosmética");
+            }
+            if (prod.getCodigocategoria().equals("4")) {
+                admin.jCCodCategoria.setSelectedItem("Infantíl y maternidad");
+            }
+            if (prod.getCodigocategoria().equals("5")) {
+                admin.jCCodCategoria.setSelectedItem("Cuidado personal");
+            }
+            if (prod.getCodigocategoria().equals("6")) {
+                admin.jCCodCategoria.setSelectedItem("Sexualidad");
+            }
+            if (prod.getCodigocategoria().equals("7")) {
+                admin.jCCodCategoria.setSelectedItem("Belleza");
+            }
+            if (prod.getCodigocategoria().equals("8")) {
+                admin.jCCodCategoria.setSelectedItem("Nutrición y vitaminas");
+            }
+            if (prod.getCodigocategoria().equals("9")) {
+                admin.jCCodCategoria.setSelectedItem("Adulto mayor");
+            }
             admin.jTCodOferta.setText(String.valueOf(prod.getCodigo_oferta()));
+            admin.jTDescripcion.setText(prod.getDescripcion_prod());
             
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "*Error al buscar el registro* no se ha encotrado.");
+            JOptionPane.showMessageDialog(null, e.getMessage());
             //Limpiar casillas de texto
             limpiar();
         }     
     }
-    
+      
     
     //metodo Agregar productos
-    public void agregar(){       
-        prod.setCodigo(Integer.parseInt(admin.jTextFieldCodigo.getText()));
-        prod.setNombre(admin.jTextFieldNombre.getText());
-        prod.setMarca(admin.jTextFieldMarca.getText());
-        prod.setValor_peso(Integer.parseInt(admin.jTextFieldPrecio.getText()));
-        SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
-        prod.setFecha_fabri(formatoFecha.format(admin.jDFecha_fab.getDate()));
-        prod.setFecha_venc(formatoFecha.format(admin.jDFecha_venc.getDate()));
-        prod.setDosis(admin.jTextFieldDosis.getText());
-        prod.setCodigocategoria(Integer.parseInt(admin.jTCodCategoria.getText()));
-        prod.setCodigo_oferta(Integer.parseInt(admin.jTCodOferta.getText()));
+    public void agregar(){               
         try {
+            prod.setCodigo(Integer.parseInt(admin.jTextFieldCodigo.getText()));
+            prod.setNombre(admin.jTextFieldNombre.getText());
+            prod.setMarca(admin.jTextFieldMarca.getText());
+            prod.setValor_peso(Integer.parseInt(admin.jTextFieldPrecio.getText()));
+            SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
+            prod.setFecha_fabri(formatoFecha.format(admin.jDFecha_fab.getDate()));
+            prod.setFecha_venc(formatoFecha.format(admin.jDFecha_venc.getDate()));
+            prod.setDosis(admin.jTextFieldDosis.getText());
+            prod.setCodigo_oferta(Integer.parseInt(admin.jTCodOferta.getText()));
+            prod.setDescripcion_prod(admin.jTDescripcion.getText());
             daoP.agregar(prod);
             JOptionPane.showMessageDialog(null, "Registro agregado");
             //Limpiar casillas de texto
-            limpiar();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ControladorProducto.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "Error al registrar producto");
+            //limpiar();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+            System.out.println("Error: " + e.getMessage());
             //Limpiar casillas de texto
-            limpiar();
+            //limpiar();
         }
     }
     // metodo listar controlador
-    public void listarCuid(JTable JTCuidadoPersonal ){
+    public void listarCuid(JTable JTCuidadoPersonal){
         modelo=(DefaultTableModel)JTCuidadoPersonal.getModel();
+        modelo.setRowCount(0);
         List<Producto>lista= daoP.listarCuidadoPersonal();
         Object[]object=new Object[7];
         for (int i = 0; i < lista.size(); i++) {
@@ -245,6 +305,7 @@ public class ControladorProducto implements ActionListener{
         // metodo listar controlador
     public void listarPrev(JTable jTPrevencion){
         modelo=(DefaultTableModel)jTPrevencion.getModel();
+        modelo.setRowCount(0);
         List<Producto>lista= daoP.listarPrevencion();
         Object[]object=new Object[7];
         for (int i = 0; i < lista.size(); i++) {
@@ -263,6 +324,7 @@ public class ControladorProducto implements ActionListener{
     // metodo listar controlador
     public void listarMedi(JTable jTMedicamentos ){
         modelo=(DefaultTableModel)jTMedicamentos.getModel();
+        modelo.setRowCount(0);
         List<Producto>lista= daoP.listarMedicamentos();
         Object[]object=new Object[7];
         for (int i = 0; i < lista.size(); i++) {
@@ -281,6 +343,7 @@ public class ControladorProducto implements ActionListener{
     // metodo listar controlador
     public void listarDermo(JTable jTaDermoCosmetica ){
         modelo=(DefaultTableModel)jTaDermoCosmetica.getModel();
+        modelo.setRowCount(0);
         List<Producto>lista= daoP.listarDermocosmetica();
         Object[]object=new Object[7];
         for (int i = 0; i < lista.size(); i++) {
@@ -299,6 +362,7 @@ public class ControladorProducto implements ActionListener{
     // metodo listar controlador
     public void listarInfyMat(JTable jTaInfantil ){
         modelo=(DefaultTableModel)jTaInfantil.getModel();
+        modelo.setRowCount(0);
         List<Producto>lista= daoP.listarInfyMat();
         Object[]object=new Object[7];
         for (int i = 0; i < lista.size(); i++) {
@@ -317,6 +381,7 @@ public class ControladorProducto implements ActionListener{
     // metodo listar controlador
     public void listarSex(JTable jTSexualidad ){
         modelo=(DefaultTableModel)jTSexualidad.getModel();
+        modelo.setRowCount(0);
         List<Producto>lista= daoP.listarSexualidad();
         Object[]object=new Object[7];
         for (int i = 0; i < lista.size(); i++) {
@@ -335,6 +400,7 @@ public class ControladorProducto implements ActionListener{
     // metodo listar controlador
     public void listarBell(JTable jTaBelleza ){
         modelo=(DefaultTableModel)jTaBelleza.getModel();
+        modelo.setRowCount(0);
         List<Producto>lista= daoP.listarBelleza();
         Object[]object=new Object[7];
         for (int i = 0; i < lista.size(); i++) {
@@ -353,6 +419,7 @@ public class ControladorProducto implements ActionListener{
     // metodo listar controlador
     public void listarNutyVit(JTable jTNutricion ){
         modelo=(DefaultTableModel)jTNutricion.getModel();
+        modelo.setRowCount(0);
         List<Producto>lista= daoP.listarnutri();
         Object[]object=new Object[7];
         for (int i = 0; i < lista.size(); i++) {
@@ -371,6 +438,7 @@ public class ControladorProducto implements ActionListener{
     // metodo listar controlador
     public void listarAdMayor(JTable jTaAdultoMayor ){
         modelo=(DefaultTableModel)jTaAdultoMayor.getModel();
+        modelo.setRowCount(0);
         List<Producto>lista= daoP.listarAdultoMayor();
         Object[]object=new Object[7];
         for (int i = 0; i < lista.size(); i++) {
@@ -396,8 +464,9 @@ public class ControladorProducto implements ActionListener{
          admin.jDFecha_fab.setCalendar(null);
          admin.jDFecha_venc.setCalendar(null);
          admin.jTextFieldDosis.setText(null);
-         admin.jTCodCategoria.setText(null);
+         admin.jCCodCategoria.setSelectedItem("Seleccione");
          admin.jTCodOferta.setText(null);
+         admin.jTDescripcion.setText(null);
          
     }
 

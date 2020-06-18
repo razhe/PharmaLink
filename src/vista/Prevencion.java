@@ -10,8 +10,11 @@ import controlador.ControladorProducto;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.TableModel;
+import modelo.Producto;
+import modelo.ProductoDAO;
 
 /**
  *
@@ -69,7 +72,6 @@ public class Prevencion extends javax.swing.JFrame {
         IniciarSesion = new javax.swing.JMenu();
         Carrito = new javax.swing.JMenu();
         Ofertas = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -227,15 +229,6 @@ public class Prevencion extends javax.swing.JFrame {
             }
         });
         jMenuBar2.add(Ofertas);
-
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/favorito.png"))); // NOI18N
-        jMenu1.setText("Favoritos");
-        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu1MouseClicked(evt);
-            }
-        });
-        jMenuBar2.add(jMenu1);
 
         setJMenuBar(jMenuBar2);
 
@@ -445,20 +438,6 @@ public class Prevencion extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_CarritoMouseClicked
 
-    private void OfertasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OfertasMouseClicked
-    Ofertas of = new Ofertas();
-    Admin adm = new Admin();
-    ControladorOferta controladorOfertas = new ControladorOferta(adm, of);
-    of.setVisible(true);
-    of.setLocationRelativeTo(of);
-    }//GEN-LAST:event_OfertasMouseClicked
-
-    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
-        Favoritos vista13 = new Favoritos();
-        vista13.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jMenu1MouseClicked
-
     private void jTPrevencionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTPrevencionMouseClicked
         // TODO add your handling code here:
         InformacionProducto vistaInfProd = new InformacionProducto();
@@ -467,19 +446,39 @@ public class Prevencion extends javax.swing.JFrame {
         int selectedRow = jTPrevencion.getSelectedRow();
         
         TableModel tm = jTPrevencion.getModel();
+        
         String codigo = tm.getValueAt(selectedRow, 0).toString();
         String nombre = tm.getValueAt(selectedRow, 1).toString();
         String marca = tm.getValueAt(selectedRow, 2).toString();
         String precio = tm.getValueAt(selectedRow, 3).toString();
         String dosis = tm.getValueAt(selectedRow, 6).toString();
         
-        vistaInfProd.jTCodigo.setText(codigo);
-        vistaInfProd.jTNomProductoInf.setText(nombre);
-        vistaInfProd.jTMarcaInf.setText(marca);
-        vistaInfProd.jTPrecioInf.setText(precio);
-        vistaInfProd.jTDosisInf.setText(dosis);
-        vistaInfProd.setVisible(true);
+        Producto prod = new Producto();
+        ProductoDAO pDAO = new ProductoDAO();
+        try {
+            prod.setCodigo(Integer.parseInt(codigo));
+            pDAO.buscarDescripcion(prod);  
+
+            vistaInfProd.jTCodigo.setText(codigo);
+            vistaInfProd.jTNomProductoInf.setText(nombre);
+            vistaInfProd.jTMarcaInf.setText(marca);
+            vistaInfProd.jTPrecioInf.setText(precio);
+            vistaInfProd.jTDosisInf.setText(dosis);
+            vistaInfProd.jTDescInfProd.setText(prod.getDescripcion_prod());
+            vistaInfProd.setVisible(true);
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }//GEN-LAST:event_jTPrevencionMouseClicked
+
+    private void OfertasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OfertasMouseClicked
+        Ofertas of = new Ofertas();
+        Admin adm = new Admin();
+        ControladorOferta controladorOfertas = new ControladorOferta(adm, of);
+        of.setVisible(true);
+        of.setLocationRelativeTo(of);
+    }//GEN-LAST:event_OfertasMouseClicked
 
     /**
      * @param args the command line arguments
@@ -515,7 +514,6 @@ public class Prevencion extends javax.swing.JFrame {
     private javax.swing.JMenuItem Prevencion;
     private javax.swing.JMenuItem Sexualidad;
     public javax.swing.JButton jBPrev;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JScrollPane jScrollPane1;

@@ -18,13 +18,12 @@ public class ListaCarrito {
     private String id;
     private String nombre;
     private int precio;
-    private double precio_bruto;
+    private int precio_bruto;
     private int cantidad;
 
     public ListaCarrito() {
     }
-
-    public ListaCarrito(String id,String nombre, int precio,double precio_bruto ,int cantidad) {
+    public ListaCarrito(String id,String nombre, int precio,int precio_bruto ,int cantidad) {
         setId(id);
         setNombre(nombre);
         setPrecio(precio);
@@ -32,7 +31,6 @@ public class ListaCarrito {
         setCantidad(cantidad);
            
     }
-
     public String getId() {
         return id;
     }
@@ -49,12 +47,11 @@ public class ListaCarrito {
         this.nombre = nombre;
     }
 
+    public void setPrecio(int precio) {            
+        this.precio =  (int) (precio - (precio*0.19));
+    }
     public int getPrecio() {
         return precio;
-    }
-
-    public void setPrecio(int precio) {
-        this.precio = precio;
     }
 
     public int getCantidad() {
@@ -65,14 +62,12 @@ public class ListaCarrito {
         this.cantidad = cantidad;
     }
 
-    public void setPrecio_bruto(Double precio_bruto) {
-        double iva= 0.81;
-        double precioBruto = getPrecio() * iva;
-        
-        this.precio_bruto =  precioBruto;
+    public void setPrecio_bruto(int precio_bruto) {
+              
+        this.precio_bruto = precio_bruto;
     }
 
-    public double getPrecio_bruto() {
+    public int getPrecio_bruto() {
         return precio_bruto;
     }
     

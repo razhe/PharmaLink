@@ -26,31 +26,21 @@ public class CompraSQL {
     
     public void agregar(Compra c){
         try{
-           String sql = "INSERT INTO COMPRA (FECHA,VALOR_NETO,VALOR_BRUTO,CODTIPOPAGO,IDUSUARIO) values (?,?,?,?,?)";
+           String sql = "INSERT INTO COMPRA (FECHA,TOTAL,CODTIPOPAGO,IDUSUARIO) values (?,?,?,?)";
             con = conectar.getConnection();
-            ps = con.prepareStatement(sql);
-//            rs = ps.getGeneratedKeys();           
-            ps.setString(1, c.getFecha());
-            ps.setInt(2, c.getBruto());
-            ps.setInt(3, c.getNeto());
-            ps.setInt(4, c.getCod_tipo_pago());
-            ps.setInt(5, c.getIdusuario());
-            ps.executeUpdate();        
-//            ps.getGeneratedKeys();           
-
-//            int idGenerada = 0;
-//            while (rs.next()) {                                
-//                idGenerada = rs.getInt(1);
-//            }
-            
+            ps = con.prepareStatement(sql);      
+            ps.setString(1, c.getFecha());  
+            ps.setInt(2, c.getTotal());
+            ps.setInt(3, c.getCod_tipo_pago());
+            ps.setInt(4, c.getIdusuario());
+            ps.executeUpdate();                   
             if (ps.executeUpdate() == 1) {
                 System.out.println("Compra ingresada correctamente");
             }
         }
-        catch(SQLException e){
-            System.out.println("Error: " + e.getErrorCode()+" "+e.getMessage());
-        }
-        
+        catch(SQLException ex){
+            System.out.println("Error SQL: " + ex.getErrorCode() +" - "+ex.getMessage());
+        }        
     }
     public void buscarIdCompra(Compra c){
         try {
@@ -61,10 +51,9 @@ public class CompraSQL {
             rs = ps.executeQuery(sql);
             while (rs.next()) {                
                 c.setId_compra(Integer.parseInt(rs.getString("MAX(NUMCOMP)")));                 
-            }
-            
+            }           
         } catch (SQLException ex) {
-            Logger.getLogger(CompraSQL.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Error SQL: " + ex.getErrorCode() +" - "+ex.getMessage());
         }
     }
 }

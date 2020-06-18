@@ -22,19 +22,15 @@ import vista.CuidadoPersonal;
  * @author Gustavo
  */
 
-
 public class ProductoDAO {
     Conexion conectar = new Conexion();
     Connection con;
     PreparedStatement ps;
-    ResultSet rs;
-    
-    //Agregar datos
-    
+    ResultSet rs;    
+    //Agregar datos    
     public void agregar(Producto p) throws ClassNotFoundException {        
-        try {
-            
-            String sql =("INSERT INTO PRODUCTO(CODPROD,NOMBRE,MARCA,PRECIO,FECHA_FAB,FECHA_VENCI,DOSIS,CODTIPOPRODUCTO,CODOFERTA) VALUES (?,?,?,?,?,?,?,?,?)");
+        try {       
+            String sql =("INSERT INTO PRODUCTO(CODPROD,NOMBRE,MARCA,PRECIO,FECHA_FAB,FECHA_VENCI,DOSIS,DESCRIPCION,CODTIPOPRODUCTO,CODOFERTA) VALUES (?,?,?,?,?,?,?,?,?,?)");
                 con = conectar.getConnection();
                 ps = con.prepareStatement(sql);                
                 ps.setInt(1, p.getCodigo());
@@ -44,8 +40,9 @@ public class ProductoDAO {
                 ps.setString(5, p.getFecha_fabri());
                 ps.setString(6, p.getFecha_venc());
                 ps.setString(7, p.getDosis());
-                ps.setInt(8, p.getCodigocategoria());
-                ps.setInt(9, p.getCodigo_oferta());
+                ps.setString(8, p.getDescripcion_prod());
+                ps.setString(9, p.getCodigocategoria());
+                ps.setInt(10, p.getCodigo_oferta());
                 ps.executeUpdate();
                 
                if(ps.executeUpdate() == 1){
@@ -56,13 +53,12 @@ public class ProductoDAO {
                 }
         }
         catch (SQLException ex) {
-            System.out.println("Error SQL: " + ex.getMessage());
-        }
-        
+            System.out.println("Error SQL: " + ex.getErrorCode() +" - "+ex.getMessage());
+        }       
     }
     //Actualizar datos
     public int actualizar(Producto p) throws ClassNotFoundException {
-        String sql =("UPDATE PRODUCTO SET nombre = ?, marca = ?, precio = ?, fecha_fab = ?, fecha_venci= ?, dosis = ?, CODTIPOPRODUCTO = ?,CODOFERTA = ? where CODPROD = ?");
+        String sql =("UPDATE PRODUCTO SET nombre = ?, marca = ?, precio = ?, fecha_fab = ?, fecha_venci= ?, dosis = ?,DESCRIPCION = ?, CODTIPOPRODUCTO = ?,CODOFERTA = ? where CODPROD = ?");
         try {           
             con= conectar.getConnection();
             ps=con.prepareStatement(sql);
@@ -73,7 +69,8 @@ public class ProductoDAO {
             ps.setString(4, p.getFecha_fabri());
             ps.setString(5, p.getFecha_venc());
             ps.setString(6, p.getDosis());
-            ps.setInt(7, p.getCodigocategoria());
+            ps.setString(7, p.getDescripcion_prod());
+            ps.setString(7, p.getCodigocategoria());
             ps.setInt(8, p.getCodigo());
             ps.setInt(9, p.getCodigo_oferta());
             ps.executeUpdate();
@@ -84,7 +81,7 @@ public class ProductoDAO {
                 JOptionPane.showMessageDialog(null,"Error al actualizar el producto...");
             }
         } catch (SQLException ex) {
-            System.out.println("Error SQL: " + ex.getMessage());
+            System.out.println("Error SQL: " + ex.getErrorCode() +" - "+ex.getMessage());
         }
         return 1;
     }     
@@ -96,7 +93,8 @@ public class ProductoDAO {
         ps = con.prepareStatement(sql);
         ps.setInt(1, p.getCodigo());
         ps.executeUpdate();
-        } catch (Exception e) {
+        } catch (SQLException ex) {
+            System.out.println("Error SQL: " + ex.getErrorCode() +" - "+ex.getMessage());
         }
         
     }
@@ -121,6 +119,7 @@ public class ProductoDAO {
                 datos.add(p);
             }
         } catch (Exception e) {
+            System.out.println("Error al listar Cuidado personal: " + e.getMessage());
         }
         return datos;
     }
@@ -145,6 +144,7 @@ public class ProductoDAO {
                 datos.add(p);
             }
         } catch (Exception e) {
+            System.out.println("Error al listar Prevención: " + e.getMessage());
         }
         return datos;
     }
@@ -169,6 +169,7 @@ public class ProductoDAO {
                 datos.add(p);
             }
         } catch (Exception e) {
+            System.out.println("Error al listar medicamentos: " + e.getMessage());
         }
         return datos;
     }
@@ -193,6 +194,7 @@ public class ProductoDAO {
                 datos.add(p);
             }
         } catch (Exception e) {
+            System.out.println("Error al listar Dermocosmentica: " + e.getMessage());
         }
         return datos;
     }
@@ -217,6 +219,7 @@ public class ProductoDAO {
                 datos.add(p);
             }
         } catch (Exception e) {
+            System.out.println("Error al listar Infantil y maternidad: " + e.getMessage());
         }
         return datos;
     }
@@ -241,6 +244,7 @@ public class ProductoDAO {
                 datos.add(p);
             }
         } catch (Exception e) {
+            System.out.println("Error al listar Sexualidad: " + e.getMessage());
         }
         return datos;
     }
@@ -265,6 +269,7 @@ public class ProductoDAO {
                 datos.add(p);
             }
         } catch (Exception e) {
+            System.out.println("Error al listar Belleza: " + e.getMessage());
         }
         return datos;
     }
@@ -289,6 +294,7 @@ public class ProductoDAO {
                 datos.add(p);
             }
         } catch (Exception e) {
+            System.out.println("Error al listar Nutrición: " + e.getMessage());
         }
         return datos;
     }
@@ -313,11 +319,12 @@ public class ProductoDAO {
                 datos.add(p);
             }
         } catch (Exception e) {
+            System.out.println("Error al listar adulto mayor: " + e.getMessage());
         }
         return datos;
     }
     //Buscar
-    public boolean buscar(Producto p){
+    public boolean buscar(Producto p) throws Exception{
         
         String sql = "SELECT * FROM PRODUCTO WHERE CODPROD=?";
         try {
@@ -334,16 +341,54 @@ public class ProductoDAO {
                 p.setFecha_fabri(rs.getString("FECHA_FAB"));
                 p.setFecha_venc(rs.getString("FECHA_VENCI"));
                 p.setDosis(rs.getString("DOSIS"));
-                p.setCodigocategoria(rs.getInt("CODTIPOPRODUCTO"));
+                p.setDescripcion_prod(rs.getString("DESCRIPCION"));
+                p.setCodigocategoria(rs.getString("CODTIPOPRODUCTO"));
                 p.setCodigo_oferta(rs.getInt("CODOFERTA"));
+                
                 return true;
             }
             return false;           
-        } catch (Exception e) {
+        } catch (SQLException ex) {
+            System.out.println("Error SQL: " + ex.getErrorCode() +" - "+ex.getMessage());
             return false;
         }
         
         
+    }
+    public boolean buscarDescripcion(Producto p) throws Exception{
+        String sql = "SELECT DESCRIPCION FROM PRODUCTO WHERE CODPROD = ?";      
+        try {
+            con = conectar.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, p.getCodigo());
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                p.setDescripcion_prod(rs.getString("DESCRIPCION"));
+                return true;
+            }
+            return false;
+        }       
+        catch (SQLException ex) {
+            System.out.println("Error SQL: " + ex.getErrorCode() +" - "+ex.getMessage());
+            return false;
+        }
+    }
+    
+    public int buscarCodOferta(){
+        String sql = "SELECT MAX(CODOFERTA) FROM OFERTA";
+        try {
+            con = conectar.getConnection();
+            ps = con.prepareStatement(sql);           
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                int numero = rs.getInt("MAX(CODOFERTA)");
+                return numero;
+            }
+            return 0;
+        } catch (Exception e) {
+            System.out.println("Error SQL al intentar buscar el codigo de oferta: " + e.getMessage());
+            return 0;
+        }
     }
     
     

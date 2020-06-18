@@ -41,7 +41,7 @@ public class TicketDeCambio extends javax.swing.JFrame {
             Object[]object=new Object[2];
             for (int i = 0; i < lista.size(); i++) {
                 object[0]= lista.get(i).getNombre();
-                object[1]= lista.get(i).getPrecio();
+                object[1]= lista.get(i).getPrecio_bruto();
            
                 modelo.addRow(object);
             }       
@@ -63,6 +63,7 @@ public class TicketDeCambio extends javax.swing.JFrame {
         jTCantidadDeProductos = new javax.swing.JTextField();
         jBAceptarCompra = new javax.swing.JButton();
         jCTipoPago = new javax.swing.JComboBox();
+        jBVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,6 +103,11 @@ public class TicketDeCambio extends javax.swing.JFrame {
         });
 
         jTPrecioTotal.setEditable(false);
+        jTPrecioTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTPrecioTotalActionPerformed(evt);
+            }
+        });
 
         jTCantidadDeProductos.setEditable(false);
         jTCantidadDeProductos.addActionListener(new java.awt.event.ActionListener() {
@@ -161,6 +167,18 @@ public class TicketDeCambio extends javax.swing.JFrame {
 
         jCTipoPago.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Forma de pago", "Credito", "Debito", "Efectivo" }));
         jCTipoPago.setToolTipText("");
+        jCTipoPago.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCTipoPagoActionPerformed(evt);
+            }
+        });
+
+        jBVolver.setText("Volver");
+        jBVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBVolverActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -173,8 +191,13 @@ public class TicketDeCambio extends javax.swing.JFrame {
                 .addComponent(jCTipoPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49))
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jBVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -186,7 +209,9 @@ public class TicketDeCambio extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCTipoPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBAceptarCompra))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jBVolver)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         pack();
@@ -204,12 +229,28 @@ public class TicketDeCambio extends javax.swing.JFrame {
      
     }//GEN-LAST:event_jTNumBoletaActionPerformed
 
+    private void jBVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVolverActionPerformed
+        Carrito car = new Carrito();
+        TicketDeCambio t = new TicketDeCambio();
+        t.removeAll();
+        dispose();
+    }//GEN-LAST:event_jBVolverActionPerformed
+
+    private void jTPrecioTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTPrecioTotalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTPrecioTotalActionPerformed
+
+    private void jCTipoPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCTipoPagoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCTipoPagoActionPerformed
+
     public static void main(String args[]) {
         
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton jBAceptarCompra;
+    public javax.swing.JButton jBVolver;
     public javax.swing.JComboBox jCTipoPago;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

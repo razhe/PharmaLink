@@ -16,8 +16,7 @@ import vista.Carrito;
 public class Compra {
     private int id_compra;
     private String fecha;
-    private int bruto;
-    private int neto;
+    private int total;
     private int cod_tipo_pago;
     private int cod_desc;
     private int idusuario;
@@ -26,11 +25,10 @@ public class Compra {
     public Compra() {
     }
 
-    public Compra(int id_compra, String fecha, int bruto, int neto, int cod_tipo_pago, int cod_desc, int idusuario) {
+    public Compra(int id_compra, String fecha,int total, int cod_tipo_pago, int cod_desc, int idusuario) {
         setId_compra(id_compra);
         setFecha(fecha);
-        setBruto(bruto);
-        setNeto(neto);
+        setTotal(total);
         setCod_tipo_pago(cod_tipo_pago);
         setCod_desc(cod_desc);
         setIdusuario(idusuario);      
@@ -52,23 +50,6 @@ public class Compra {
     public void setFecha(String fecha) {       
         this.fecha = fecha;
     }
-
-    public int getBruto() {
-        return bruto;
-    }
-
-    public void setBruto(int bruto) {
-        this.bruto = bruto;
-    }
-
-    public int getNeto() {
-        return neto;
-    }
-
-    public void setNeto(int neto) {
-        this.neto = neto;
-    }
-
     public int getCod_tipo_pago() {            
         return cod_tipo_pago;
     }
@@ -88,11 +69,19 @@ public class Compra {
     }
 
     public int getIdusuario() {
-        return 1;
+        return 2;
     }
 
     public void setIdusuario(int idusuario) {
         this.idusuario = idusuario;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
     }
 
     

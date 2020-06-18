@@ -87,7 +87,7 @@ public class ControladorCompra implements ActionListener{
         List<ListaCarrito>listarCarrito = ControladorCarrito.listarCarrito();
         for (ListaCarrito listarCarrito1 : listarCarrito) {
             cantidadTotal += listarCarrito1.getCantidad();
-            precioTotal += listarCarrito1.getPrecio();
+            precioTotal += listarCarrito1.getPrecio_bruto();
         }
         
         tick.jTNumBoleta.setText(String.valueOf(com.getId_compra())); 
@@ -101,15 +101,12 @@ public class ControladorCompra implements ActionListener{
         List<ListaCarrito>listarCarrito = ControladorCarrito.listarCarrito();
         for (ListaCarrito listarCarrito1 : listarCarrito) {           
             listarCarrito1.getPrecio();
-            listarCarrito1.getPrecio_bruto();
-       
+            listarCarrito1.getPrecio_bruto();      
             //Falta codigo compra
-            com.setFecha(car.jTFecha.getText());
-            com.setNeto(listarCarrito1.getPrecio());
-            com.setBruto((int) listarCarrito1.getPrecio_bruto());
+            com.setFecha(car.jTFecha.getText()); 
+            com.setTotal(Integer.parseInt(tick.jTPrecioTotal.getText()));
             com.setIdusuario(com.getIdusuario());
-            //Falta Id de Usuario  
-            
+            //Falta Id de Usuario              
         }
         cSQL.agregar(com);   
     }
@@ -120,13 +117,13 @@ public class ControladorCompra implements ActionListener{
             
         List<ListaCarrito>listarCarrito = ControladorCarrito.listarCarrito();
         for (ListaCarrito listarCarrito1 : listarCarrito) {
- 
+            try {
+            detCom.setPrecio_neto(listarCarrito1.getPrecio());
+            detCom.setPrecio_bruto((int) listarCarrito1.getPrecio_bruto());
             detCom.setCantidad(listarCarrito1.getCantidad());
             //Evaluar el parse int
-            detCom.setCod_producto(Integer.parseInt(listarCarrito1.getId()));
-            
-            detCom.setCod_compra(com.getId_compra());
-            try {
+            detCom.setCod_producto(Integer.parseInt(listarCarrito1.getId()));           
+            detCom.setCod_compra(com.getId_compra());           
                 detDAO.agregarDetalleCompra(detCom);
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorCompra.class.getName()).log(Level.SEVERE, null, ex);

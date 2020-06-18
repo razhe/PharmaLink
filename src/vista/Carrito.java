@@ -32,7 +32,7 @@ public class Carrito extends javax.swing.JFrame {
     int col;
     int row;
     DefaultTableModel dtm = new DefaultTableModel();
-    
+       
     public Carrito() {
         initComponents();
         
@@ -61,9 +61,9 @@ public class Carrito extends javax.swing.JFrame {
         DefaultTableModel modelo = new DefaultTableModel();
         ListaCarrito l = new ListaCarrito();
         
-        modelo=(DefaultTableModel)jTCarrito.getModel();
-        
+        modelo=(DefaultTableModel)jTCarrito.getModel();       
         modelo.setRowCount(0);
+        
         List<ListaCarrito>lista=  ControladorCarrito.listarCarrito();
         Object[]object=new Object[5];
         for (int i = 0; i < lista.size(); i++) {
@@ -74,8 +74,7 @@ public class Carrito extends javax.swing.JFrame {
             object[4]=lista.get(i).getCantidad();            
             modelo.addRow(object);
         }       
-        jTCarrito.setModel(modelo);
-                
+        jTCarrito.setModel(modelo);             
     }
 
     
@@ -90,6 +89,7 @@ public class Carrito extends javax.swing.JFrame {
         jBLimpiarCarrito = new javax.swing.JButton();
         jBCarritoComprar = new javax.swing.JButton();
         jTFecha = new javax.swing.JTextField();
+        jBCancelarCompra = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         Prevencion = new javax.swing.JMenuItem();
@@ -104,7 +104,6 @@ public class Carrito extends javax.swing.JFrame {
         IniciarSesion = new javax.swing.JMenu();
         Carrito = new javax.swing.JMenu();
         Ofertas = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -113,7 +112,7 @@ public class Carrito extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Codigo", "Nombre ", "Precio", "Precio bruto", "Cantidad"
+                "Codigo", "Nombre ", "Precio neto", "Precio bruto", "Cantidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -164,6 +163,13 @@ public class Carrito extends javax.swing.JFrame {
         jTFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFechaActionPerformed(evt);
+            }
+        });
+
+        jBCancelarCompra.setText("Cancelar Compra");
+        jBCancelarCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCancelarCompraActionPerformed(evt);
             }
         });
 
@@ -288,15 +294,6 @@ public class Carrito extends javax.swing.JFrame {
         });
         jMenuBar2.add(Ofertas);
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/favorito.png"))); // NOI18N
-        jMenu1.setText("Favoritos");
-        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu1MouseClicked(evt);
-            }
-        });
-        jMenuBar2.add(jMenu1);
-
         setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -317,6 +314,7 @@ public class Carrito extends javax.swing.JFrame {
                         .addComponent(jBCarritoComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jBCancelarCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jBEliminarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jBLimpiarCarrito, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(38, 38, 38))))
@@ -334,6 +332,8 @@ public class Carrito extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jTFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jBCancelarCompra)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jBCarritoComprar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
@@ -532,13 +532,8 @@ public class Carrito extends javax.swing.JFrame {
     ControladorOferta controladorOfertas = new ControladorOferta(adm, of);
     of.setVisible(true);
     of.setLocationRelativeTo(of);
+    dispose();
     }//GEN-LAST:event_OfertasMouseClicked
-
-    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
-        Favoritos vista13 = new Favoritos();
-        vista13.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jMenu1MouseClicked
 
     private void jBRecargarCarritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRecargarCarritoActionPerformed
         
@@ -559,22 +554,18 @@ public class Carrito extends javax.swing.JFrame {
             modelo.addRow(object);
         }       
         jTCarrito.setModel(modelo);
-    
     }//GEN-LAST:event_jBRecargarCarritoActionPerformed
 
     private void jBEliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEliminarProductoActionPerformed
         DefaultTableModel modelo = new DefaultTableModel();
-        modelo=(DefaultTableModel)jTCarrito.getModel();
-        
-        
+        modelo=(DefaultTableModel)jTCarrito.getModel();      
         int dialogButton = JOptionPane.YES_NO_OPTION;
         
         int dialogResult = JOptionPane.showConfirmDialog(null, "¿Desea eliminar el producto de la lista?");
         if (dialogResult == 0) {
             modelo.removeRow(row);
             ControladorCarrito.lista.remove(row);
-            modelo.setRowCount(0);
-            
+            modelo.setRowCount(0);            
         }
         for (int i = 0; i < ControladorCarrito.lista.size(); i++) {
             Object[] objs = {ControladorCarrito.lista.get(i).getId(), ControladorCarrito.lista.get(i).getNombre(), ControladorCarrito.lista.get(i).getPrecio(),
@@ -587,17 +578,14 @@ public class Carrito extends javax.swing.JFrame {
 
     private void jBLimpiarCarritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLimpiarCarritoActionPerformed
         DefaultTableModel modelo = new DefaultTableModel();
-        modelo=(DefaultTableModel)jTCarrito.getModel();
-        
-        
+        modelo=(DefaultTableModel)jTCarrito.getModel();     
         int dialogButton = JOptionPane.YES_NO_OPTION;
         
-        int dialogResult = JOptionPane.showConfirmDialog(null, "¿Desea eliminar el producto de la lista?");
+        int dialogResult = JOptionPane.showConfirmDialog(null, "¿Desea eliminar todos los productos de la lista?");
         if (dialogResult == 0) {
             modelo.removeRow(row);
             ControladorCarrito.lista.removeAll(lista);
-            modelo.setRowCount(0);
-            
+            modelo.setRowCount(0);            
         }
         for (int i = 0; i < ControladorCarrito.lista.size(); i++) {
             Object[] objs = {ControladorCarrito.lista.get(i).getId(), ControladorCarrito.lista.get(i).getNombre(), ControladorCarrito.lista.get(i).getPrecio(),
@@ -617,18 +605,46 @@ public class Carrito extends javax.swing.JFrame {
         CompraSQL cSQl = new CompraSQL();
         ControladorCompra con = new ControladorCompra(c,t);
         t.setVisible(true);
-        t.setLocationRelativeTo(t);
-        
-        con.retornarFkCompra();
-        
-        
-        
-        
+        t.setLocationRelativeTo(t);       
+        con.retornarFkCompra();  
     }//GEN-LAST:event_jBCarritoComprarActionPerformed
 
     private void jTFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFechaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFechaActionPerformed
+
+    private void jBCancelarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCancelarCompraActionPerformed
+
+        DefaultTableModel modelo = new DefaultTableModel();
+        
+        modelo=(DefaultTableModel)jTCarrito.getModel();
+        TicketDeCambio tick = new TicketDeCambio();
+        Menú men = new Menú();    
+        int dialogResult = JOptionPane.showConfirmDialog(null, "¿Seguro que quiere cancelar la compra?");
+        try {
+            if (dialogResult == 0) {
+            modelo.removeRow(row);
+            ControladorCarrito.lista.removeAll(lista);
+            modelo.setRowCount(0);            
+            }
+            for (int i = 0; i < ControladorCarrito.lista.size(); i++) {
+                Object[] objs = {ControladorCarrito.lista.get(i).getId(), ControladorCarrito.lista.get(i).getNombre(), ControladorCarrito.lista.get(i).getPrecio(),
+                ControladorCarrito.lista.get(i).getCantidad()};
+                modelo.addRow(objs);
+            }
+        } catch (Exception e) {
+            System.out.println("No hay datos en el carrito");
+        }
+        
+        
+        tick.jTNumBoleta.setText(null);
+        men.dispose();
+        
+        men.setVisible(true);
+        
+        dispose();
+   
+    }//GEN-LAST:event_jBCancelarCompraActionPerformed
     
     /**
      * @param args the command line arguments
@@ -650,11 +666,11 @@ public class Carrito extends javax.swing.JFrame {
     private javax.swing.JMenu Ofertas;
     private javax.swing.JMenuItem Prevencion;
     private javax.swing.JMenuItem Sexualidad;
+    public javax.swing.JButton jBCancelarCompra;
     public javax.swing.JButton jBCarritoComprar;
     public javax.swing.JButton jBEliminarProducto;
     public javax.swing.JButton jBLimpiarCarrito;
     public javax.swing.JButton jBRecargarCarrito;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JScrollPane jScrollPane1;

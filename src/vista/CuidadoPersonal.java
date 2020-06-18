@@ -7,13 +7,16 @@ package vista;
 
 import controlador.ControladorOferta;
 import controlador.ControladorProducto;
+import controlador.ControladorUsuario;
 import java.sql.ResultSetMetaData;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.TableModel;
 import modelo.Producto;
+import modelo.ProductoDAO;
 
 
 /**
@@ -75,7 +78,6 @@ public class CuidadoPersonal extends javax.swing.JFrame {
         IniciarSesion = new javax.swing.JMenu();
         Carrito = new javax.swing.JMenu();
         Ofertas = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("JFCuidadoP");
@@ -240,15 +242,6 @@ public class CuidadoPersonal extends javax.swing.JFrame {
             }
         });
         jMenuBar2.add(Ofertas);
-
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/favorito.png"))); // NOI18N
-        jMenu1.setText("Favoritos");
-        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu1MouseClicked(evt);
-            }
-        });
-        jMenuBar2.add(jMenu1);
 
         setJMenuBar(jMenuBar2);
 
@@ -466,12 +459,6 @@ public class CuidadoPersonal extends javax.swing.JFrame {
     of.setLocationRelativeTo(of);
     }//GEN-LAST:event_OfertasMouseClicked
 
-    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
-        Favoritos vista13 = new Favoritos();
-        vista13.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jMenu1MouseClicked
-
     private void BTListarProdCuidadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTListarProdCuidadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BTListarProdCuidadoActionPerformed
@@ -490,12 +477,23 @@ public class CuidadoPersonal extends javax.swing.JFrame {
         String precio = tm.getValueAt(selectedRow, 3).toString();
         String dosis = tm.getValueAt(selectedRow, 6).toString();
         
-        vistaInfProd.jTCodigo.setText(codigo);
-        vistaInfProd.jTNomProductoInf.setText(nombre);
-        vistaInfProd.jTMarcaInf.setText(marca);
-        vistaInfProd.jTPrecioInf.setText(precio);
-        vistaInfProd.jTDosisInf.setText(dosis);
-        vistaInfProd.setVisible(true);
+        Producto prod = new Producto();
+        ProductoDAO pDAO = new ProductoDAO();
+        try {
+            prod.setCodigo(Integer.parseInt(codigo));
+            pDAO.buscarDescripcion(prod);  
+
+            vistaInfProd.jTCodigo.setText(codigo);
+            vistaInfProd.jTNomProductoInf.setText(nombre);
+            vistaInfProd.jTMarcaInf.setText(marca);
+            vistaInfProd.jTPrecioInf.setText(precio);
+            vistaInfProd.jTDosisInf.setText(dosis);
+            vistaInfProd.jTDescInfProd.setText(prod.getDescripcion_prod());
+            vistaInfProd.setVisible(true);
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
         
         
     }//GEN-LAST:event_JTCuidadoPersonalMouseClicked
@@ -507,7 +505,10 @@ public class CuidadoPersonal extends javax.swing.JFrame {
         
         //Mostrar los datos en la tabla.
             CuidadoPersonal cp = new CuidadoPersonal();
-            Admin ad = new Admin();           
+            Admin ad = new Admin();
+            IniciarSesion lg = new IniciarSesion();
+            //borré cp, ad
+            ControladorUsuario c = new ControladorUsuario(lg);                      
             AdultoMayor adul = new AdultoMayor();
             Belleza be = new Belleza();
             Dermocosmetica der = new Dermocosmetica();
@@ -516,7 +517,7 @@ public class CuidadoPersonal extends javax.swing.JFrame {
             Nutricion nut = new Nutricion();
             Prevencion prev = new Prevencion();
             Sexualidad sex = new Sexualidad();
-            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+            ControladorProducto cProd = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
             cp.setVisible(true);
             cp.setLocationRelativeTo(cp);
             
@@ -537,7 +538,6 @@ public class CuidadoPersonal extends javax.swing.JFrame {
     private javax.swing.JMenu Ofertas;
     private javax.swing.JMenuItem Prevencion;
     private javax.swing.JMenuItem Sexualidad;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JScrollPane jScrollPane1;
