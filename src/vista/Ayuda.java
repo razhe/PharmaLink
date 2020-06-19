@@ -7,6 +7,7 @@ package vista;
 
 import controlador.ControladorOferta;
 import controlador.ControladorProducto;
+import controlador.ControladorUsuario;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
@@ -417,12 +418,14 @@ public class Ayuda extends javax.swing.JFrame {
 
     private void IniciarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IniciarSesionMouseClicked
         IniciarSesion vista1 = new IniciarSesion();
+        ControladorUsuario c = new ControladorUsuario(vista1);
         vista1.setVisible(true);
         dispose();
     }//GEN-LAST:event_IniciarSesionMouseClicked
 
     private void IniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IniciarSesionActionPerformed
         IniciarSesion vista1 = new IniciarSesion();
+        ControladorUsuario c = new ControladorUsuario(vista1);
         vista1.setVisible(true);
         dispose();
     }//GEN-LAST:event_IniciarSesionActionPerformed
