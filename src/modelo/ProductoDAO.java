@@ -58,10 +58,10 @@ public class ProductoDAO {
     }
     //Actualizar datos
     public int actualizar(Producto p) throws ClassNotFoundException {
-        String sql =("UPDATE PRODUCTO SET nombre = ?, marca = ?, precio = ?, fecha_fab = ?, fecha_venci= ?, dosis = ?,DESCRIPCION = ?, CODTIPOPRODUCTO = ?,CODOFERTA = ? where CODPROD = ?");
+        String sql =("UPDATE PRODUCTO SET nombre = ?, marca = ?, precio = ?, fecha_fab = ?, fecha_venci= ?, DOSIS = ?,DESCRIPCION = ?, CODTIPOPRODUCTO = ?,CODOFERTA = ? where CODPROD = ?");
         try {           
             con= conectar.getConnection();
-            ps=con.prepareStatement(sql);
+            ps=con.prepareStatement(sql);  
             
             ps.setString(1, p.getNombre()); // Nombre
             ps.setString(2, p.getMarca());//precio
@@ -70,9 +70,9 @@ public class ProductoDAO {
             ps.setString(5, p.getFecha_venc());
             ps.setString(6, p.getDosis());
             ps.setString(7, p.getDescripcion_prod());
-            ps.setString(7, p.getCodigocategoria());
-            ps.setInt(8, p.getCodigo());
+            ps.setString(8, p.getCodigocategoria());           
             ps.setInt(9, p.getCodigo_oferta());
+            ps.setInt(10, p.getCodigo());
             ps.executeUpdate();
             if (ps.executeUpdate() == 1) {
                 JOptionPane.showMessageDialog(null,"¡Actualización exitosa!");

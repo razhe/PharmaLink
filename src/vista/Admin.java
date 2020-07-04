@@ -62,11 +62,9 @@ public class Admin extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jTOfertaCodigo = new javax.swing.JTextField();
         jTOfertaDescuento = new javax.swing.JTextField();
         jTOfertasCantidad = new javax.swing.JTextField();
-        jTOfertasCodigoProducto = new javax.swing.JTextField();
         jDOfertaInicio = new com.toedter.calendar.JDateChooser();
         jDOfertaFinal = new com.toedter.calendar.JDateChooser();
         jBOfertaBuscar = new javax.swing.JButton();
@@ -80,6 +78,7 @@ public class Admin extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jBCerrar = new javax.swing.JButton();
         jCCodCategoria = new javax.swing.JComboBox();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CrudAdmin");
@@ -211,8 +210,6 @@ public class Admin extends javax.swing.JFrame {
 
         jLabel13.setText("Cantidad de productos:");
 
-        jLabel14.setText("Codigo del producto:");
-
         jTOfertaCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTOfertaCodigoKeyTyped(evt);
@@ -231,12 +228,6 @@ public class Admin extends javax.swing.JFrame {
             }
         });
 
-        jTOfertasCodigoProducto.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTOfertasCodigoProductoKeyTyped(evt);
-            }
-        });
-
         jBOfertaBuscar.setText("Buscar");
 
         jBOfertaEliminar.setText("Eliminar");
@@ -244,6 +235,11 @@ public class Admin extends javax.swing.JFrame {
         jBOfertaModificar.setText("Modificar");
 
         jBOfertaAgregar.setText("Agregar");
+        jBOfertaAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBOfertaAgregarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -251,16 +247,14 @@ public class Admin extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13)
                     .addComponent(jLabel12)
                     .addComponent(jLabel11)
                     .addComponent(jLabel10)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel8))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTOfertasCodigoProducto)
                     .addComponent(jTOfertasCantidad)
                     .addComponent(jTOfertaDescuento)
                     .addComponent(jTOfertaCodigo)
@@ -306,11 +300,7 @@ public class Admin extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(jTOfertasCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(jTOfertasCodigoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBOfertaModificar)
                     .addComponent(jBOfertaAgregar))
@@ -340,6 +330,8 @@ public class Admin extends javax.swing.JFrame {
 
         jCCodCategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Prevencion", "Medicamentos", "Dermocosmética", "Infantíl y maternidad", "Cuidado personal", "Sexualidad", "Belleza", "Nutrición y vitaminas", "Adulto Mayor" }));
 
+        jLabel14.setText("Código 0 si no posee oferta");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -364,9 +356,6 @@ public class Admin extends javax.swing.JFrame {
                     .addComponent(jLabel16))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jTCodOferta, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -396,7 +385,12 @@ public class Admin extends javax.swing.JFrame {
                         .addComponent(BTModificar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jBCerrar)
-                        .addGap(35, 35, 35))))
+                        .addGap(35, 35, 35))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTCodOferta, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -450,7 +444,8 @@ public class Admin extends javax.swing.JFrame {
                 .addGap(2, 2, 2)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTCodOferta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15))
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel14))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel16)
@@ -550,15 +545,6 @@ public class Admin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTOfertasCantidadKeyTyped
 
-    private void jTOfertasCodigoProductoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTOfertasCodigoProductoKeyTyped
-        char validarNum = evt.getKeyChar();
-        if (Character.isLetter(validarNum)) {
-            getToolkit().beep();
-            evt.consume();
-        JOptionPane.showMessageDialog(null, "Solo puede ingresar numeros en esta casilla");
-        }
-    }//GEN-LAST:event_jTOfertasCodigoProductoKeyTyped
-
     private void BTModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTModificarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BTModificarActionPerformed
@@ -576,6 +562,10 @@ public class Admin extends javax.swing.JFrame {
         dispose();
         
     }//GEN-LAST:event_jBCerrarActionPerformed
+
+    private void jBOfertaAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBOfertaAgregarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBOfertaAgregarActionPerformed
 
 
     /**
@@ -643,7 +633,6 @@ public class Admin extends javax.swing.JFrame {
     public javax.swing.JTextField jTOfertaCodigo;
     public javax.swing.JTextField jTOfertaDescuento;
     public javax.swing.JTextField jTOfertasCantidad;
-    public javax.swing.JTextField jTOfertasCodigoProducto;
     public javax.swing.JTextField jTextFieldCodigo;
     public javax.swing.JTextField jTextFieldDosis;
     public javax.swing.JTextField jTextFieldMarca;

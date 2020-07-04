@@ -167,9 +167,10 @@ public class ControladorProducto implements ActionListener{
             eliminar();
         }
         //Buscar
-        if (e.getSource() == admin.BtBuscar) {
+        if (e.getSource() == admin.BtBuscar) {           
             buscar();
         }
+        
       
     }
     //Actualizar registro de tabla.   
@@ -183,10 +184,10 @@ public class ControladorProducto implements ActionListener{
             SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
             prod.setFecha_fabri(formatoFecha.format(admin.jDFecha_fab.getDate()));
             prod.setFecha_venc(formatoFecha.format(admin.jDFecha_venc.getDate()));
-            prod.setDosis(admin.jTextFieldDosis.getText());            
+            prod.setDosis(admin.jTextFieldDosis.getText());
+            prod.setDescripcion_prod(admin.jTDescripcion.getText());
             prod.setCodigo_oferta(Integer.parseInt(admin.jTCodOferta.getText()));
-            daoP.actualizar(prod);
-            JOptionPane.showMessageDialog(null, "Registro modificado");
+            daoP.actualizar(prod);           
             //Limpiar casillas de texto
             limpiar();
         } catch (Exception e) {          
@@ -211,7 +212,9 @@ public class ControladorProducto implements ActionListener{
     }
     public void buscar(){      
         try {
-            prod.setCodigo(Integer.parseInt(admin.jTextFieldCodigo.getText()));  
+            
+            prod.setCodigo(Integer.parseInt(admin.jTextFieldCodigo.getText())); 
+            
             daoP.buscar(prod); 
             //De volviendo la información a las casillas
             admin.jTextFieldNombre.setText(prod.getNombre());
@@ -282,6 +285,8 @@ public class ControladorProducto implements ActionListener{
             //Limpiar casillas de texto
             //limpiar();
         }
+        
+        
     }
     // metodo listar controlador
     public void listarCuid(JTable JTCuidadoPersonal){
@@ -466,8 +471,7 @@ public class ControladorProducto implements ActionListener{
          admin.jTextFieldDosis.setText(null);
          admin.jCCodCategoria.setSelectedItem("Seleccione");
          admin.jTCodOferta.setText(null);
-         admin.jTDescripcion.setText(null);
-         
+         admin.jTDescripcion.setText(null);       
     }
 
     

@@ -144,6 +144,7 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="CarritoMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CarritoActionPerformed"/>
           </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="Ofertas">

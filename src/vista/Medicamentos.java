@@ -5,6 +5,7 @@
  */
 package vista;
 
+import controlador.ControladorCompra;
 import controlador.ControladorOferta;
 import controlador.ControladorProducto;
 import javax.swing.ImageIcon;
@@ -217,6 +218,11 @@ public class Medicamentos extends javax.swing.JFrame {
         Carrito.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CarritoMouseClicked(evt);
+            }
+        });
+        Carrito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CarritoActionPerformed(evt);
             }
         });
         jMenuBar2.add(Carrito);
@@ -434,8 +440,10 @@ public class Medicamentos extends javax.swing.JFrame {
 
     private void CarritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CarritoMouseClicked
         Carrito vista11 = new Carrito();
+        ControladorCompra c = new ControladorCompra(vista11);
         vista11.setVisible(true);
         dispose();
+        
     }//GEN-LAST:event_CarritoMouseClicked
 
     private void OfertasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OfertasMouseClicked
@@ -478,6 +486,10 @@ public class Medicamentos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }//GEN-LAST:event_jTMedicamentosMouseClicked
+
+    private void CarritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarritoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CarritoActionPerformed
 
     /**
      * @param args the command line arguments

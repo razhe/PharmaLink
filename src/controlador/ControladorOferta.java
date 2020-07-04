@@ -69,8 +69,7 @@ public class ControladorOferta implements ActionListener  {
         public void limpiar(){
          admin.jTOfertaCodigo.setText(null);
          admin.jTOfertaDescuento.setText(null);
-         admin.jTOfertasCantidad.setText(null);
-         admin.jTOfertasCodigoProducto.setText(null);
+         admin.jTOfertasCantidad.setText(null);        
          admin.jDOfertaInicio.setCalendar(null);
          admin.jDOfertaFinal.setCalendar(null);
          
@@ -86,7 +85,7 @@ public class ControladorOferta implements ActionListener  {
             SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd");
             admin.jDOfertaInicio.setDate(sd.parse(oferta.getFecha_inicio()));
             admin.jDOfertaFinal.setDate(sd.parse(oferta.getFecha_fin()));
-            admin.jTOfertasCantidad.setText(String.valueOf(oferta.getNum_producto()));      
+            admin.jTOfertasCantidad.setText(String.valueOf(oferta.getNum_producto()));           
         } catch (Exception e) {
         }
     }
@@ -115,8 +114,7 @@ public class ControladorOferta implements ActionListener  {
     }
     
     public void agregarOferta(){  
-        try {
-            oferta.setId(Integer.parseInt(admin.jTOfertaCodigo.getText()));
+        try {           
             oferta.setDescuento(Double.parseDouble(admin.jTOfertaDescuento.getText()));
             SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
             oferta.setFecha_inicio(formatoFecha.format(admin.jDOfertaInicio.getDate()));

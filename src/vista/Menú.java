@@ -5,6 +5,7 @@
  */
 package vista;
 
+import controlador.ControladorCompra;
 import controlador.ControladorOferta;
 import controlador.ControladorProducto;
 import controlador.ControladorUsuario;
@@ -79,6 +80,11 @@ public class Menú extends javax.swing.JFrame {
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -206,6 +212,11 @@ public class Menú extends javax.swing.JFrame {
         Ofertas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 OfertasMouseClicked(evt);
+            }
+        });
+        Ofertas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OfertasActionPerformed(evt);
             }
         });
         jMenuBar2.add(Ofertas);
@@ -444,13 +455,25 @@ public class Menú extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void CarritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarritoActionPerformed
+        Carrito car = new Carrito();
+        ControladorCompra controladorOfertas = new ControladorCompra(car);
+        car.setVisible(true);
+        car.setLocationRelativeTo(car);
+        dispose();
+    }//GEN-LAST:event_CarritoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void OfertasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OfertasActionPerformed
         Ofertas of = new Ofertas();
         Admin adm = new Admin();
         ControladorOferta controladorOfertas = new ControladorOferta(adm, of);
         of.setVisible(true);
         of.setLocationRelativeTo(of);
         dispose();
-    }//GEN-LAST:event_CarritoActionPerformed
+    }//GEN-LAST:event_OfertasActionPerformed
 
     
     /**
@@ -461,6 +484,7 @@ public class Menú extends javax.swing.JFrame {
         men.setVisible(true);
         
         men.setLocationRelativeTo(men);
+        
             
     }
 

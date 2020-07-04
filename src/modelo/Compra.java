@@ -30,7 +30,6 @@ public class Compra {
         setFecha(fecha);
         setTotal(total);
         setCod_tipo_pago(cod_tipo_pago);
-        setCod_desc(cod_desc);
         setIdusuario(idusuario);      
     }
 

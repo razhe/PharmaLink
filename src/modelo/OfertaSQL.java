@@ -26,14 +26,14 @@ public class OfertaSQL {
     
     public void agregarOferta(Oferta o){
         try {
-            String sql = "INSERT INTO OFERTA (CODOFERTA,PORC_DESC,INICIO,FIN,NUM_PROD) VALUES (?,?,?,?,?) ";
+            String sql = "INSERT INTO OFERTA (PORC_DESC,INICIO,FIN,NUM_PROD) VALUES (?,?,?,?) ";
             con = conectar.getConnection();
             ps = con.prepareStatement(sql);
-            ps.setInt(1, o.getId());            
-            ps.setDouble(2, o.getDescuento());
-            ps.setString(3, o.getFecha_inicio());
-            ps.setString(4, o.getFecha_fin());
-            ps.setInt(5, o.getNum_producto());          
+                     
+            ps.setDouble(1, o.getDescuento());
+            ps.setString(2, o.getFecha_inicio());
+            ps.setString(3, o.getFecha_fin());
+            ps.setInt(4, o.getNum_producto());          
             ps.executeUpdate();           
             if (ps.executeUpdate() == 1) {
                 JOptionPane.showMessageDialog(null, "Oferta agregada correctamente");

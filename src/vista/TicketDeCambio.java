@@ -7,6 +7,8 @@ package vista;
 
 import controlador.ControladorCarrito;
 import controlador.ControladorCompra;
+import static java.awt.SystemColor.info;
+import static java.time.Clock.tick;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import modelo.Compra;
@@ -61,11 +63,9 @@ public class TicketDeCambio extends javax.swing.JFrame {
         jTNumBoleta = new javax.swing.JTextField();
         jTPrecioTotal = new javax.swing.JTextField();
         jTCantidadDeProductos = new javax.swing.JTextField();
-        jBAceptarCompra = new javax.swing.JButton();
-        jCTipoPago = new javax.swing.JComboBox();
         jBVolver = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos de la boleta"));
 
@@ -158,21 +158,6 @@ public class TicketDeCambio extends javax.swing.JFrame {
                 .addContainerGap(48, Short.MAX_VALUE))
         );
 
-        jBAceptarCompra.setText("Aceptar compra");
-        jBAceptarCompra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBAceptarCompraActionPerformed(evt);
-            }
-        });
-
-        jCTipoPago.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Forma de pago", "Credito", "Debito", "Efectivo" }));
-        jCTipoPago.setToolTipText("");
-        jCTipoPago.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCTipoPagoActionPerformed(evt);
-            }
-        });
-
         jBVolver.setText("Volver");
         jBVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,12 +169,6 @@ public class TicketDeCambio extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jBAceptarCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCTipoPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -205,21 +184,13 @@ public class TicketDeCambio extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCTipoPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBAceptarCompra))
-                .addGap(18, 18, 18)
+                .addGap(94, 94, 94)
                 .addComponent(jBVolver)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jBAceptarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAceptarCompraActionPerformed
-      
-    }//GEN-LAST:event_jBAceptarCompraActionPerformed
 
     private void jTCantidadDeProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTCantidadDeProductosActionPerformed
         // TODO add your handling code here:
@@ -240,18 +211,12 @@ public class TicketDeCambio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTPrecioTotalActionPerformed
 
-    private void jCTipoPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCTipoPagoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCTipoPagoActionPerformed
-
     public static void main(String args[]) {
         
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jBAceptarCompra;
     public javax.swing.JButton jBVolver;
-    public javax.swing.JComboBox jCTipoPago;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

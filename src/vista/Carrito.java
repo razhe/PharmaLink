@@ -90,6 +90,8 @@ public class Carrito extends javax.swing.JFrame {
         jBCarritoComprar = new javax.swing.JButton();
         jTFecha = new javax.swing.JTextField();
         jBCancelarCompra = new javax.swing.JButton();
+        jBComprar = new javax.swing.JButton();
+        jCTipoPago1 = new javax.swing.JComboBox();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         Prevencion = new javax.swing.JMenuItem();
@@ -151,7 +153,7 @@ public class Carrito extends javax.swing.JFrame {
             }
         });
 
-        jBCarritoComprar.setText("Generar ticket");
+        jBCarritoComprar.setText("Ver ticket");
         jBCarritoComprar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBCarritoComprarActionPerformed(evt);
@@ -170,6 +172,21 @@ public class Carrito extends javax.swing.JFrame {
         jBCancelarCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBCancelarCompraActionPerformed(evt);
+            }
+        });
+
+        jBComprar.setText("Aceptar compra");
+        jBComprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBComprarActionPerformed(evt);
+            }
+        });
+
+        jCTipoPago1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Forma de pago", "Credito", "Debito", "Efectivo" }));
+        jCTipoPago1.setToolTipText("");
+        jCTipoPago1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCTipoPago1ActionPerformed(evt);
             }
         });
 
@@ -310,9 +327,12 @@ public class Carrito extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                        .addComponent(jBCarritoComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jBCarritoComprar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBComprar, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                            .addComponent(jCTipoPago1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jBCancelarCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jBEliminarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -324,22 +344,28 @@ public class Carrito extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jBCancelarCompra)
+                                .addGap(18, 18, 18)
+                                .addComponent(jBLimpiarCarrito)
+                                .addGap(18, 18, 18)
+                                .addComponent(jBEliminarProducto))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jBComprar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jBCarritoComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jBRecargarCarrito)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jTFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBCancelarCompra)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jBCarritoComprar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jBLimpiarCarrito)
-                                .addGap(18, 18, 18)
-                                .addComponent(jBEliminarProducto)))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jCTipoPago1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
@@ -602,11 +628,10 @@ public class Carrito extends javax.swing.JFrame {
         Carrito c = new Carrito();
         TicketDeCambio t = new TicketDeCambio();
         Compra com = new Compra();
-        CompraSQL cSQl = new CompraSQL();
-        ControladorCompra con = new ControladorCompra(c,t);
+        CompraSQL cSQl = new CompraSQL();       
         t.setVisible(true);
         t.setLocationRelativeTo(t);       
-        con.retornarFkCompra();  
+          
     }//GEN-LAST:event_jBCarritoComprarActionPerformed
 
     private void jTFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFechaActionPerformed
@@ -645,6 +670,14 @@ public class Carrito extends javax.swing.JFrame {
         dispose();
    
     }//GEN-LAST:event_jBCancelarCompraActionPerformed
+
+    private void jCTipoPago1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCTipoPago1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCTipoPago1ActionPerformed
+
+    private void jBComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBComprarActionPerformed
+
+    }//GEN-LAST:event_jBComprarActionPerformed
     
     /**
      * @param args the command line arguments
@@ -668,9 +701,11 @@ public class Carrito extends javax.swing.JFrame {
     private javax.swing.JMenuItem Sexualidad;
     public javax.swing.JButton jBCancelarCompra;
     public javax.swing.JButton jBCarritoComprar;
+    public javax.swing.JButton jBComprar;
     public javax.swing.JButton jBEliminarProducto;
     public javax.swing.JButton jBLimpiarCarrito;
     public javax.swing.JButton jBRecargarCarrito;
+    public javax.swing.JComboBox jCTipoPago1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JScrollPane jScrollPane1;

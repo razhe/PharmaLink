@@ -23,7 +23,7 @@ public class Oferta {
 
     public Oferta(int id, double descuento, String fecha_inicio, String fecha_fin, int num_producto) {
         try {           
-            setId(id);        
+                  
             setDescuento(descuento);
             setFecha_inicio(fecha_inicio);
             setFecha_fin(fecha_fin);

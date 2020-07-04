@@ -25,7 +25,8 @@ import vista.TicketDeCambio;
  *
  * @author Gustavo
  */
-public class ControladorCompra implements ActionListener{
+public class ControladorCompra implements ActionListener {
+
     //Sql 
     CompraSQL cSQL = new CompraSQL();
     DetalleCompraDAO detDAO = new DetalleCompraDAO();
@@ -39,97 +40,63 @@ public class ControladorCompra implements ActionListener{
     DefaultTableModel modelo = new DefaultTableModel();
     //variable global
     String info;
-    
-    public ControladorCompra(Carrito carrito,TicketDeCambio ticket) {
+
+    public ControladorCompra(Carrito carrito) {
         this.car = carrito;
-        this.car.jBCarritoComprar.addActionListener(this);
-        this.tick = ticket;
-        this.tick.jBAceptarCompra.addActionListener(this);
+        this.car.jBComprar.addActionListener(this);
     }
 
-    
-
-   
-    
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if (e.getSource() == tick.jBAceptarCompra) {
-            info =  tick.jCTipoPago.getSelectedItem().toString();
+        if (e.getSource() == car.jBComprar) {
+            info = car.jCTipoPago1.getSelectedItem().toString();
             if (info.equals("Credito")) {
                 com.setCod_tipo_pago(1);
-            }
-            else if(info.equals("Debito")){
+            } else if (info.equals("Debito")) {
                 com.setCod_tipo_pago(2);
-            }
-            else if(info.equals("Efectivo")){
+            } else if (info.equals("Efectivo")) {
                 com.setCod_tipo_pago(3);
             }
             agregarCompra();
         }
-        
-        if (e.getSource() == tick.jBAceptarCompra) {
-            retornarFkCompra();
-        }
-        if (e.getSource() == tick.jBAceptarCompra) {
+        if (e.getSource() == car.jBComprar) {
             agregarDetalleCompra();
         }
-        
-            
-        
-        
+
     }
-    public void retornarFkCompra(){
-        cSQL.buscarIdCompra(com);
-       
-        int cantidadTotal = 0;
+
+    public void agregarCompra() {
+        //Falta codigo compra
         int precioTotal = 0;
-        List<ListaCarrito>listarCarrito = ControladorCarrito.listarCarrito();
+        List<ListaCarrito> listarCarrito = ControladorCarrito.listarCarrito();
         for (ListaCarrito listarCarrito1 : listarCarrito) {
-            cantidadTotal += listarCarrito1.getCantidad();
             precioTotal += listarCarrito1.getPrecio_bruto();
         }
-        
-        tick.jTNumBoleta.setText(String.valueOf(com.getId_compra())); 
-        tick.jTCantidadDeProductos.setText(String.valueOf(cantidadTotal));
-        tick.jTPrecioTotal.setText(String.valueOf(precioTotal));
-        
-        
-                
+        com.setFecha(car.jTFecha.getText());
+        com.setTotal(precioTotal);
+        com.setIdusuario(com.getIdusuario());       
+        //Falta Id de Usuario
+        cSQL.agregar(com);
     }
-    public void agregarCompra(){
-        List<ListaCarrito>listarCarrito = ControladorCarrito.listarCarrito();
-        for (ListaCarrito listarCarrito1 : listarCarrito) {           
-            listarCarrito1.getPrecio();
-            listarCarrito1.getPrecio_bruto();      
-            //Falta codigo compra
-            com.setFecha(car.jTFecha.getText()); 
-            com.setTotal(Integer.parseInt(tick.jTPrecioTotal.getText()));
-            com.setIdusuario(com.getIdusuario());
-            //Falta Id de Usuario              
-        }
-        cSQL.agregar(com);   
-    }
-    
-    public void agregarDetalleCompra(){
-        CompraSQL det = new CompraSQL();
-        det.buscarIdCompra(com);
-            
-        List<ListaCarrito>listarCarrito = ControladorCarrito.listarCarrito();
+
+    public void agregarDetalleCompra() {       
+        cSQL.buscarIdCompra(com);
+        List<ListaCarrito> listarCarrito = ControladorCarrito.listarCarrito();
         for (ListaCarrito listarCarrito1 : listarCarrito) {
             try {
-            detCom.setPrecio_neto(listarCarrito1.getPrecio());
-            detCom.setPrecio_bruto((int) listarCarrito1.getPrecio_bruto());
-            detCom.setCantidad(listarCarrito1.getCantidad());
-            //Evaluar el parse int
-            detCom.setCod_producto(Integer.parseInt(listarCarrito1.getId()));           
-            detCom.setCod_compra(com.getId_compra());           
+
+                detCom.setPrecio_neto(listarCarrito1.getPrecio());
+                detCom.setPrecio_bruto((int) listarCarrito1.getPrecio_bruto());
+                detCom.setCantidad(listarCarrito1.getCantidad());
+                //Evaluar el parse int
+                detCom.setCod_producto(Integer.parseInt(listarCarrito1.getId()));
+                detCom.setCod_compra(com.getId_compra());
                 detDAO.agregarDetalleCompra(detCom);
             } catch (SQLException ex) {
                 Logger.getLogger(ControladorCompra.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
-    
-    
+
 }
