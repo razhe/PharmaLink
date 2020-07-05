@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import vista.TicketDeCambio;
 
 /**
  *
@@ -32,8 +33,7 @@ public class CompraSQL {
             ps.setString(1, c.getFecha());  
             ps.setInt(2, c.getTotal());
             ps.setInt(3, c.getCod_tipo_pago());
-            ps.setInt(4, c.getIdusuario());
-            ps.executeUpdate();                   
+            ps.setInt(4, c.getIdusuario());                           
             if (ps.executeUpdate() == 1) {
                 System.out.println("Compra ingresada correctamente");
             }
@@ -42,18 +42,21 @@ public class CompraSQL {
             System.out.println("Error SQL: " + ex.getErrorCode() +" - "+ex.getMessage());
         }        
     }
-    public void buscarIdCompra(Compra c){
+    public int buscarIdCompra(){
+        Compra c = new Compra();
         try {
+            
             String sql = "SELECT MAX(NUMCOMP) FROM COMPRA";
             con = conectar.getConnection();
-            ps = con.prepareStatement(sql);
-            
+            ps = con.prepareStatement(sql);           
             rs = ps.executeQuery(sql);
             while (rs.next()) {                
                 c.setId_compra(Integer.parseInt(rs.getString("MAX(NUMCOMP)")));                 
-            }           
+            }
+            TicketDeCambio t = new TicketDeCambio();
         } catch (SQLException ex) {
             System.out.println("Error SQL: " + ex.getErrorCode() +" - "+ex.getMessage());
         }
+        return c.getId_compra();
     }
 }

@@ -24,31 +24,54 @@ public class TicketDeCambio extends javax.swing.JFrame {
     /**
      * Creates new form TicketDeCambio
      */
-    
     public TicketDeCambio() {
-        initComponents();        
+        initComponents();
         listarProductos();
         setLocationRelativeTo(null);
-        
-        
-        
-    }
-    public void listarProductos(){
-            DefaultTableModel modelo = new DefaultTableModel();
-            ListaCarrito l = new ListaCarrito();
+    } 
+//    public int retornarTotal(){
+//        int total = 0;
+//        List<ListaCarrito> listarCarrito = ControladorCarrito.listarCarrito();
+//        for (ListaCarrito listarCarrito1 : listarCarrito) {
+//            total += listarCarrito1.getPrecio_bruto();
+//            
+//        }
+//        return total;
+//    }
+//    public int retornarCantidadTotal(){
+//        int cant_total = 0;
+//        List<ListaCarrito> listarCarrito = ControladorCarrito.listarCarrito();
+//        for (ListaCarrito listarCarrito1 : listarCarrito) {           
+//            cant_total += listarCarrito1.getCantidad();
+//        }
+//        return cant_total;            
+//    }
+//    public void rellenarCasillasTicket() {
+//        CompraSQL c = new CompraSQL();        
+//        jTNumBoleta.setText(String.valueOf(c.buscarIdCompra()));
+//        jTPrecioTotal.setText(String.valueOf(retornarTotal()));
+//        jTCantidadDeProductos.setText(String.valueOf(retornarCantidadTotal()));
+    
+    
 
-            modelo=(DefaultTableModel)jTProductosTicket.getModel();       
-            modelo.setRowCount(0);
-            List<ListaCarrito>lista=  ControladorCarrito.listarCarrito();
-            Object[]object=new Object[2];
-            for (int i = 0; i < lista.size(); i++) {
-                object[0]= lista.get(i).getNombre();
-                object[1]= lista.get(i).getPrecio_bruto();
-           
-                modelo.addRow(object);
-            }       
-            jTProductosTicket.setModel(modelo);
+    public void listarProductos() {
+        DefaultTableModel modelo = new DefaultTableModel();
+        ListaCarrito l = new ListaCarrito();
+
+        modelo = (DefaultTableModel) jTProductosTicket.getModel();
+        modelo.setRowCount(0);
+        List<ListaCarrito> lista = ControladorCarrito.listarCarrito();
+        Object[] object = new Object[2];
+        for (int i = 0; i < lista.size(); i++) {
+            object[0] = lista.get(i).getNombre();
+            object[1] = lista.get(i).getPrecio_bruto();
+
+            modelo.addRow(object);
         }
+        jTProductosTicket.setModel(modelo);
+    }
+    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -197,13 +220,13 @@ public class TicketDeCambio extends javax.swing.JFrame {
     }//GEN-LAST:event_jTCantidadDeProductosActionPerformed
 
     private void jTNumBoletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTNumBoletaActionPerformed
-     
+
     }//GEN-LAST:event_jTNumBoletaActionPerformed
 
     private void jBVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVolverActionPerformed
-        Carrito car = new Carrito();
-        TicketDeCambio t = new TicketDeCambio();
-        t.removeAll();
+//        Carrito car = new Carrito();
+//        TicketDeCambio t = new TicketDeCambio();
+//        t.removeAll();
         dispose();
     }//GEN-LAST:event_jBVolverActionPerformed
 

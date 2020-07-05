@@ -71,6 +71,7 @@ public class Menú extends javax.swing.JFrame {
         IniciarSesion = new javax.swing.JMenu();
         Carrito = new javax.swing.JMenu();
         Ofertas = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -221,6 +222,15 @@ public class Menú extends javax.swing.JFrame {
         });
         jMenuBar2.add(Ofertas);
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/errores (1).png"))); // NOI18N
+        jMenu1.setText("Reportes");
+        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu1MouseClicked(evt);
+            }
+        });
+        jMenuBar2.add(jMenu1);
+
         setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -231,29 +241,32 @@ public class Menú extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(274, 274, 274)
-                        .addComponent(jLabel1))
+                        .addComponent(jLabel1)
+                        .addGap(55, 55, 55)
+                        .addComponent(FarmaciaLogo))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(225, 225, 225)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(FarmaciaLogo))))
-                .addContainerGap(230, Short.MAX_VALUE))
+                        .addGap(259, 259, 259)
+                        .addComponent(jButton1)
+                        .addGap(155, 155, 155)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(234, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(FarmaciaLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(327, 327, 327)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(FarmaciaLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(120, 120, 120)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(130, 130, 130))
         );
 
         pack();
@@ -435,6 +448,7 @@ public class Menú extends javax.swing.JFrame {
 
     private void CarritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CarritoMouseClicked
         Carrito vista11 = new Carrito();
+        ControladorCompra c = new ControladorCompra(vista11);
         vista11.setVisible(true);
         dispose();
     }//GEN-LAST:event_CarritoMouseClicked
@@ -475,6 +489,14 @@ public class Menú extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_OfertasActionPerformed
 
+    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+    
+        ReporteVista r = new ReporteVista();
+        r.setVisible(true);
+        r.setLocationRelativeTo(null);
+        
+    }//GEN-LAST:event_jMenu1MouseClicked
+
     
     /**
      * @param args the command line arguments
@@ -505,6 +527,7 @@ public class Menú extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar2;
     // End of variables declaration//GEN-END:variables

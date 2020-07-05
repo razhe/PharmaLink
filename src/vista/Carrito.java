@@ -10,6 +10,7 @@ import static controlador.ControladorCarrito.lista;
 import controlador.ControladorCompra;
 import controlador.ControladorOferta;
 import controlador.ControladorProducto;
+import controlador.ControladorUsuario;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
@@ -106,6 +107,7 @@ public class Carrito extends javax.swing.JFrame {
         IniciarSesion = new javax.swing.JMenu();
         Carrito = new javax.swing.JMenu();
         Ofertas = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -310,6 +312,15 @@ public class Carrito extends javax.swing.JFrame {
             }
         });
         jMenuBar2.add(Ofertas);
+
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/errores (1).png"))); // NOI18N
+        jMenu1.setText("Reportes");
+        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu1MouseClicked(evt);
+            }
+        });
+        jMenuBar2.add(jMenu1);
 
         setJMenuBar(jMenuBar2);
 
@@ -535,8 +546,10 @@ public class Carrito extends javax.swing.JFrame {
     }//GEN-LAST:event_AdultoMayorActionPerformed
 
     private void IniciarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IniciarSesionMouseClicked
-        IniciarSesion vista1 = new IniciarSesion();
-        vista1.setVisible(true);
+        IniciarSesion lg = new IniciarSesion();
+        ControladorUsuario c = new ControladorUsuario(lg);
+        lg.setVisible(true);
+        lg.setLocationRelativeTo(lg);
         dispose();
     }//GEN-LAST:event_IniciarSesionMouseClicked
 
@@ -548,6 +561,7 @@ public class Carrito extends javax.swing.JFrame {
 
     private void CarritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CarritoMouseClicked
         Carrito vista11 = new Carrito();
+        ControladorCompra c = new ControladorCompra(vista11);
         vista11.setVisible(true);
         dispose();
     }//GEN-LAST:event_CarritoMouseClicked
@@ -626,9 +640,20 @@ public class Carrito extends javax.swing.JFrame {
 
     private void jBCarritoComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCarritoComprarActionPerformed
         Carrito c = new Carrito();
-        TicketDeCambio t = new TicketDeCambio();
-        Compra com = new Compra();
-        CompraSQL cSQl = new CompraSQL();       
+        TicketDeCambio t = new TicketDeCambio();  
+        ControladorCompra con = new ControladorCompra(c);
+        CompraSQL cs = new CompraSQL();
+        List<ListaCarrito> listarCarrito = ControladorCarrito.listarCarrito();
+        int total = 0;
+        int cant_total = 0;
+        for (ListaCarrito listarCarrito1 : listarCarrito) {
+             total += listarCarrito1.getPrecio_bruto();
+             cant_total += listarCarrito1.getCantidad();
+        }
+        t.jTNumBoleta.setText(String.valueOf(cs.buscarIdCompra()));
+        t.jTPrecioTotal.setText(String.valueOf(total));
+        t.jTCantidadDeProductos.setText(String.valueOf(cant_total));
+       
         t.setVisible(true);
         t.setLocationRelativeTo(t);       
           
@@ -678,6 +703,14 @@ public class Carrito extends javax.swing.JFrame {
     private void jBComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBComprarActionPerformed
 
     }//GEN-LAST:event_jBComprarActionPerformed
+
+    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+
+        ReporteVista r = new ReporteVista();
+        r.setVisible(true);
+        r.setLocationRelativeTo(null);
+
+    }//GEN-LAST:event_jMenu1MouseClicked
     
     /**
      * @param args the command line arguments
@@ -706,6 +739,7 @@ public class Carrito extends javax.swing.JFrame {
     public javax.swing.JButton jBLimpiarCarrito;
     public javax.swing.JButton jBRecargarCarrito;
     public javax.swing.JComboBox jCTipoPago1;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JScrollPane jScrollPane1;

@@ -32,7 +32,6 @@ public class DetalleCompraDAO {
         ps.setInt(3, d.getCantidad());
         ps.setInt(4, d.getCod_producto());
         ps.setInt(5, d.getCod_compra());
-        ps.executeUpdate();
         if (ps.executeUpdate() == 1) {
             System.out.println("Detalle compra ingresado correctamente");
         }

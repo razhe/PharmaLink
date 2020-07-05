@@ -42,9 +42,7 @@ public class ProductoDAO {
                 ps.setString(7, p.getDosis());
                 ps.setString(8, p.getDescripcion_prod());
                 ps.setString(9, p.getCodigocategoria());
-                ps.setInt(10, p.getCodigo_oferta());
-                ps.executeUpdate();
-                
+                ps.setInt(10, p.getCodigo_oferta());          
                if(ps.executeUpdate() == 1){
                    JOptionPane.showMessageDialog(null, "¡Producto insertado correctamente!");
                }
@@ -73,7 +71,6 @@ public class ProductoDAO {
             ps.setString(8, p.getCodigocategoria());           
             ps.setInt(9, p.getCodigo_oferta());
             ps.setInt(10, p.getCodigo());
-            ps.executeUpdate();
             if (ps.executeUpdate() == 1) {
                 JOptionPane.showMessageDialog(null,"¡Actualización exitosa!");
             }

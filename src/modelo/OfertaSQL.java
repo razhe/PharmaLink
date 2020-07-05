@@ -33,8 +33,7 @@ public class OfertaSQL {
             ps.setDouble(1, o.getDescuento());
             ps.setString(2, o.getFecha_inicio());
             ps.setString(3, o.getFecha_fin());
-            ps.setInt(4, o.getNum_producto());          
-            ps.executeUpdate();           
+            ps.setInt(4, o.getNum_producto());               
             if (ps.executeUpdate() == 1) {
                 JOptionPane.showMessageDialog(null, "Oferta agregada correctamente");
             }
@@ -55,7 +54,6 @@ public class OfertaSQL {
             con = conectar.getConnection();
             ps = con.prepareStatement(sql);            
             ps.setInt(1, o.getId());
-            ps.executeUpdate();
             if (ps.executeUpdate() == 1) {
                 JOptionPane.showMessageDialog(null, "Oferta eliminada correctamente");
             }
@@ -74,8 +72,6 @@ public class OfertaSQL {
             ps.setString(3, o.getFecha_fin());
             ps.setInt(4, o.getNum_producto());            
             ps.setInt(5, o.getId());
-            
-            ps.executeUpdate();
             if (ps.executeUpdate() == 1) {
                 JOptionPane.showMessageDialog(null, "Oferta modificada de manera exitosa");
             }

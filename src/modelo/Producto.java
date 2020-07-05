@@ -138,7 +138,7 @@ public class Producto {
     public void setCodigo_oferta(int codigo_oferta) throws Exception {
         // quiero dejar que pueda ser null
         ProductoDAO pDAO = new ProductoDAO();
-        if (codigo_oferta <= 0) {
+        if (codigo_oferta <= -1) {
             throw new Exception("~Error~ El código oferta no puede ser menor a 0");
         }
         if (codigo_oferta> pDAO.buscarCodOferta()) {
