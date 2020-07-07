@@ -13,14 +13,14 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import modelo.UsuarioDAO;
+import modelo.UsuarioSQL;
 
 /**
  *
  * @author Eduardo
  */
 public class IniciarSesion extends javax.swing.JFrame {    
-    UsuarioDAO daoU = new UsuarioDAO();
+    UsuarioSQL daoU = new UsuarioSQL();
     
     public IniciarSesion() {
         initComponents();
@@ -55,66 +55,65 @@ public class IniciarSesion extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        InicioSesion = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        BTLogin = new javax.swing.JButton();
         jPContraseña = new javax.swing.JPasswordField();
+        BTLogin = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jPanel1 = new javax.swing.JPanel();
+        FarmaciaLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(561, 158, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/usuario.png"))); // NOI18N
+        InicioSesion.setBackground(new java.awt.Color(0, 42, 113));
+        InicioSesion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        InicioSesion.setForeground(new java.awt.Color(0, 42, 113));
+        InicioSesion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Rut:");
+        InicioSesion.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 44, 50));
 
-        BTLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/login.png"))); // NOI18N
-        BTLogin.setText("Iniciar sesión");
+        jPContraseña.setBackground(new java.awt.Color(0, 42, 113));
+        jPContraseña.setForeground(new java.awt.Color(255, 255, 255));
+        jPContraseña.setBorder(null);
+        InicioSesion.add(jPContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 159, 30));
+
+        BTLogin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Gustavo\\Desktop\\img\\V2inicFoto.png")); // NOI18N
+        BTLogin.setBorder(null);
+        BTLogin.setBorderPainted(false);
+        BTLogin.setContentAreaFilled(false);
         BTLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BTLoginActionPerformed(evt);
             }
         });
+        InicioSesion.add(BTLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 460, 120, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(209, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(jPContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel1)))
-                        .addGap(239, 239, 239))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(BTLogin)
-                        .addGap(247, 247, 247))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(158, 158, 158)
-                        .addComponent(jLabel1)
-                        .addGap(72, 72, 72))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addComponent(BTLogin)
-                .addContainerGap(102, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/usuario.png"))); // NOI18N
+        InicioSesion.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, -1, -1));
+
+        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
+        InicioSesion.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 160, 20));
+
+        getContentPane().add(InicioSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 600));
+
+        jPanel1.setBackground(new java.awt.Color(195, 204, 204));
+        jPanel1.setForeground(new java.awt.Color(195, 204, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        FarmaciaLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/Profej.jpg"))); // NOI18N
+        jPanel1.add(FarmaciaLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 0, 550, 600));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 460, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -135,9 +134,13 @@ public class IniciarSesion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton BTLogin;
+    private javax.swing.JLabel FarmaciaLogo;
+    private javax.swing.JPanel InicioSesion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     public javax.swing.JPasswordField jPContraseña;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

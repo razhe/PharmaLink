@@ -34,10 +34,11 @@ public class Producto {
     private String codigocategoria;
     private int codigo_oferta;
     private String descripcion_prod;
+    private String ruta;
     public Producto() {
     }
 
-    public Producto(int codigo, String nombre, String marca, int valor_peso, String fecha_fabri, String fecha_venc, String dosis, String codigocategoria,int codigo_oferta, String descripcion_prod) throws Exception {       
+    public Producto(int codigo, String nombre, String marca, int valor_peso, String fecha_fabri, String fecha_venc, String dosis, String codigocategoria,int codigo_oferta, String descripcion_prod, String ruta) throws Exception {       
             setCodigo(codigo);
             setNombre(nombre);
             setMarca(marca);
@@ -48,12 +49,22 @@ public class Producto {
             setCodigocategoria(codigocategoria);
             setCodigo_oferta(codigo_oferta);
             setDescripcion_prod(descripcion_prod);
-             
+            setRuta(ruta);
+            
     }
 
     public int getCodigo() {
         return codigo;
     }
+
+    public String getRuta() {
+        return ruta;
+    }
+
+    public void setRuta(String ruta) {
+        this.ruta = ruta;
+    }
+    
     public void setCodigo(int codigo) throws Exception {
         if (codigo < 0 ) {
             throw new Exception ("~Error~ El Código no puede ser menor que 0.");
@@ -137,7 +148,7 @@ public class Producto {
     }
     public void setCodigo_oferta(int codigo_oferta) throws Exception {
         // quiero dejar que pueda ser null
-        ProductoDAO pDAO = new ProductoDAO();
+        ProductoSQL pDAO = new ProductoSQL();
         if (codigo_oferta <= -1) {
             throw new Exception("~Error~ El código oferta no puede ser menor a 0");
         }

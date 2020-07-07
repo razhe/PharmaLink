@@ -54,9 +54,22 @@ public class Menú extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        FarmaciaLogo = new javax.swing.JLabel();
+        FondoPrincmenú = new javax.swing.JPanel();
+        DownHeader = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel7 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel6 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         Prevencion = new javax.swing.JMenuItem();
@@ -74,10 +87,40 @@ public class Menú extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 327, -1, -1));
 
-        FarmaciaLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Farmacia-logo_1.png"))); // NOI18N
+        FondoPrincmenú.setBackground(new java.awt.Color(0, 30, 84));
+        FondoPrincmenú.setForeground(new java.awt.Color(255, 255, 255));
+        FondoPrincmenú.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        DownHeader.setBackground(new java.awt.Color(195, 204, 204));
+        DownHeader.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setText("Pharma Link");
+        DownHeader.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 180, 60));
+
+        jLabel4.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel4.setText("Tu farmacia experta en servicios");
+        DownHeader.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 200, 50));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_rod_of_asclepius_26px.png"))); // NOI18N
+        DownHeader.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 30, 40));
+
+        FondoPrincmenú.add(DownHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 150));
+
+        jPanel1.setBackground(new java.awt.Color(0, 42, 113));
+        jPanel1.setPreferredSize(new java.awt.Dimension(300, 300));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setBackground(new java.awt.Color(0, 42, 113));
+        jButton1.setForeground(new java.awt.Color(204, 204, 204));
         jButton1.setText("¿Te ayudamos?");
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
@@ -88,17 +131,76 @@ public class Menú extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
 
+        jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 90, 10));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_help_40px ayuda.png"))); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 70, 50));
+
+        FondoPrincmenú.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 210, 200));
+
+        jPanel3.setBackground(new java.awt.Color(0, 42, 113));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setText("Menú principal");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 130, 30));
+
+        FondoPrincmenú.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 830, 50));
+
+        jPanel4.setBackground(new java.awt.Color(0, 42, 113));
+        jPanel4.setPreferredSize(new java.awt.Dimension(300, 300));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jSeparator3.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel4.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(62, 190, 80, 10));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_search_property_40px_3.png"))); // NOI18N
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 80, 70));
+
+        jButton2.setForeground(new java.awt.Color(204, 204, 204));
         jButton2.setText("Diagnóstico");
+        jButton2.setBorder(null);
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, -1, -1));
 
-        jMenuBar2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 2, true));
+        FondoPrincmenú.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 210, 200));
+
+        jSeparator1.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator1.setForeground(new java.awt.Color(204, 204, 204));
+        FondoPrincmenú.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 110, 10));
+
+        getContentPane().add(FondoPrincmenú, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 470));
+
+        jMenuBar2.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuBar2.setBorder(null);
+        jMenuBar2.setForeground(new java.awt.Color(102, 153, 255));
+        jMenuBar2.setToolTipText("");
         jMenuBar2.setName(""); // NOI18N
 
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/producto.png"))); // NOI18N
+        jMenu3.setBackground(new java.awt.Color(255, 255, 255));
+        jMenu3.setBorder(null);
+        jMenu3.setForeground(new java.awt.Color(153, 153, 153));
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_menu_26px.png"))); // NOI18N
         jMenu3.setText("Productos");
+        jMenu3.setBorderPainted(false);
 
-        Prevencion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/prevencion.png"))); // NOI18N
+        Prevencion.setBackground(new java.awt.Color(255, 255, 255));
+        Prevencion.setForeground(new java.awt.Color(153, 153, 153));
+        Prevencion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_doctors_bag_40px.png"))); // NOI18N
         Prevencion.setText("Prevención");
+        Prevencion.setBorder(null);
         Prevencion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PrevencionActionPerformed(evt);
@@ -106,8 +208,11 @@ public class Menú extends javax.swing.JFrame {
         });
         jMenu3.add(Prevencion);
 
-        Medicamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/medicamento.png"))); // NOI18N
+        Medicamentos.setBackground(new java.awt.Color(255, 255, 255));
+        Medicamentos.setForeground(new java.awt.Color(153, 153, 153));
+        Medicamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_pill_40px.png"))); // NOI18N
         Medicamentos.setText("Medicamentos");
+        Medicamentos.setBorder(null);
         Medicamentos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MedicamentosActionPerformed(evt);
@@ -115,8 +220,11 @@ public class Menú extends javax.swing.JFrame {
         });
         jMenu3.add(Medicamentos);
 
-        Dermocosmetica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/dermocosmetica.png"))); // NOI18N
+        Dermocosmetica.setBackground(new java.awt.Color(255, 255, 255));
+        Dermocosmetica.setForeground(new java.awt.Color(153, 153, 153));
+        Dermocosmetica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_cosmetic_brush_40px.png"))); // NOI18N
         Dermocosmetica.setText("Dermocosmética");
+        Dermocosmetica.setBorder(null);
         Dermocosmetica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DermocosmeticaActionPerformed(evt);
@@ -124,8 +232,11 @@ public class Menú extends javax.swing.JFrame {
         });
         jMenu3.add(Dermocosmetica);
 
-        InfantilMaternidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/infantil.png"))); // NOI18N
+        InfantilMaternidad.setBackground(new java.awt.Color(255, 255, 255));
+        InfantilMaternidad.setForeground(new java.awt.Color(153, 153, 153));
+        InfantilMaternidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_mother_40px_1.png"))); // NOI18N
         InfantilMaternidad.setText("Infantil y maternidad");
+        InfantilMaternidad.setBorder(null);
         InfantilMaternidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InfantilMaternidadActionPerformed(evt);
@@ -133,8 +244,11 @@ public class Menú extends javax.swing.JFrame {
         });
         jMenu3.add(InfantilMaternidad);
 
-        CuidadoPersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cuidadopersonal.png"))); // NOI18N
+        CuidadoPersonal.setBackground(new java.awt.Color(255, 255, 255));
+        CuidadoPersonal.setForeground(new java.awt.Color(153, 153, 153));
+        CuidadoPersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_bandage_40px.png"))); // NOI18N
         CuidadoPersonal.setText("Cuidado personal");
+        CuidadoPersonal.setBorder(null);
         CuidadoPersonal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CuidadoPersonalActionPerformed(evt);
@@ -142,8 +256,11 @@ public class Menú extends javax.swing.JFrame {
         });
         jMenu3.add(CuidadoPersonal);
 
-        Sexualidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/sexualidad.png"))); // NOI18N
+        Sexualidad.setBackground(new java.awt.Color(255, 255, 255));
+        Sexualidad.setForeground(new java.awt.Color(153, 153, 153));
+        Sexualidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_gender_40px.png"))); // NOI18N
         Sexualidad.setText("Sexualidad");
+        Sexualidad.setBorder(null);
         Sexualidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SexualidadActionPerformed(evt);
@@ -151,8 +268,11 @@ public class Menú extends javax.swing.JFrame {
         });
         jMenu3.add(Sexualidad);
 
-        Belleza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/belleza.png"))); // NOI18N
+        Belleza.setBackground(new java.awt.Color(255, 255, 255));
+        Belleza.setForeground(new java.awt.Color(153, 153, 153));
+        Belleza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_mirror_40px.png"))); // NOI18N
         Belleza.setText("Belleza");
+        Belleza.setBorder(null);
         Belleza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BellezaActionPerformed(evt);
@@ -160,8 +280,11 @@ public class Menú extends javax.swing.JFrame {
         });
         jMenu3.add(Belleza);
 
-        Nutricion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/vitamina.png"))); // NOI18N
+        Nutricion.setBackground(new java.awt.Color(255, 255, 255));
+        Nutricion.setForeground(new java.awt.Color(153, 153, 153));
+        Nutricion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_pill_bottle_40px.png"))); // NOI18N
         Nutricion.setText("Nutrición y vitaminas");
+        Nutricion.setBorder(null);
         Nutricion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NutricionActionPerformed(evt);
@@ -169,8 +292,11 @@ public class Menú extends javax.swing.JFrame {
         });
         jMenu3.add(Nutricion);
 
-        AdultoMayor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/adultomayor.png"))); // NOI18N
+        AdultoMayor.setBackground(new java.awt.Color(255, 255, 255));
+        AdultoMayor.setForeground(new java.awt.Color(153, 153, 153));
+        AdultoMayor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_elderly_person_40px.png"))); // NOI18N
         AdultoMayor.setText("Adulto mayor");
+        AdultoMayor.setBorder(null);
         AdultoMayor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AdultoMayorActionPerformed(evt);
@@ -180,8 +306,10 @@ public class Menú extends javax.swing.JFrame {
 
         jMenuBar2.add(jMenu3);
 
-        IniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logical_1.png"))); // NOI18N
-        IniciarSesion.setText("Iniciar Sesión");
+        IniciarSesion.setBackground(new java.awt.Color(255, 255, 255));
+        IniciarSesion.setForeground(new java.awt.Color(153, 153, 153));
+        IniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_user_40px.png"))); // NOI18N
+        IniciarSesion.setText("Cerrar Sesión");
         IniciarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 IniciarSesionMouseClicked(evt);
@@ -194,7 +322,9 @@ public class Menú extends javax.swing.JFrame {
         });
         jMenuBar2.add(IniciarSesion);
 
-        Carrito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/carrito_1.png"))); // NOI18N
+        Carrito.setBackground(new java.awt.Color(255, 255, 255));
+        Carrito.setForeground(new java.awt.Color(153, 153, 153));
+        Carrito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_card_payment_40px_1.png"))); // NOI18N
         Carrito.setText("Carrito");
         Carrito.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -208,7 +338,9 @@ public class Menú extends javax.swing.JFrame {
         });
         jMenuBar2.add(Carrito);
 
-        Ofertas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/descuento-nalgene-icon.png"))); // NOI18N
+        Ofertas.setBackground(new java.awt.Color(255, 255, 255));
+        Ofertas.setForeground(new java.awt.Color(153, 153, 153));
+        Ofertas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_discount_40px.png"))); // NOI18N
         Ofertas.setText("Ofertas");
         Ofertas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -222,7 +354,9 @@ public class Menú extends javax.swing.JFrame {
         });
         jMenuBar2.add(Ofertas);
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/errores (1).png"))); // NOI18N
+        jMenu1.setBackground(new java.awt.Color(255, 255, 255));
+        jMenu1.setForeground(new java.awt.Color(153, 153, 153));
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_system_report_40px.png"))); // NOI18N
         jMenu1.setText("Reportes");
         jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -232,42 +366,6 @@ public class Menú extends javax.swing.JFrame {
         jMenuBar2.add(jMenu1);
 
         setJMenuBar(jMenuBar2);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(274, 274, 274)
-                        .addComponent(jLabel1)
-                        .addGap(55, 55, 55)
-                        .addComponent(FarmaciaLogo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(259, 259, 259)
-                        .addComponent(jButton1)
-                        .addGap(155, 155, 155)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(234, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(327, 327, 327)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(FarmaciaLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(120, 120, 120)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(130, 130, 130))
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -477,7 +575,10 @@ public class Menú extends javax.swing.JFrame {
     }//GEN-LAST:event_CarritoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        Ayuda a = new Ayuda();
+        a.setVisible(true);
+        a.setLocationRelativeTo(null);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void OfertasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OfertasActionPerformed
@@ -496,6 +597,12 @@ public class Menú extends javax.swing.JFrame {
         r.setLocationRelativeTo(null);
         
     }//GEN-LAST:event_jMenu1MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Diagnostico diag = new Diagnostico();
+        diag.setVisible(true);
+        diag.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     
     /**
@@ -516,7 +623,8 @@ public class Menú extends javax.swing.JFrame {
     private javax.swing.JMenu Carrito;
     private javax.swing.JMenuItem CuidadoPersonal;
     private javax.swing.JMenuItem Dermocosmetica;
-    private javax.swing.JLabel FarmaciaLogo;
+    private javax.swing.JPanel DownHeader;
+    private javax.swing.JPanel FondoPrincmenú;
     private javax.swing.JMenuItem InfantilMaternidad;
     private javax.swing.JMenu IniciarSesion;
     private javax.swing.JMenuItem Medicamentos;
@@ -527,8 +635,20 @@ public class Menú extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     // End of variables declaration//GEN-END:variables
 }

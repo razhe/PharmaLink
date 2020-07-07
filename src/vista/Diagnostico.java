@@ -36,16 +36,30 @@ public class Diagnostico extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
         jBDolorCabeza = new javax.swing.JButton();
         jBDolorEst = new javax.swing.JButton();
         jBInfl = new javax.swing.JButton();
         jBDolorBoca = new javax.swing.JButton();
         jBDolorEspalda = new javax.swing.JButton();
         jBFiebre = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTPInformacion = new javax.swing.JTextPane();
         jBTos = new javax.swing.JButton();
         jBPiel = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
+        jSeparator7 = new javax.swing.JSeparator();
+        jSeparator8 = new javax.swing.JSeparator();
+        jSeparator9 = new javax.swing.JSeparator();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTPInformacion = new javax.swing.JTextPane();
         lblAdv = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -67,82 +81,216 @@ public class Diagnostico extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 51));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jBDolorCabeza.setBackground(new java.awt.Color(0, 0, 51));
+        jBDolorCabeza.setForeground(new java.awt.Color(204, 204, 204));
         jBDolorCabeza.setText("Dolor de cabeza");
+        jBDolorCabeza.setBorder(null);
         jBDolorCabeza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBDolorCabezaActionPerformed(evt);
             }
         });
+        jPanel1.add(jBDolorCabeza, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, -1));
 
+        jBDolorEst.setBackground(new java.awt.Color(0, 0, 51));
+        jBDolorEst.setForeground(new java.awt.Color(204, 204, 204));
         jBDolorEst.setText("Dolor estomacal");
+        jBDolorEst.setBorder(null);
         jBDolorEst.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBDolorEstActionPerformed(evt);
             }
         });
+        jPanel1.add(jBDolorEst, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 150, -1));
 
+        jBInfl.setBackground(new java.awt.Color(0, 0, 51));
+        jBInfl.setForeground(new java.awt.Color(255, 255, 255));
         jBInfl.setText("Inflamación corporal");
+        jBInfl.setBorder(null);
         jBInfl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBInflActionPerformed(evt);
             }
         });
+        jPanel1.add(jBInfl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 150, -1));
 
+        jBDolorBoca.setBackground(new java.awt.Color(0, 0, 51));
+        jBDolorBoca.setForeground(new java.awt.Color(255, 255, 255));
         jBDolorBoca.setText("Dolor de boca");
+        jBDolorBoca.setBorder(null);
         jBDolorBoca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBDolorBocaActionPerformed(evt);
             }
         });
+        jPanel1.add(jBDolorBoca, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 150, -1));
 
+        jBDolorEspalda.setBackground(new java.awt.Color(0, 0, 51));
+        jBDolorEspalda.setForeground(new java.awt.Color(204, 204, 204));
         jBDolorEspalda.setText("Dolor de espalda");
+        jBDolorEspalda.setBorder(null);
         jBDolorEspalda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBDolorEspaldaActionPerformed(evt);
             }
         });
+        jPanel1.add(jBDolorEspalda, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 150, -1));
 
+        jBFiebre.setBackground(new java.awt.Color(0, 0, 51));
+        jBFiebre.setForeground(new java.awt.Color(204, 204, 204));
         jBFiebre.setText("Fiebre");
+        jBFiebre.setBorder(null);
         jBFiebre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBFiebreActionPerformed(evt);
             }
         });
+        jPanel1.add(jBFiebre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 150, -1));
 
-        jScrollPane1.setViewportView(jTPInformacion);
-
+        jBTos.setBackground(new java.awt.Color(0, 0, 51));
+        jBTos.setForeground(new java.awt.Color(204, 204, 204));
         jBTos.setText("Tos");
+        jBTos.setBorder(null);
         jBTos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBTosActionPerformed(evt);
             }
         });
+        jPanel1.add(jBTos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 150, -1));
 
+        jBPiel.setBackground(new java.awt.Color(0, 0, 51));
+        jBPiel.setForeground(new java.awt.Color(204, 204, 204));
         jBPiel.setText("Afección a la piel");
+        jBPiel.setBorder(null);
         jBPiel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBPielActionPerformed(evt);
             }
         });
+        jPanel1.add(jBPiel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 150, -1));
+
+        jSeparator2.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator2.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 150, 10));
+
+        jSeparator3.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator3.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 112, 150, 10));
+
+        jSeparator4.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator4.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 150, 10));
+
+        jSeparator5.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator5.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 150, 10));
+
+        jSeparator6.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator6.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 150, 10));
+
+        jSeparator7.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator7.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 150, 10));
+
+        jSeparator8.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator8.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 150, 10));
+
+        jSeparator9.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator9.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 150, 10));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI Light", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel6.setText("Pharma Link");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 140, 60));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 560));
+
+        jPanel2.setBackground(new java.awt.Color(195, 204, 204));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI Light", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel4.setText("Diagnóstico virtual");
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_x-ray_32px.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addContainerGap(544, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 840, 110));
+
+        jPanel3.setBackground(new java.awt.Color(0, 30, 84));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTPInformacion.setEditable(false);
+        jTPInformacion.setBackground(new java.awt.Color(0, 30, 84));
+        jTPInformacion.setBorder(null);
+        jTPInformacion.setForeground(new java.awt.Color(204, 204, 204));
+        jScrollPane1.setViewportView(jTPInformacion);
+
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 438, 240));
 
         lblAdv.setForeground(new java.awt.Color(204, 0, 0));
         lblAdv.setText("ADVERTENCIA:");
+        jPanel3.add(lblAdv, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, -1));
 
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("La información proporcionada es la estimada por la farmacia,");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, -1, -1));
 
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("y recomendamos productos que no requieran medicación");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, 349, -1));
 
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("Para mas información consulte a un especialista.");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, -1, -1));
 
-        jMenuBar2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 2, true));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 830, 450));
+
+        jMenuBar2.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuBar2.setBorder(null);
+        jMenuBar2.setForeground(new java.awt.Color(102, 153, 255));
+        jMenuBar2.setToolTipText("");
         jMenuBar2.setName(""); // NOI18N
 
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/producto.png"))); // NOI18N
+        jMenu3.setBackground(new java.awt.Color(255, 255, 255));
+        jMenu3.setBorder(null);
+        jMenu3.setForeground(new java.awt.Color(153, 153, 153));
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_menu_26px.png"))); // NOI18N
         jMenu3.setText("Productos");
+        jMenu3.setBorderPainted(false);
 
-        Prevencion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/prevencion.png"))); // NOI18N
+        Prevencion.setBackground(new java.awt.Color(255, 255, 255));
+        Prevencion.setForeground(new java.awt.Color(153, 153, 153));
+        Prevencion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_doctors_bag_40px.png"))); // NOI18N
         Prevencion.setText("Prevención");
+        Prevencion.setBorder(null);
         Prevencion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PrevencionActionPerformed(evt);
@@ -150,8 +298,11 @@ public class Diagnostico extends javax.swing.JFrame {
         });
         jMenu3.add(Prevencion);
 
-        Medicamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/medicamento.png"))); // NOI18N
+        Medicamentos.setBackground(new java.awt.Color(255, 255, 255));
+        Medicamentos.setForeground(new java.awt.Color(153, 153, 153));
+        Medicamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_pill_40px.png"))); // NOI18N
         Medicamentos.setText("Medicamentos");
+        Medicamentos.setBorder(null);
         Medicamentos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MedicamentosActionPerformed(evt);
@@ -159,8 +310,11 @@ public class Diagnostico extends javax.swing.JFrame {
         });
         jMenu3.add(Medicamentos);
 
-        Dermocosmetica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/dermocosmetica.png"))); // NOI18N
+        Dermocosmetica.setBackground(new java.awt.Color(255, 255, 255));
+        Dermocosmetica.setForeground(new java.awt.Color(153, 153, 153));
+        Dermocosmetica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_cosmetic_brush_40px.png"))); // NOI18N
         Dermocosmetica.setText("Dermocosmética");
+        Dermocosmetica.setBorder(null);
         Dermocosmetica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DermocosmeticaActionPerformed(evt);
@@ -168,8 +322,11 @@ public class Diagnostico extends javax.swing.JFrame {
         });
         jMenu3.add(Dermocosmetica);
 
-        InfantilMaternidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/infantil.png"))); // NOI18N
+        InfantilMaternidad.setBackground(new java.awt.Color(255, 255, 255));
+        InfantilMaternidad.setForeground(new java.awt.Color(153, 153, 153));
+        InfantilMaternidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_mother_40px_1.png"))); // NOI18N
         InfantilMaternidad.setText("Infantil y maternidad");
+        InfantilMaternidad.setBorder(null);
         InfantilMaternidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InfantilMaternidadActionPerformed(evt);
@@ -177,8 +334,11 @@ public class Diagnostico extends javax.swing.JFrame {
         });
         jMenu3.add(InfantilMaternidad);
 
-        CuidadoPersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cuidadopersonal.png"))); // NOI18N
+        CuidadoPersonal.setBackground(new java.awt.Color(255, 255, 255));
+        CuidadoPersonal.setForeground(new java.awt.Color(153, 153, 153));
+        CuidadoPersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_bandage_40px.png"))); // NOI18N
         CuidadoPersonal.setText("Cuidado personal");
+        CuidadoPersonal.setBorder(null);
         CuidadoPersonal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CuidadoPersonalActionPerformed(evt);
@@ -186,8 +346,11 @@ public class Diagnostico extends javax.swing.JFrame {
         });
         jMenu3.add(CuidadoPersonal);
 
-        Sexualidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/sexualidad.png"))); // NOI18N
+        Sexualidad.setBackground(new java.awt.Color(255, 255, 255));
+        Sexualidad.setForeground(new java.awt.Color(153, 153, 153));
+        Sexualidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_gender_40px.png"))); // NOI18N
         Sexualidad.setText("Sexualidad");
+        Sexualidad.setBorder(null);
         Sexualidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SexualidadActionPerformed(evt);
@@ -195,8 +358,11 @@ public class Diagnostico extends javax.swing.JFrame {
         });
         jMenu3.add(Sexualidad);
 
-        Belleza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/belleza.png"))); // NOI18N
+        Belleza.setBackground(new java.awt.Color(255, 255, 255));
+        Belleza.setForeground(new java.awt.Color(153, 153, 153));
+        Belleza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_mirror_40px.png"))); // NOI18N
         Belleza.setText("Belleza");
+        Belleza.setBorder(null);
         Belleza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BellezaActionPerformed(evt);
@@ -204,8 +370,11 @@ public class Diagnostico extends javax.swing.JFrame {
         });
         jMenu3.add(Belleza);
 
-        Nutricion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/vitamina.png"))); // NOI18N
+        Nutricion.setBackground(new java.awt.Color(255, 255, 255));
+        Nutricion.setForeground(new java.awt.Color(153, 153, 153));
+        Nutricion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_pill_bottle_40px.png"))); // NOI18N
         Nutricion.setText("Nutrición y vitaminas");
+        Nutricion.setBorder(null);
         Nutricion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NutricionActionPerformed(evt);
@@ -213,8 +382,11 @@ public class Diagnostico extends javax.swing.JFrame {
         });
         jMenu3.add(Nutricion);
 
-        AdultoMayor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/adultomayor.png"))); // NOI18N
+        AdultoMayor.setBackground(new java.awt.Color(255, 255, 255));
+        AdultoMayor.setForeground(new java.awt.Color(153, 153, 153));
+        AdultoMayor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_elderly_person_40px.png"))); // NOI18N
         AdultoMayor.setText("Adulto mayor");
+        AdultoMayor.setBorder(null);
         AdultoMayor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AdultoMayorActionPerformed(evt);
@@ -224,7 +396,9 @@ public class Diagnostico extends javax.swing.JFrame {
 
         jMenuBar2.add(jMenu3);
 
-        IniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logical_1.png"))); // NOI18N
+        IniciarSesion.setBackground(new java.awt.Color(255, 255, 255));
+        IniciarSesion.setForeground(new java.awt.Color(153, 153, 153));
+        IniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_user_40px.png"))); // NOI18N
         IniciarSesion.setText("Iniciar Sesión");
         IniciarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -238,25 +412,41 @@ public class Diagnostico extends javax.swing.JFrame {
         });
         jMenuBar2.add(IniciarSesion);
 
-        Carrito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/carrito_1.png"))); // NOI18N
+        Carrito.setBackground(new java.awt.Color(255, 255, 255));
+        Carrito.setForeground(new java.awt.Color(153, 153, 153));
+        Carrito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_card_payment_40px_1.png"))); // NOI18N
         Carrito.setText("Carrito");
         Carrito.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CarritoMouseClicked(evt);
             }
         });
+        Carrito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CarritoActionPerformed(evt);
+            }
+        });
         jMenuBar2.add(Carrito);
 
-        Ofertas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/descuento-nalgene-icon.png"))); // NOI18N
+        Ofertas.setBackground(new java.awt.Color(255, 255, 255));
+        Ofertas.setForeground(new java.awt.Color(153, 153, 153));
+        Ofertas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_discount_40px.png"))); // NOI18N
         Ofertas.setText("Ofertas");
         Ofertas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 OfertasMouseClicked(evt);
             }
         });
+        Ofertas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OfertasActionPerformed(evt);
+            }
+        });
         jMenuBar2.add(Ofertas);
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/errores (1).png"))); // NOI18N
+        jMenu1.setBackground(new java.awt.Color(255, 255, 255));
+        jMenu1.setForeground(new java.awt.Color(153, 153, 153));
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_system_report_40px.png"))); // NOI18N
         jMenu1.setText("Reportes");
         jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -267,270 +457,8 @@ public class Diagnostico extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar2);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jBDolorBoca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jBInfl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(3, 3, 3))
-                            .addComponent(jBDolorEspalda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jBFiebre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jBTos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jBPiel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(142, 142, 142)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(lblAdv)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                        .addGap(248, 248, 248))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jBDolorCabeza, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jBDolorEst, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(837, 837, 837))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(jBDolorCabeza)
-                .addGap(27, 27, 27)
-                .addComponent(jBDolorEst)
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jBInfl)
-                        .addGap(35, 35, 35)
-                        .addComponent(jBDolorBoca)
-                        .addGap(35, 35, 35)
-                        .addComponent(jBDolorEspalda)
-                        .addGap(33, 33, 33)
-                        .addComponent(jBFiebre))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAdv)
-                    .addComponent(jLabel1))
-                .addGap(1, 1, 1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBTos)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(jBPiel)
-                .addContainerGap(145, Short.MAX_VALUE))
-        );
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void PrevencionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrevencionActionPerformed
-        //Mostrar los datos en la tabla.
-        CuidadoPersonal cp = new CuidadoPersonal();
-        Admin ad = new Admin();
-        AdultoMayor adul = new AdultoMayor();
-        Belleza be = new Belleza();
-        Dermocosmetica der = new Dermocosmetica();
-        Infantil inf = new Infantil();
-        Medicamentos med = new Medicamentos();
-        Nutricion nut = new Nutricion();
-        Prevencion prev = new Prevencion();
-        Sexualidad sex = new Sexualidad();
-        ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
-        prev.setVisible(true);
-        prev.setLocationRelativeTo(prev);
-        dispose();
-    }//GEN-LAST:event_PrevencionActionPerformed
-
-    private void MedicamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MedicamentosActionPerformed
-        //Mostrar los datos en la tabla.
-        CuidadoPersonal cp = new CuidadoPersonal();
-        Admin ad = new Admin();
-        AdultoMayor adul = new AdultoMayor();
-        Belleza be = new Belleza();
-        Dermocosmetica der = new Dermocosmetica();
-        Infantil inf = new Infantil();
-        Medicamentos med = new Medicamentos();
-        Nutricion nut = new Nutricion();
-        Prevencion prev = new Prevencion();
-        Sexualidad sex = new Sexualidad();
-        ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
-        med.setVisible(true);
-        med.setLocationRelativeTo(med);
-        dispose();
-    }//GEN-LAST:event_MedicamentosActionPerformed
-
-    private void DermocosmeticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DermocosmeticaActionPerformed
-        //Mostrar los datos en la tabla.
-        CuidadoPersonal cp = new CuidadoPersonal();
-        Admin ad = new Admin();
-        AdultoMayor adul = new AdultoMayor();
-        Belleza be = new Belleza();
-        Dermocosmetica der = new Dermocosmetica();
-        Infantil inf = new Infantil();
-        Medicamentos med = new Medicamentos();
-        Nutricion nut = new Nutricion();
-        Prevencion prev = new Prevencion();
-        Sexualidad sex = new Sexualidad();
-        ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
-        der.setVisible(true);
-        der.setLocationRelativeTo(der);
-        dispose();
-    }//GEN-LAST:event_DermocosmeticaActionPerformed
-
-    private void InfantilMaternidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InfantilMaternidadActionPerformed
-        //Mostrar los datos en la tabla.
-        CuidadoPersonal cp = new CuidadoPersonal();
-        Admin ad = new Admin();
-        AdultoMayor adul = new AdultoMayor();
-        Belleza be = new Belleza();
-        Dermocosmetica der = new Dermocosmetica();
-        Infantil inf = new Infantil();
-        Medicamentos med = new Medicamentos();
-        Nutricion nut = new Nutricion();
-        Prevencion prev = new Prevencion();
-        Sexualidad sex = new Sexualidad();
-        ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
-        inf.setVisible(true);
-        inf.setLocationRelativeTo(inf);
-        dispose();
-    }//GEN-LAST:event_InfantilMaternidadActionPerformed
-
-    private void CuidadoPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuidadoPersonalActionPerformed
-        //Mostrar los datos en la tabla.
-        CuidadoPersonal cp = new CuidadoPersonal();
-        Admin ad = new Admin();
-        AdultoMayor adul = new AdultoMayor();
-        Belleza be = new Belleza();
-        Dermocosmetica der = new Dermocosmetica();
-        Infantil inf = new Infantil();
-        Medicamentos med = new Medicamentos();
-        Nutricion nut = new Nutricion();
-        Prevencion prev = new Prevencion();
-        Sexualidad sex = new Sexualidad();
-        ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
-        cp.setVisible(true);
-        cp.setLocationRelativeTo(cp);
-        dispose();
-    }//GEN-LAST:event_CuidadoPersonalActionPerformed
-
-    private void SexualidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SexualidadActionPerformed
-        //Mostrar los datos en la tabla.
-        CuidadoPersonal cp = new CuidadoPersonal();
-        Admin ad = new Admin();
-        AdultoMayor adul = new AdultoMayor();
-        Belleza be = new Belleza();
-        Dermocosmetica der = new Dermocosmetica();
-        Infantil inf = new Infantil();
-        Medicamentos med = new Medicamentos();
-        Nutricion nut = new Nutricion();
-        Prevencion prev = new Prevencion();
-        Sexualidad sex = new Sexualidad();
-        ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
-        sex.setVisible(true);
-        sex.setLocationRelativeTo(sex);
-        dispose();
-    }//GEN-LAST:event_SexualidadActionPerformed
-
-    private void BellezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BellezaActionPerformed
-        //Mostrar los datos en la tabla.
-        CuidadoPersonal cp = new CuidadoPersonal();
-        Admin ad = new Admin();
-        AdultoMayor adul = new AdultoMayor();
-        Belleza be = new Belleza();
-        Dermocosmetica der = new Dermocosmetica();
-        Infantil inf = new Infantil();
-        Medicamentos med = new Medicamentos();
-        Nutricion nut = new Nutricion();
-        Prevencion prev = new Prevencion();
-        Sexualidad sex = new Sexualidad();
-        ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
-        be.setVisible(true);
-        be.setLocationRelativeTo(be);
-        dispose();
-    }//GEN-LAST:event_BellezaActionPerformed
-
-    private void NutricionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NutricionActionPerformed
-        //Mostrar los datos en la tabla.
-        CuidadoPersonal cp = new CuidadoPersonal();
-        Admin ad = new Admin();
-        AdultoMayor adul = new AdultoMayor();
-        Belleza be = new Belleza();
-        Dermocosmetica der = new Dermocosmetica();
-        Infantil inf = new Infantil();
-        Medicamentos med = new Medicamentos();
-        Nutricion nut = new Nutricion();
-        Prevencion prev = new Prevencion();
-        Sexualidad sex = new Sexualidad();
-        ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
-        nut.setVisible(true);
-        nut.setLocationRelativeTo(nut);
-        dispose();
-    }//GEN-LAST:event_NutricionActionPerformed
-
-    private void AdultoMayorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdultoMayorActionPerformed
-        //Mostrar los datos en la tabla.
-        CuidadoPersonal cp = new CuidadoPersonal();
-        Admin ad = new Admin();
-        AdultoMayor adul = new AdultoMayor();
-        Belleza be = new Belleza();
-        Dermocosmetica der = new Dermocosmetica();
-        Infantil inf = new Infantil();
-        Medicamentos med = new Medicamentos();
-        Nutricion nut = new Nutricion();
-        Prevencion prev = new Prevencion();
-        Sexualidad sex = new Sexualidad();
-        ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
-        adul.setVisible(true);
-        adul.setLocationRelativeTo(adul);
-        dispose();
-    }//GEN-LAST:event_AdultoMayorActionPerformed
-
-    private void IniciarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IniciarSesionMouseClicked
-        IniciarSesion lg = new IniciarSesion();
-        ControladorUsuario c = new ControladorUsuario(lg);
-        lg.setVisible(true);
-        lg.setLocationRelativeTo(lg);
-        dispose();
-    }//GEN-LAST:event_IniciarSesionMouseClicked
-
-    private void IniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IniciarSesionActionPerformed
-        IniciarSesion vista1 = new IniciarSesion();
-        ControladorUsuario c = new ControladorUsuario(vista1);
-        vista1.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_IniciarSesionActionPerformed
-
-    private void CarritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CarritoMouseClicked
-        Carrito vista11 = new Carrito();
-        ControladorCompra c = new ControladorCompra(vista11);
-        vista11.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_CarritoMouseClicked
-
-    private void OfertasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OfertasMouseClicked
-        Ofertas of = new Ofertas();
-        Admin adm = new Admin();
-        ControladorOferta controladorOfertas = new ControladorOferta(adm, of);
-        of.setVisible(true);
-        of.setLocationRelativeTo(of);
-    }//GEN-LAST:event_OfertasMouseClicked
 
     private void jBDolorCabezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBDolorCabezaActionPerformed
         jTPInformacion.setText("");
@@ -602,6 +530,213 @@ public class Diagnostico extends javax.swing.JFrame {
 "Se recomienda utilizar cremas humectantes para utilizar en la zona problematica.");
     }//GEN-LAST:event_jBPielActionPerformed
 
+    private void PrevencionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrevencionActionPerformed
+        CuidadoPersonal cp = new CuidadoPersonal();
+        Admin ad = new Admin();
+        AdultoMayor adul = new AdultoMayor();
+        Belleza be = new Belleza();
+        Dermocosmetica der = new Dermocosmetica();
+        Infantil inf = new Infantil();
+        Medicamentos med = new Medicamentos();
+        Nutricion nut = new Nutricion();
+        Prevencion prev = new Prevencion();
+        Sexualidad sex = new Sexualidad();
+        ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+        prev.setVisible(true);
+        prev.setLocationRelativeTo(prev);
+        dispose();
+    }//GEN-LAST:event_PrevencionActionPerformed
+
+    private void MedicamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MedicamentosActionPerformed
+        CuidadoPersonal cp = new CuidadoPersonal();
+        Admin ad = new Admin();
+        AdultoMayor adul = new AdultoMayor();
+        Belleza be = new Belleza();
+        Dermocosmetica der = new Dermocosmetica();
+        Infantil inf = new Infantil();
+        Medicamentos med = new Medicamentos();
+        Nutricion nut = new Nutricion();
+        Prevencion prev = new Prevencion();
+        Sexualidad sex = new Sexualidad();
+        ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+        med.setVisible(true);
+        med.setLocationRelativeTo(med);
+        dispose();
+    }//GEN-LAST:event_MedicamentosActionPerformed
+
+    private void DermocosmeticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DermocosmeticaActionPerformed
+        CuidadoPersonal cp = new CuidadoPersonal();
+        Admin ad = new Admin();
+        AdultoMayor adul = new AdultoMayor();
+        Belleza be = new Belleza();
+        Dermocosmetica der = new Dermocosmetica();
+        Infantil inf = new Infantil();
+        Medicamentos med = new Medicamentos();
+        Nutricion nut = new Nutricion();
+        Prevencion prev = new Prevencion();
+        Sexualidad sex = new Sexualidad();
+        ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+        der.setVisible(true);
+        der.setLocationRelativeTo(der);
+        dispose();
+    }//GEN-LAST:event_DermocosmeticaActionPerformed
+
+    private void InfantilMaternidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InfantilMaternidadActionPerformed
+        //Mostrar los datos en la tabla.
+        CuidadoPersonal cp = new CuidadoPersonal();
+        Admin ad = new Admin();
+        AdultoMayor adul = new AdultoMayor();
+        Belleza be = new Belleza();
+        Dermocosmetica der = new Dermocosmetica();
+        Infantil inf = new Infantil();
+        Medicamentos med = new Medicamentos();
+        Nutricion nut = new Nutricion();
+        Prevencion prev = new Prevencion();
+        Sexualidad sex = new Sexualidad();
+        Carrito car = new Carrito();
+        InformacionProducto inprod = new InformacionProducto();
+
+        ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+        prev.setVisible(true);
+        prev.setLocationRelativeTo(prev);
+        dispose();
+    }//GEN-LAST:event_InfantilMaternidadActionPerformed
+
+    private void CuidadoPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuidadoPersonalActionPerformed
+        CuidadoPersonal cp = new CuidadoPersonal();
+        Admin ad = new Admin();
+        AdultoMayor adul = new AdultoMayor();
+        Belleza be = new Belleza();
+        Dermocosmetica der = new Dermocosmetica();
+        Infantil inf = new Infantil();
+        Medicamentos med = new Medicamentos();
+        Nutricion nut = new Nutricion();
+        Prevencion prev = new Prevencion();
+        Sexualidad sex = new Sexualidad();
+        ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+        cp.setVisible(true);
+        cp.setLocationRelativeTo(cp);
+        dispose();
+    }//GEN-LAST:event_CuidadoPersonalActionPerformed
+
+    private void SexualidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SexualidadActionPerformed
+        CuidadoPersonal cp = new CuidadoPersonal();
+        Admin ad = new Admin();
+        AdultoMayor adul = new AdultoMayor();
+        Belleza be = new Belleza();
+        Dermocosmetica der = new Dermocosmetica();
+        Infantil inf = new Infantil();
+        Medicamentos med = new Medicamentos();
+        Nutricion nut = new Nutricion();
+        Prevencion prev = new Prevencion();
+        Sexualidad sex = new Sexualidad();
+        ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+        sex.setVisible(true);
+        sex.setLocationRelativeTo(sex);
+        dispose();
+    }//GEN-LAST:event_SexualidadActionPerformed
+
+    private void BellezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BellezaActionPerformed
+        CuidadoPersonal cp = new CuidadoPersonal();
+        Admin ad = new Admin();
+        AdultoMayor adul = new AdultoMayor();
+        Belleza be = new Belleza();
+        Dermocosmetica der = new Dermocosmetica();
+        Infantil inf = new Infantil();
+        Medicamentos med = new Medicamentos();
+        Nutricion nut = new Nutricion();
+        Prevencion prev = new Prevencion();
+        Sexualidad sex = new Sexualidad();
+        ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+        be.setVisible(true);
+        be.setLocationRelativeTo(be);
+        dispose();
+    }//GEN-LAST:event_BellezaActionPerformed
+
+    private void NutricionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NutricionActionPerformed
+        CuidadoPersonal cp = new CuidadoPersonal();
+        Admin ad = new Admin();
+        AdultoMayor adul = new AdultoMayor();
+        Belleza be = new Belleza();
+        Dermocosmetica der = new Dermocosmetica();
+        Infantil inf = new Infantil();
+        Medicamentos med = new Medicamentos();
+        Nutricion nut = new Nutricion();
+        Prevencion prev = new Prevencion();
+        Sexualidad sex = new Sexualidad();
+        ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+        nut.setVisible(true);
+        nut.setLocationRelativeTo(nut);
+        dispose();
+    }//GEN-LAST:event_NutricionActionPerformed
+
+    private void AdultoMayorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdultoMayorActionPerformed
+        CuidadoPersonal cp = new CuidadoPersonal();
+        Admin ad = new Admin();
+        AdultoMayor adul = new AdultoMayor();
+        Belleza be = new Belleza();
+        Dermocosmetica der = new Dermocosmetica();
+        Infantil inf = new Infantil();
+        Medicamentos med = new Medicamentos();
+        Nutricion nut = new Nutricion();
+        Prevencion prev = new Prevencion();
+        Sexualidad sex = new Sexualidad();
+        ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
+        adul.setVisible(true);
+        adul.setLocationRelativeTo(adul);
+        dispose();
+    }//GEN-LAST:event_AdultoMayorActionPerformed
+
+    private void IniciarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IniciarSesionMouseClicked
+        IniciarSesion lg = new IniciarSesion();
+        ControladorUsuario c = new ControladorUsuario(lg);
+        lg.setVisible(true);
+        lg.setLocationRelativeTo(lg);
+        dispose();
+    }//GEN-LAST:event_IniciarSesionMouseClicked
+
+    private void IniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IniciarSesionActionPerformed
+        IniciarSesion lg = new IniciarSesion();
+        ControladorUsuario c = new ControladorUsuario(lg);
+        lg.setVisible(true);
+        lg.setLocationRelativeTo(lg);
+        dispose();
+
+    }//GEN-LAST:event_IniciarSesionActionPerformed
+
+    private void CarritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CarritoMouseClicked
+        Carrito vista11 = new Carrito();
+        ControladorCompra c = new ControladorCompra(vista11);
+        vista11.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_CarritoMouseClicked
+
+    private void CarritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarritoActionPerformed
+        Carrito car = new Carrito();
+        ControladorCompra controladorOfertas = new ControladorCompra(car);
+        car.setVisible(true);
+        car.setLocationRelativeTo(car);
+        dispose();
+    }//GEN-LAST:event_CarritoActionPerformed
+
+    private void OfertasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OfertasMouseClicked
+        Ofertas of = new Ofertas();
+        Admin adm = new Admin();
+        ControladorOferta controladorOfertas = new ControladorOferta(adm, of);
+        of.setVisible(true);
+        of.setLocationRelativeTo(of);
+        dispose();
+    }//GEN-LAST:event_OfertasMouseClicked
+
+    private void OfertasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OfertasActionPerformed
+        Ofertas of = new Ofertas();
+        Admin adm = new Admin();
+        ControladorOferta controladorOfertas = new ControladorOferta(adm, of);
+        of.setVisible(true);
+        of.setLocationRelativeTo(of);
+        dispose();
+    }//GEN-LAST:event_OfertasActionPerformed
+
     private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
 
         ReporteVista r = new ReporteVista();
@@ -669,10 +804,24 @@ public class Diagnostico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     public javax.swing.JTextPane jTPInformacion;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblAdv;

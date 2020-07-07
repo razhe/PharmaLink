@@ -12,11 +12,12 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JMenu;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.Compra;
 import modelo.CompraSQL;
 import modelo.DetalleCompra;
-import modelo.DetalleCompraDAO;
+import modelo.DetalleCompraSQL;
 import modelo.ListaCarrito;
 import vista.Carrito;
 import vista.TicketDeCambio;
@@ -29,7 +30,7 @@ public class ControladorCompra implements ActionListener {
 
     //Sql 
     CompraSQL cSQL = new CompraSQL();
-    DetalleCompraDAO detDAO = new DetalleCompraDAO();
+    DetalleCompraSQL detDAO = new DetalleCompraSQL();
     //Datos
     Compra com = new Compra();
     DetalleCompra detCom = new DetalleCompra();
@@ -58,21 +59,36 @@ public class ControladorCompra implements ActionListener {
             } else if (info.equals("Efectivo")) {
                 com.setCod_tipo_pago(3);
             }
-            agregarCompra();
-        }
-        if (e.getSource() == car.jBComprar) {
-            agregarDetalleCompra();
+            try {
+                if (car.jCTipoPago1.getSelectedItem() == "Forma de pago") {
+                    JOptionPane.showMessageDialog(null, "Debe seleccionar un metodo de pago");
+                    return;
+                }
+                agregarCompra();
+                if (e.getSource() == car.jBComprar) {
+
+                    try {
+                        agregarDetalleCompra();
+                    } catch (Exception ex) {
+                        System.out.println("Error al agregar detalle compra (Controlador compra)");
+                    }
+                }
+            } catch (Exception ex) {
+                System.out.println("Error al agregar la compra (Controlador compra)");
+            }
+
         }
 
     }
 
-    public void agregarCompra() {   
+    public void agregarCompra() throws ClassNotFoundException {
         com.setFecha(car.jTFecha.getText());
         com.setTotal(retornarPrecio());
-        com.setIdusuario(com.getIdusuario());       
+        com.setIdusuario(com.getIdusuario());
         cSQL.agregar(com);
     }
-    public int retornarPrecio(){
+
+    public int retornarPrecio() {
         int precioTotal = 0;
         List<ListaCarrito> listarCarrito = ControladorCarrito.listarCarrito();
         for (ListaCarrito listarCarrito1 : listarCarrito) {
@@ -95,8 +111,8 @@ public class ControladorCompra implements ActionListener {
 //        t.jTCantidadDeProductos.setText(String.valueOf(cant_total));
 //    }
 
-    public void agregarDetalleCompra() {       
-        
+    public void agregarDetalleCompra() throws ClassNotFoundException {
+
         List<ListaCarrito> listarCarrito = ControladorCarrito.listarCarrito();
         for (ListaCarrito listarCarrito1 : listarCarrito) {
             try {

@@ -53,417 +53,92 @@ public class Ayuda extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jMenuBar2 = new javax.swing.JMenuBar();
-        jMenu3 = new javax.swing.JMenu();
-        Prevencion = new javax.swing.JMenuItem();
-        Medicamentos = new javax.swing.JMenuItem();
-        Dermocosmetica = new javax.swing.JMenuItem();
-        InfantilMaternidad = new javax.swing.JMenuItem();
-        CuidadoPersonal = new javax.swing.JMenuItem();
-        Sexualidad = new javax.swing.JMenuItem();
-        Belleza = new javax.swing.JMenuItem();
-        Nutricion = new javax.swing.JMenuItem();
-        AdultoMayor = new javax.swing.JMenuItem();
-        IniciarSesion = new javax.swing.JMenu();
-        Carrito = new javax.swing.JMenu();
-        Ofertas = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Instrucciones para moverse por el sistema:");
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/producto.png"))); // NOI18N
-        jLabel2.setText("- Productos: Te permitirá desplegar las categorías de los diferentes tipos de productos");
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logical_1.png"))); // NOI18N
-        jLabel3.setText("- Iniciar Sesión: Te permitirá ingresar al sistema y a sus funciones dependiendo del tipo de usuario");
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/carrito_1.png"))); // NOI18N
-        jLabel4.setText("- Carrito: Te permitirá visualizar los productos que ha seleccionado para su compra");
-
+        jLabel5.setFont(new java.awt.Font("Segoe UI Light", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
         jLabel5.setText("Número de contacto: 978967382");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 375, -1, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/descuento-nalgene-icon.png"))); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(195, 204, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_menu_26px.png"))); // NOI18N
+        jLabel2.setText("- Productos: Te permitirá desplegar las categorías de los diferentes tipos de productos");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 538, 40));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI Light", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_discount_40px.png"))); // NOI18N
         jLabel6.setText("- Ofertas: Te permitirá ver los productos que se encuentran en oferta");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
 
-        jMenuBar2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 2, true));
-        jMenuBar2.setName(""); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI Light", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_card_payment_40px_1.png"))); // NOI18N
+        jLabel4.setText("- Carrito: Te permitirá visualizar los productos que ha seleccionado para su compra");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 594, -1));
 
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/producto.png"))); // NOI18N
-        jMenu3.setText("Productos");
+        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_user_40px.png"))); // NOI18N
+        jLabel3.setText("- Iniciar Sesión: Te permitirá ingresar al sistema y a sus funciones dependiendo del tipo de usuario");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 628, -1));
 
-        Prevencion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/prevencion.png"))); // NOI18N
-        Prevencion.setText("Prevención");
-        Prevencion.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setFont(new java.awt.Font("Segoe UI Light", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel1.setText("Instrucciones para moverse por el sistema:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI Light", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel7.setText("Ayuda al usuario");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 190, 60));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_inquiry_32px.png"))); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 60, 40));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 790, 400));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_go_back_32px.png"))); // NOI18N
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PrevencionActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        jMenu3.add(Prevencion);
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 12, -1, 30));
 
-        Medicamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/medicamento.png"))); // NOI18N
-        Medicamentos.setText("Medicamentos");
-        Medicamentos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MedicamentosActionPerformed(evt);
-            }
-        });
-        jMenu3.add(Medicamentos);
-
-        Dermocosmetica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/dermocosmetica.png"))); // NOI18N
-        Dermocosmetica.setText("Dermocosmética");
-        Dermocosmetica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DermocosmeticaActionPerformed(evt);
-            }
-        });
-        jMenu3.add(Dermocosmetica);
-
-        InfantilMaternidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/infantil.png"))); // NOI18N
-        InfantilMaternidad.setText("Infantil y maternidad");
-        InfantilMaternidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InfantilMaternidadActionPerformed(evt);
-            }
-        });
-        jMenu3.add(InfantilMaternidad);
-
-        CuidadoPersonal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cuidadopersonal.png"))); // NOI18N
-        CuidadoPersonal.setText("Cuidado personal");
-        CuidadoPersonal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CuidadoPersonalActionPerformed(evt);
-            }
-        });
-        jMenu3.add(CuidadoPersonal);
-
-        Sexualidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/sexualidad.png"))); // NOI18N
-        Sexualidad.setText("Sexualidad");
-        Sexualidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SexualidadActionPerformed(evt);
-            }
-        });
-        jMenu3.add(Sexualidad);
-
-        Belleza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/belleza.png"))); // NOI18N
-        Belleza.setText("Belleza");
-        Belleza.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BellezaActionPerformed(evt);
-            }
-        });
-        jMenu3.add(Belleza);
-
-        Nutricion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/vitamina.png"))); // NOI18N
-        Nutricion.setText("Nutrición y vitaminas");
-        Nutricion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NutricionActionPerformed(evt);
-            }
-        });
-        jMenu3.add(Nutricion);
-
-        AdultoMayor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/adultomayor.png"))); // NOI18N
-        AdultoMayor.setText("Adulto mayor");
-        AdultoMayor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdultoMayorActionPerformed(evt);
-            }
-        });
-        jMenu3.add(AdultoMayor);
-
-        jMenuBar2.add(jMenu3);
-
-        IniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logical_1.png"))); // NOI18N
-        IniciarSesion.setText("Iniciar Sesión");
-        IniciarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                IniciarSesionMouseClicked(evt);
-            }
-        });
-        IniciarSesion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IniciarSesionActionPerformed(evt);
-            }
-        });
-        jMenuBar2.add(IniciarSesion);
-
-        Carrito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/carrito_1.png"))); // NOI18N
-        Carrito.setText("Carrito");
-        Carrito.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CarritoMouseClicked(evt);
-            }
-        });
-        jMenuBar2.add(Carrito);
-
-        Ofertas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/descuento-nalgene-icon.png"))); // NOI18N
-        Ofertas.setText("Ofertas");
-        Ofertas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                OfertasMouseClicked(evt);
-            }
-        });
-        jMenuBar2.add(Ofertas);
-
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/errores (1).png"))); // NOI18N
-        jMenu1.setText("Reportes");
-        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu1MouseClicked(evt);
-            }
-        });
-        jMenuBar2.add(jMenu1);
-
-        setJMenuBar(jMenuBar2);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jLabel5)))
-                .addContainerGap(119, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(jLabel1)
-                .addGap(41, 41, 41)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addContainerGap())
-        );
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void PrevencionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrevencionActionPerformed
-        //Mostrar los datos en la tabla.
-            CuidadoPersonal cp = new CuidadoPersonal();
-            Admin ad = new Admin();           
-            AdultoMayor adul = new AdultoMayor();
-            Belleza be = new Belleza();
-            Dermocosmetica der = new Dermocosmetica();
-            Infantil inf = new Infantil();
-            Medicamentos med = new Medicamentos();
-            Nutricion nut = new Nutricion();
-            Prevencion prev = new Prevencion();
-            Sexualidad sex = new Sexualidad();
-            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
-            prev.setVisible(true);
-            prev.setLocationRelativeTo(prev);
-            dispose();
-    }//GEN-LAST:event_PrevencionActionPerformed
-
-    private void MedicamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MedicamentosActionPerformed
-        //Mostrar los datos en la tabla.
-            CuidadoPersonal cp = new CuidadoPersonal();
-            Admin ad = new Admin();           
-            AdultoMayor adul = new AdultoMayor();
-            Belleza be = new Belleza();
-            Dermocosmetica der = new Dermocosmetica();
-            Infantil inf = new Infantil();
-            Medicamentos med = new Medicamentos();
-            Nutricion nut = new Nutricion();
-            Prevencion prev = new Prevencion();
-            Sexualidad sex = new Sexualidad();
-            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
-            med.setVisible(true);
-            med.setLocationRelativeTo(med);
-            dispose();
-    }//GEN-LAST:event_MedicamentosActionPerformed
-
-    private void DermocosmeticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DermocosmeticaActionPerformed
-        //Mostrar los datos en la tabla.
-            CuidadoPersonal cp = new CuidadoPersonal();
-            Admin ad = new Admin();           
-            AdultoMayor adul = new AdultoMayor();
-            Belleza be = new Belleza();
-            Dermocosmetica der = new Dermocosmetica();
-            Infantil inf = new Infantil();
-            Medicamentos med = new Medicamentos();
-            Nutricion nut = new Nutricion();
-            Prevencion prev = new Prevencion();
-            Sexualidad sex = new Sexualidad();
-            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
-            der.setVisible(true);
-            der.setLocationRelativeTo(der);
-            dispose();
-    }//GEN-LAST:event_DermocosmeticaActionPerformed
-
-    private void InfantilMaternidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InfantilMaternidadActionPerformed
-        //Mostrar los datos en la tabla.
-            CuidadoPersonal cp = new CuidadoPersonal();
-            Admin ad = new Admin();           
-            AdultoMayor adul = new AdultoMayor();
-            Belleza be = new Belleza();
-            Dermocosmetica der = new Dermocosmetica();
-            Infantil inf = new Infantil();
-            Medicamentos med = new Medicamentos();
-            Nutricion nut = new Nutricion();
-            Prevencion prev = new Prevencion();
-            Sexualidad sex = new Sexualidad();
-            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
-            inf.setVisible(true);
-            inf.setLocationRelativeTo(inf);
-            dispose();
-    }//GEN-LAST:event_InfantilMaternidadActionPerformed
-
-    private void CuidadoPersonalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CuidadoPersonalActionPerformed
-        //Mostrar los datos en la tabla.
-            CuidadoPersonal cp = new CuidadoPersonal();
-            Admin ad = new Admin();           
-            AdultoMayor adul = new AdultoMayor();
-            Belleza be = new Belleza();
-            Dermocosmetica der = new Dermocosmetica();
-            Infantil inf = new Infantil();
-            Medicamentos med = new Medicamentos();
-            Nutricion nut = new Nutricion();
-            Prevencion prev = new Prevencion();
-            Sexualidad sex = new Sexualidad();
-            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
-            cp.setVisible(true);
-            cp.setLocationRelativeTo(cp);
-            dispose();
-    }//GEN-LAST:event_CuidadoPersonalActionPerformed
-
-    private void SexualidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SexualidadActionPerformed
-        //Mostrar los datos en la tabla.
-            CuidadoPersonal cp = new CuidadoPersonal();
-            Admin ad = new Admin();           
-            AdultoMayor adul = new AdultoMayor();
-            Belleza be = new Belleza();
-            Dermocosmetica der = new Dermocosmetica();
-            Infantil inf = new Infantil();
-            Medicamentos med = new Medicamentos();
-            Nutricion nut = new Nutricion();
-            Prevencion prev = new Prevencion();
-            Sexualidad sex = new Sexualidad();
-            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
-            sex.setVisible(true);
-            sex.setLocationRelativeTo(sex);
-            dispose();
-    }//GEN-LAST:event_SexualidadActionPerformed
-
-    private void BellezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BellezaActionPerformed
-        //Mostrar los datos en la tabla.
-            CuidadoPersonal cp = new CuidadoPersonal();
-            Admin ad = new Admin();           
-            AdultoMayor adul = new AdultoMayor();
-            Belleza be = new Belleza();
-            Dermocosmetica der = new Dermocosmetica();
-            Infantil inf = new Infantil();
-            Medicamentos med = new Medicamentos();
-            Nutricion nut = new Nutricion();
-            Prevencion prev = new Prevencion();
-            Sexualidad sex = new Sexualidad();
-            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
-            be.setVisible(true);
-            be.setLocationRelativeTo(be);
-            dispose();
-    }//GEN-LAST:event_BellezaActionPerformed
-
-    private void NutricionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NutricionActionPerformed
-        //Mostrar los datos en la tabla.
-            CuidadoPersonal cp = new CuidadoPersonal();
-            Admin ad = new Admin();           
-            AdultoMayor adul = new AdultoMayor();
-            Belleza be = new Belleza();
-            Dermocosmetica der = new Dermocosmetica();
-            Infantil inf = new Infantil();
-            Medicamentos med = new Medicamentos();
-            Nutricion nut = new Nutricion();
-            Prevencion prev = new Prevencion();
-            Sexualidad sex = new Sexualidad();
-            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
-            nut.setVisible(true);
-            nut.setLocationRelativeTo(nut);
-            dispose();
-    }//GEN-LAST:event_NutricionActionPerformed
-
-    private void AdultoMayorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdultoMayorActionPerformed
-        //Mostrar los datos en la tabla.
-            CuidadoPersonal cp = new CuidadoPersonal();
-            Admin ad = new Admin();           
-            AdultoMayor adul = new AdultoMayor();
-            Belleza be = new Belleza();
-            Dermocosmetica der = new Dermocosmetica();
-            Infantil inf = new Infantil();
-            Medicamentos med = new Medicamentos();
-            Nutricion nut = new Nutricion();
-            Prevencion prev = new Prevencion();
-            Sexualidad sex = new Sexualidad();
-            ControladorProducto c = new ControladorProducto(cp, ad, adul, be, der, inf, med, nut, prev, sex);
-            adul.setVisible(true);
-            adul.setLocationRelativeTo(adul);
-            dispose();
-    }//GEN-LAST:event_AdultoMayorActionPerformed
-
-    private void IniciarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IniciarSesionMouseClicked
-        IniciarSesion lg = new IniciarSesion();
-        ControladorUsuario c = new ControladorUsuario(lg);
-        lg.setVisible(true);
-        lg.setLocationRelativeTo(lg);
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Menú m = new Menú();
+        m.setVisible(true);
         dispose();
-    }//GEN-LAST:event_IniciarSesionMouseClicked
-
-    private void IniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IniciarSesionActionPerformed
-        IniciarSesion vista1 = new IniciarSesion();
-        ControladorUsuario c = new ControladorUsuario(vista1);
-        vista1.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_IniciarSesionActionPerformed
-
-    private void CarritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CarritoMouseClicked
-        Carrito vista11 = new Carrito();
-        ControladorCompra c = new ControladorCompra(vista11);
-        vista11.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_CarritoMouseClicked
-
-    private void OfertasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OfertasMouseClicked
-    Ofertas of = new Ofertas();
-    Admin adm = new Admin();
-    ControladorOferta controladorOfertas = new ControladorOferta(adm, of);
-    of.setVisible(true);
-    of.setLocationRelativeTo(of);
-    }//GEN-LAST:event_OfertasMouseClicked
-
-    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
-
-        ReporteVista r = new ReporteVista();
-        r.setVisible(true);
-        r.setLocationRelativeTo(null);
-
-    }//GEN-LAST:event_jMenu1MouseClicked
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -501,26 +176,16 @@ public class Ayuda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem AdultoMayor;
-    private javax.swing.JMenuItem Belleza;
-    private javax.swing.JMenu Carrito;
-    private javax.swing.JMenuItem CuidadoPersonal;
-    private javax.swing.JMenuItem Dermocosmetica;
-    private javax.swing.JMenuItem InfantilMaternidad;
-    private javax.swing.JMenu IniciarSesion;
-    private javax.swing.JMenuItem Medicamentos;
-    private javax.swing.JMenuItem Nutricion;
-    private javax.swing.JMenu Ofertas;
-    private javax.swing.JMenuItem Prevencion;
-    private javax.swing.JMenuItem Sexualidad;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

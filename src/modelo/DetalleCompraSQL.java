@@ -18,12 +18,12 @@ import jdk.nashorn.internal.scripts.JO;
  *
  * @author Gustavo
  */
-public class DetalleCompraDAO {
+public class DetalleCompraSQL {
     Conexion conectar = new Conexion();
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
-    public void agregarDetalleCompra(DetalleCompra d) throws SQLException{
+    public void agregarDetalleCompra(DetalleCompra d) throws SQLException, ClassNotFoundException{
         String sql = "INSERT INTO DETALLE_COMPRA (VALOR_NETO,VALOR_BRUTO,CANTIDAD,CODPROD,NUMCOMPRA) VALUES (?,?,?,?,?)";
         con = conectar.getConnection();
         ps = con.prepareStatement(sql);               

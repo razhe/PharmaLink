@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelo.Usuario;
-import modelo.UsuarioDAO;
+import modelo.UsuarioSQL;
 import vista.Admin;
 import vista.AdultoMayor;
 import vista.Belleza;
@@ -35,7 +35,7 @@ import vista.Sexualidad;
 // Instanciando clases.
 public class ControladorUsuario implements ActionListener {
     Usuario usr = null;
-    UsuarioDAO daoU = new UsuarioDAO();
+    UsuarioSQL daoU = new UsuarioSQL();
     IniciarSesion login = new IniciarSesion();
    
 

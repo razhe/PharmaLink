@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  *
  * @author Eduardo
  */
-public class UsuarioDAO {
+public class UsuarioSQL {
     Conexion conectar = new Conexion();
     Connection con;
     PreparedStatement ps;

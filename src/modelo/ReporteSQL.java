@@ -22,7 +22,7 @@ public class ReporteSQL {
     PreparedStatement ps;
     ResultSet rs;
 
-    public void enviarReporte(Reporte r) {
+    public void enviarReporte(Reporte r) throws ClassNotFoundException {
         String sql = "INSERT INTO REPORTES (DESCRIPCION,IDUSUARIO) VALUES (?,?)";
         try {
             con = conectar.getConnection();

@@ -25,7 +25,7 @@ public class CompraSQL {
     ResultSet rs;
     
     
-    public void agregar(Compra c){
+    public void agregar(Compra c) throws ClassNotFoundException{
         try{
            String sql = "INSERT INTO COMPRA (FECHA,TOTAL,CODTIPOPAGO,IDUSUARIO) values (?,?,?,?)";
             con = conectar.getConnection();
@@ -42,7 +42,7 @@ public class CompraSQL {
             System.out.println("Error SQL: " + ex.getErrorCode() +" - "+ex.getMessage());
         }        
     }
-    public int buscarIdCompra(){
+    public int buscarIdCompra() throws ClassNotFoundException{
         Compra c = new Compra();
         try {
             

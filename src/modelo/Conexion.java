@@ -7,6 +7,7 @@ package modelo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  *
@@ -14,15 +15,15 @@ import java.sql.DriverManager;
  */
 public class Conexion {
     Connection con;
-    public Connection getConnection(){
+    public Connection getConnection() throws ClassNotFoundException, SQLException {
+        Connection con = null;
         String url = "jdbc:mysql://168.138.149.15:3306/Pharma";
-        String user = "pharma_link";
-        String pass = "PharmaLink__//1";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con=DriverManager.getConnection(url,user,pass);
-            
+            con = DriverManager.getConnection(url, "pharma_link", "PharmaLink__//1");
+            System.out.println("En linea");
         } catch (Exception e) {
+            System.out.println("Error al conectar a la base de datos");
         }
         return con;
     }

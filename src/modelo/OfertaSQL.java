@@ -24,7 +24,7 @@ public class OfertaSQL {
     PreparedStatement ps;
     ResultSet rs;
     
-    public void agregarOferta(Oferta o){
+    public void agregarOferta(Oferta o) throws ClassNotFoundException{
         try {
             String sql = "INSERT INTO OFERTA (PORC_DESC,INICIO,FIN,NUM_PROD) VALUES (?,?,?,?) ";
             con = conectar.getConnection();
@@ -47,7 +47,7 @@ public class OfertaSQL {
         
     }
     
-    public void eliminar(Oferta o){
+    public void eliminar(Oferta o) throws ClassNotFoundException{
         try {
             
             String sql = "DELETE FROM OFERTA WHERE CODOFERTA = ?";
@@ -62,7 +62,7 @@ public class OfertaSQL {
         }
     }
     
-    public void actualizarOferta(Oferta o){
+    public void actualizarOferta(Oferta o) throws ClassNotFoundException{
         try {
             String sql = "UPDATE OFERTA SET PORC_DESC = ?, INICIO = ?, FIN = ?, NUM_PROD = ? WHERE CODOFERTA = ? ";
             con = conectar.getConnection();
@@ -81,25 +81,37 @@ public class OfertaSQL {
     }
     
     
-    public List listarOfertas(){
-        List<Producto>datos = new ArrayList<>();
-        String sql = "SELECT NOMBRE,MARCA,PRECIO,DOSIS FROM PRODUCTO WHERE CODOFERTA <> 'null'";
+//    public List listarOfertas(){
+//        List<Producto>datos = new ArrayList<>();
+//        String sql = "SELECT NOMBRE,MARCA,PRECIO,DOSIS FROM PRODUCTO WHERE CODOFERTA <> 'null'";
+//        try {
+//            con=conectar.getConnection();
+//            ps=con.prepareStatement(sql);
+//            rs=ps.executeQuery();
+//            while (rs.next()) {                               
+//                Producto p = new Producto();
+//                p.setNombre(rs.getString(1));
+//                p.setMarca(rs.getString(2));
+//                p.setValor_peso(rs.getInt(3));
+//                p.setDosis(rs.getString(4));                
+//                datos.add(p);
+//            }
+//        } catch (Exception e) {
+//            System.out.println("Error SQL listar ofertas: " + e.getMessage());
+//        }
+//        return datos;
+//    }
+    //Experimental
+    public ResultSet visualizar_oferta() throws ClassNotFoundException, SQLException {
+        con = conectar.getConnection();
+        ResultSet rs = null;
         try {
-            con=conectar.getConnection();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
-            while (rs.next()) {                               
-                Producto p = new Producto();
-                p.setNombre(rs.getString(1));
-                p.setMarca(rs.getString(2));
-                p.setValor_peso(rs.getInt(3));
-                p.setDosis(rs.getString(4));                
-                datos.add(p);
-            }
+            ps = con.prepareStatement("SELECT NOMBRE,MARCA,PRECIO,DOSIS,PORC_DESC,IMAGEN FROM PRODUCTO JOIN OFERTA USING(CODOFERTA) WHERE CODOFERTA <> 'null';");
+            rs = ps.executeQuery();
         } catch (Exception e) {
-            System.out.println("Error SQL listar ofertas: " + e.getMessage());
+            System.out.println("Error de consulta");
         }
-        return datos;
+        return rs;
     }
     public boolean buscarOferta(Oferta o){       
         try {
