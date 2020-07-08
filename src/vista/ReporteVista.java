@@ -6,6 +6,7 @@
 package vista;
 
 import javax.print.event.PrintJobEvent;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import modelo.Reporte;
 import modelo.ReporteSQL;
@@ -21,6 +22,9 @@ public class ReporteVista extends javax.swing.JFrame {
      */
     public ReporteVista() {
         initComponents();
+        
+        //        Icono
+        setIconImage(new ImageIcon(getClass().getResource("/imagenes/iconox.png")).getImage());
     }
 
     /**

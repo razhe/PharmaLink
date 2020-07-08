@@ -10,6 +10,7 @@ import controlador.ControladorCompra;
 import java.awt.event.WindowListener;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import modelo.ListaCarrito;
 
@@ -26,6 +27,9 @@ public class InformacionProducto extends javax.swing.JFrame {
         initComponents();
         //        Centrar Jframe
         this.setLocationRelativeTo(null);
+        
+        //        Icono
+        setIconImage(new ImageIcon(getClass().getResource("/imagenes/iconox.png")).getImage());
         
     }
 
@@ -397,7 +401,8 @@ public class InformacionProducto extends javax.swing.JFrame {
         listaCarrito.setPrecio(Integer.parseInt(jTPrecioInf.getText()));
         listaCarrito.setPrecio_bruto(Integer.parseInt(jTPrecioInf.getText()));
         listaCarrito.setCantidad(Integer.parseInt(jTCantidad.getText()));     
-        ControladorCarrito.agregarCarrito(listaCarrito);   
+        ControladorCarrito.agregarCarrito(listaCarrito); 
+        JOptionPane.showMessageDialog(null, "Producto agregado al carrito");
     }//GEN-LAST:event_jBAñadirCarritoActionPerformed
 
     private void jTNomProductoInfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTNomProductoInfActionPerformed

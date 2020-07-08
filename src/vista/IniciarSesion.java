@@ -86,7 +86,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         jPContraseña.setBorder(null);
         InicioSesion.add(jPContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 159, 30));
 
-        BTLogin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Gustavo\\Desktop\\img\\V2inicFoto.png")); // NOI18N
+        BTLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/inicfoto.png"))); // NOI18N
         BTLogin.setBorder(null);
         BTLogin.setBorderPainted(false);
         BTLogin.setContentAreaFilled(false);

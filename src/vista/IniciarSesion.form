@@ -103,7 +103,7 @@
         <Component class="javax.swing.JButton" name="BTLogin">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Gustavo\Desktop\img\V2inicFoto.png"/>
+              <Image iconType="3" name="/Imagenes/inicfoto.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>

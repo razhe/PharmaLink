@@ -85,9 +85,6 @@ public class Carrito extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTCarrito = new javax.swing.JTable();
-        jTFecha = new javax.swing.JTextField();
-        jCTipoPago1 = new javax.swing.JComboBox();
-        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         jBRecargarCarrito = new javax.swing.JButton();
@@ -101,6 +98,9 @@ public class Carrito extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
         jBComprar = new javax.swing.JButton();
+        jCTipoPago1 = new javax.swing.JComboBox();
+        jLabel1 = new javax.swing.JLabel();
+        jTFecha = new javax.swing.JTextField();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         Prevencion = new javax.swing.JMenuItem();
@@ -143,32 +143,7 @@ public class Carrito extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTCarrito);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 69, 1460, 650));
-
-        jTFecha.setEditable(false);
-        jTFecha.setBackground(new java.awt.Color(0, 30, 84));
-        jTFecha.setBorder(null);
-        jTFecha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTFechaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1347, 6, 102, -1));
-
-        jCTipoPago1.setBackground(new java.awt.Color(0, 42, 113));
-        jCTipoPago1.setForeground(new java.awt.Color(204, 204, 204));
-        jCTipoPago1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Forma de pago", "Credito", "Debito", "Efectivo" }));
-        jCTipoPago1.setToolTipText("");
-        jCTipoPago1.setBorder(null);
-        jCTipoPago1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCTipoPago1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jCTipoPago1, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 727, 188, 30));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/metodopago.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 727, -1, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 69, 1360, 430));
 
         jPanel1.setBackground(new java.awt.Color(0, 30, 84));
         jPanel1.setForeground(new java.awt.Color(0, 30, 84));
@@ -189,7 +164,7 @@ public class Carrito extends javax.swing.JFrame {
         });
         jPanel1.add(jBRecargarCarrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 120, 30));
 
-        jBCarritoComprar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Gustavo\\Desktop\\img\\verTicket.png")); // NOI18N
+        jBCarritoComprar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/verTicket.png"))); // NOI18N
         jBCarritoComprar.setText("Ver ticket");
         jBCarritoComprar.setBorder(null);
         jBCarritoComprar.setBorderPainted(false);
@@ -199,9 +174,9 @@ public class Carrito extends javax.swing.JFrame {
                 jBCarritoComprarActionPerformed(evt);
             }
         });
-        jPanel1.add(jBCarritoComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 780, 170, 30));
+        jPanel1.add(jBCarritoComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 590, 170, 30));
 
-        jBLimpiarCarrito.setIcon(new javax.swing.ImageIcon("C:\\Users\\Gustavo\\Desktop\\img\\Limpiar Carrito.png")); // NOI18N
+        jBLimpiarCarrito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/AceptarCompra.png"))); // NOI18N
         jBLimpiarCarrito.setBorder(null);
         jBLimpiarCarrito.setBorderPainted(false);
         jBLimpiarCarrito.setContentAreaFilled(false);
@@ -210,7 +185,7 @@ public class Carrito extends javax.swing.JFrame {
                 jBLimpiarCarritoActionPerformed(evt);
             }
         });
-        jPanel1.add(jBLimpiarCarrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 780, 170, 30));
+        jPanel1.add(jBLimpiarCarrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 590, 170, 30));
 
         jBCancelarCompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/Cancelar Compra.png"))); // NOI18N
         jBCancelarCompra.setBorder(null);
@@ -221,7 +196,7 @@ public class Carrito extends javax.swing.JFrame {
                 jBCancelarCompraActionPerformed(evt);
             }
         });
-        jPanel1.add(jBCancelarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 778, 170, 30));
+        jPanel1.add(jBCancelarCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 590, 170, 30));
 
         jBEliminarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/Eliminar producto de la lista.png"))); // NOI18N
         jBEliminarProducto.setBorder(null);
@@ -232,27 +207,27 @@ public class Carrito extends javax.swing.JFrame {
                 jBEliminarProductoActionPerformed(evt);
             }
         });
-        jPanel1.add(jBEliminarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 780, 170, 30));
+        jPanel1.add(jBEliminarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 590, 170, 30));
 
         jSeparator2.setBackground(new java.awt.Color(204, 204, 204));
         jSeparator2.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 820, 170, 10));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 630, 170, 10));
 
         jSeparator3.setBackground(new java.awt.Color(204, 204, 204));
         jSeparator3.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 820, 170, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 630, 170, 10));
 
         jSeparator4.setBackground(new java.awt.Color(204, 204, 204));
         jSeparator4.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 820, 170, 10));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 630, 170, 10));
 
         jSeparator5.setBackground(new java.awt.Color(204, 204, 204));
         jSeparator5.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 820, 170, 10));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 630, 170, 10));
 
         jSeparator6.setBackground(new java.awt.Color(204, 204, 204));
         jSeparator6.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 820, 170, 10));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 630, 170, 10));
 
         jBComprar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/AceptarCompra.png"))); // NOI18N
         jBComprar.setBorder(null);
@@ -263,9 +238,34 @@ public class Carrito extends javax.swing.JFrame {
                 jBComprarActionPerformed(evt);
             }
         });
-        jPanel1.add(jBComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 780, 170, 30));
+        jPanel1.add(jBComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 590, 170, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1460, 840));
+        jCTipoPago1.setBackground(new java.awt.Color(0, 42, 113));
+        jCTipoPago1.setForeground(new java.awt.Color(204, 204, 204));
+        jCTipoPago1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Forma de pago", "Credito", "Debito", "Efectivo" }));
+        jCTipoPago1.setToolTipText("");
+        jCTipoPago1.setBorder(null);
+        jCTipoPago1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCTipoPago1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jCTipoPago1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 188, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/metodopago.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 530, -1, 30));
+
+        jTFecha.setEditable(false);
+        jTFecha.setBackground(new java.awt.Color(0, 30, 84));
+        jTFecha.setBorder(null);
+        jTFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFechaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 20, 102, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 660));
 
         jMenuBar2.setBackground(new java.awt.Color(255, 255, 255));
         jMenuBar2.setBorder(null);

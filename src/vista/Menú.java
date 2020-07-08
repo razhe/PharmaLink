@@ -602,6 +602,7 @@ public class Menú extends javax.swing.JFrame {
         Diagnostico diag = new Diagnostico();
         diag.setVisible(true);
         diag.setLocationRelativeTo(null);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     

@@ -258,7 +258,7 @@ public class Infantil extends javax.swing.JFrame {
         IniciarSesion.setBackground(new java.awt.Color(255, 255, 255));
         IniciarSesion.setForeground(new java.awt.Color(153, 153, 153));
         IniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/icons8_user_40px.png"))); // NOI18N
-        IniciarSesion.setText("Iniciar Sesión");
+        IniciarSesion.setText("Cerrar Sesión");
         IniciarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 IniciarSesionMouseClicked(evt);

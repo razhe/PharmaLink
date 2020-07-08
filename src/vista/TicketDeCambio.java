@@ -10,6 +10,7 @@ import controlador.ControladorCompra;
 import static java.awt.SystemColor.info;
 import static java.time.Clock.tick;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import modelo.Compra;
 import modelo.CompraSQL;
@@ -28,6 +29,9 @@ public class TicketDeCambio extends javax.swing.JFrame {
         initComponents();
         listarProductos();
         setLocationRelativeTo(null);
+        
+        //        Icono
+        setIconImage(new ImageIcon(getClass().getResource("/imagenes/iconox.png")).getImage());
     } 
 //    public int retornarTotal(){
 //        int total = 0;

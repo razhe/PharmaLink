@@ -42,37 +42,12 @@ public class Admin extends javax.swing.JFrame {
         jBCerrar = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
         jSeparator14 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jBOfertaBuscar = new javax.swing.JButton();
-        jBOfertaEliminar = new javax.swing.JButton();
-        jBOfertaModificar = new javax.swing.JButton();
-        jBOfertaAgregar = new javax.swing.JButton();
-        jPanel16 = new javax.swing.JPanel();
-        jTOfertaCodigo = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jSeparator11 = new javax.swing.JSeparator();
-        jPanel17 = new javax.swing.JPanel();
-        jTOfertaDescuento = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jSeparator12 = new javax.swing.JSeparator();
-        jPanel18 = new javax.swing.JPanel();
-        jDOfertaInicio = new com.toedter.calendar.JDateChooser();
-        jLabel11 = new javax.swing.JLabel();
-        jPanel19 = new javax.swing.JPanel();
-        jDOfertaFinal = new com.toedter.calendar.JDateChooser();
-        jLabel12 = new javax.swing.JLabel();
-        jPanel20 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jTOfertasCantidad = new javax.swing.JTextField();
-        jSeparator13 = new javax.swing.JSeparator();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        BTEliminar = new javax.swing.JButton();
-        BtBuscar = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jTextFieldCodigo = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jTextFieldNombre = new javax.swing.JTextField();
@@ -116,8 +91,33 @@ public class Admin extends javax.swing.JFrame {
         lblimagen = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        BTAgregar = new javax.swing.JButton();
         BTModificar = new javax.swing.JButton();
+        BTAgregar = new javax.swing.JButton();
+        BtBuscar = new javax.swing.JButton();
+        BTEliminar = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jBOfertaBuscar = new javax.swing.JButton();
+        jBOfertaEliminar = new javax.swing.JButton();
+        jBOfertaModificar = new javax.swing.JButton();
+        jBOfertaAgregar = new javax.swing.JButton();
+        jPanel16 = new javax.swing.JPanel();
+        jTOfertaCodigo = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jSeparator11 = new javax.swing.JSeparator();
+        jPanel17 = new javax.swing.JPanel();
+        jTOfertaDescuento = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jSeparator12 = new javax.swing.JSeparator();
+        jPanel18 = new javax.swing.JPanel();
+        jDOfertaInicio = new com.toedter.calendar.JDateChooser();
+        jLabel11 = new javax.swing.JLabel();
+        jPanel19 = new javax.swing.JPanel();
+        jDOfertaFinal = new com.toedter.calendar.JDateChooser();
+        jLabel12 = new javax.swing.JLabel();
+        jPanel20 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jTOfertasCantidad = new javax.swing.JTextField();
+        jSeparator13 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CrudAdmin");
@@ -125,7 +125,7 @@ public class Admin extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabelTitAdmin.setFont(new java.awt.Font("Segoe UI Light", 0, 36)); // NOI18N
+        jLabelTitAdmin.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabelTitAdmin.setForeground(new java.awt.Color(102, 102, 102));
         jLabelTitAdmin.setText("Administrador");
 
@@ -149,170 +149,31 @@ public class Admin extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(25, 25, 25)
                 .addComponent(jBCerrar)
-                .addGap(512, 512, 512)
+                .addGap(511, 511, 511)
                 .addComponent(jLabel19)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jSeparator14)
                     .addComponent(jLabelTitAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(567, Short.MAX_VALUE))
+                .addContainerGap(639, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelTitAdmin, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jBCerrar)
+                        .addComponent(jLabelTitAdmin))
+                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jBCerrar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1392, 90));
-
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel1.setText("Código");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 174, 69, -1));
-
-        jPanel4.setBackground(new java.awt.Color(0, 30, 84));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jBOfertaBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/Buscar.png"))); // NOI18N
-        jBOfertaBuscar.setBorder(null);
-        jBOfertaBuscar.setBorderPainted(false);
-        jBOfertaBuscar.setContentAreaFilled(false);
-        jPanel4.add(jBOfertaBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 720, 120, 40));
-
-        jBOfertaEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/Eliminar.png"))); // NOI18N
-        jBOfertaEliminar.setBorder(null);
-        jBOfertaEliminar.setBorderPainted(false);
-        jBOfertaEliminar.setContentAreaFilled(false);
-        jPanel4.add(jBOfertaEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 720, 110, 40));
-
-        jBOfertaModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/Modificar.png"))); // NOI18N
-        jBOfertaModificar.setBorder(null);
-        jBOfertaModificar.setBorderPainted(false);
-        jBOfertaModificar.setContentAreaFilled(false);
-        jBOfertaModificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBOfertaModificarActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jBOfertaModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 720, 130, 40));
-
-        jBOfertaAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/Agregar.png"))); // NOI18N
-        jBOfertaAgregar.setBorderPainted(false);
-        jBOfertaAgregar.setContentAreaFilled(false);
-        jBOfertaAgregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBOfertaAgregarActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jBOfertaAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 720, 120, 40));
-
-        jPanel16.setBackground(new java.awt.Color(0, 42, 113));
-        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTOfertaCodigo.setBackground(new java.awt.Color(0, 42, 113));
-        jTOfertaCodigo.setForeground(new java.awt.Color(204, 204, 204));
-        jTOfertaCodigo.setBorder(null);
-        jTOfertaCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTOfertaCodigoKeyTyped(evt);
-            }
-        });
-        jPanel16.add(jTOfertaCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 120, -1));
-
-        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel8.setText("Código");
-        jPanel16.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
-
-        jSeparator11.setBackground(new java.awt.Color(204, 204, 204));
-        jSeparator11.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel16.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 130, 10));
-
-        jPanel4.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 350, 50));
-
-        jPanel17.setBackground(new java.awt.Color(0, 42, 113));
-        jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTOfertaDescuento.setBackground(new java.awt.Color(0, 42, 113));
-        jTOfertaDescuento.setForeground(new java.awt.Color(204, 204, 204));
-        jTOfertaDescuento.setBorder(null);
-        jTOfertaDescuento.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTOfertaDescuentoKeyTyped(evt);
-            }
-        });
-        jPanel17.add(jTOfertaDescuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 120, -1));
-
-        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel10.setText("Descuento");
-        jPanel17.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-
-        jSeparator12.setBackground(new java.awt.Color(204, 204, 204));
-        jSeparator12.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel17.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 130, 10));
-
-        jPanel4.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 350, 50));
-
-        jPanel18.setBackground(new java.awt.Color(0, 42, 113));
-        jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jDOfertaInicio.setBackground(new java.awt.Color(0, 42, 113));
-        jDOfertaInicio.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel18.add(jDOfertaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 130, 20));
-
-        jLabel11.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel11.setText("Inicio de la oferta:");
-        jPanel18.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
-
-        jPanel4.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 350, 50));
-
-        jPanel19.setBackground(new java.awt.Color(0, 42, 113));
-        jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jDOfertaFinal.setBackground(new java.awt.Color(0, 42, 113));
-        jDOfertaFinal.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel19.add(jDOfertaFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 130, 20));
-
-        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel12.setText("Fin de la oferta:");
-        jPanel19.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
-
-        jPanel4.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 350, 50));
-
-        jPanel20.setBackground(new java.awt.Color(0, 42, 113));
-        jPanel20.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel13.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel13.setText("Cantidad de productos:");
-        jPanel20.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
-
-        jTOfertasCantidad.setBackground(new java.awt.Color(0, 42, 113));
-        jTOfertasCantidad.setForeground(new java.awt.Color(204, 204, 204));
-        jTOfertasCantidad.setBorder(null);
-        jTOfertasCantidad.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTOfertasCantidadKeyTyped(evt);
-            }
-        });
-        jPanel20.add(jTOfertasCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 120, -1));
-
-        jSeparator13.setBackground(new java.awt.Color(204, 204, 204));
-        jSeparator13.setForeground(new java.awt.Color(204, 204, 204));
-        jPanel20.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 130, 10));
-
-        jPanel4.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 350, 50));
-
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(789, 90, 610, 780));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1392, 60));
 
         jPanel3.setBackground(new java.awt.Color(195, 204, 204));
         jPanel3.setForeground(new java.awt.Color(195, 204, 204));
@@ -320,23 +181,6 @@ public class Admin extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(0, 30, 84));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        BTEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/Eliminar.png"))); // NOI18N
-        BTEliminar.setBorder(null);
-        BTEliminar.setBorderPainted(false);
-        BTEliminar.setContentAreaFilled(false);
-        BTEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTEliminarActionPerformed(evt);
-            }
-        });
-        jPanel5.add(BTEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 720, 120, 38));
-
-        BtBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/Buscar.png"))); // NOI18N
-        BtBuscar.setBorder(null);
-        BtBuscar.setBorderPainted(false);
-        BtBuscar.setContentAreaFilled(false);
-        jPanel5.add(BtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 720, 120, 40));
 
         jPanel6.setBackground(new java.awt.Color(0, 42, 113));
         jPanel6.setForeground(new java.awt.Color(0, 42, 113));
@@ -360,6 +204,10 @@ public class Admin extends javax.swing.JFrame {
         jSeparator4.setBackground(new java.awt.Color(204, 204, 204));
         jSeparator4.setForeground(new java.awt.Color(204, 204, 204));
         jPanel6.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 140, 10));
+
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setText("Código");
+        jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 69, -1));
 
         jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 320, 50));
 
@@ -568,13 +416,13 @@ public class Admin extends javax.swing.JFrame {
         jTDescripcion.setBorder(null);
         jScrollPane1.setViewportView(jTDescripcion);
 
-        jPanel15.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, 70));
+        jPanel15.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, 50));
 
         jLabel16.setForeground(new java.awt.Color(204, 204, 204));
         jLabel16.setText("Descripción");
-        jPanel15.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+        jPanel15.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        jPanel5.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 580, 320, 110));
+        jPanel5.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 580, 320, 70));
 
         jPanel2.setBackground(new java.awt.Color(0, 42, 113));
         jPanel2.setForeground(new java.awt.Color(0, 42, 113));
@@ -604,7 +452,17 @@ public class Admin extends javax.swing.JFrame {
         jSeparator2.setForeground(new java.awt.Color(204, 204, 204));
         jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 502, 250, 10));
 
-        jPanel5.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 360, 540));
+        jPanel5.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 360, 540));
+
+        BTModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/Modificar.png"))); // NOI18N
+        BTModificar.setBorderPainted(false);
+        BTModificar.setContentAreaFilled(false);
+        BTModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTModificarActionPerformed(evt);
+            }
+        });
+        jPanel5.add(BTModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 560, 130, 36));
 
         BTAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/Agregar.png"))); // NOI18N
         BTAgregar.setText("Agregar");
@@ -621,21 +479,161 @@ public class Admin extends javax.swing.JFrame {
                 BTAgregarActionPerformed(evt);
             }
         });
-        jPanel5.add(BTAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 720, 100, 36));
+        jPanel5.add(BTAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 560, 100, 36));
 
-        BTModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/Modificar.png"))); // NOI18N
-        BTModificar.setBorderPainted(false);
-        BTModificar.setContentAreaFilled(false);
-        BTModificar.addActionListener(new java.awt.event.ActionListener() {
+        BtBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/Buscar.png"))); // NOI18N
+        BtBuscar.setBorder(null);
+        BtBuscar.setBorderPainted(false);
+        BtBuscar.setContentAreaFilled(false);
+        jPanel5.add(BtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 120, 40));
+
+        BTEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/Eliminar.png"))); // NOI18N
+        BTEliminar.setBorder(null);
+        BTEliminar.setBorderPainted(false);
+        BTEliminar.setContentAreaFilled(false);
+        BTEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTModificarActionPerformed(evt);
+                BTEliminarActionPerformed(evt);
             }
         });
-        jPanel5.add(BTModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 720, 130, 36));
+        jPanel5.add(BTEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 120, 40));
 
-        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 780));
+        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 660));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1390, 780));
+        jPanel4.setBackground(new java.awt.Color(0, 30, 84));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jBOfertaBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/Buscar.png"))); // NOI18N
+        jBOfertaBuscar.setBorder(null);
+        jBOfertaBuscar.setBorderPainted(false);
+        jBOfertaBuscar.setContentAreaFilled(false);
+        jPanel4.add(jBOfertaBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 120, 40));
+
+        jBOfertaEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/Eliminar.png"))); // NOI18N
+        jBOfertaEliminar.setBorder(null);
+        jBOfertaEliminar.setBorderPainted(false);
+        jBOfertaEliminar.setContentAreaFilled(false);
+        jPanel4.add(jBOfertaEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 110, 40));
+
+        jBOfertaModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/Modificar.png"))); // NOI18N
+        jBOfertaModificar.setBorder(null);
+        jBOfertaModificar.setBorderPainted(false);
+        jBOfertaModificar.setContentAreaFilled(false);
+        jBOfertaModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBOfertaModificarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jBOfertaModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 130, 40));
+
+        jBOfertaAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes_2/Agregar.png"))); // NOI18N
+        jBOfertaAgregar.setBorderPainted(false);
+        jBOfertaAgregar.setContentAreaFilled(false);
+        jBOfertaAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBOfertaAgregarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jBOfertaAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 120, 40));
+
+        jPanel16.setBackground(new java.awt.Color(0, 42, 113));
+        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTOfertaCodigo.setBackground(new java.awt.Color(0, 42, 113));
+        jTOfertaCodigo.setForeground(new java.awt.Color(204, 204, 204));
+        jTOfertaCodigo.setBorder(null);
+        jTOfertaCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTOfertaCodigoKeyTyped(evt);
+            }
+        });
+        jPanel16.add(jTOfertaCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 120, -1));
+
+        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel8.setText("Código");
+        jPanel16.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jSeparator11.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator11.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel16.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 130, 10));
+
+        jPanel4.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 350, 50));
+
+        jPanel17.setBackground(new java.awt.Color(0, 42, 113));
+        jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTOfertaDescuento.setBackground(new java.awt.Color(0, 42, 113));
+        jTOfertaDescuento.setForeground(new java.awt.Color(204, 204, 204));
+        jTOfertaDescuento.setBorder(null);
+        jTOfertaDescuento.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTOfertaDescuentoKeyTyped(evt);
+            }
+        });
+        jPanel17.add(jTOfertaDescuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 120, -1));
+
+        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel10.setText("Descuento");
+        jPanel17.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jSeparator12.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator12.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel17.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 130, 10));
+
+        jPanel4.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 350, 50));
+
+        jPanel18.setBackground(new java.awt.Color(0, 42, 113));
+        jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jDOfertaInicio.setBackground(new java.awt.Color(0, 42, 113));
+        jDOfertaInicio.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel18.add(jDOfertaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 130, 20));
+
+        jLabel11.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel11.setText("Inicio de la oferta:");
+        jPanel18.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jPanel4.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 350, 50));
+
+        jPanel19.setBackground(new java.awt.Color(0, 42, 113));
+        jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jDOfertaFinal.setBackground(new java.awt.Color(0, 42, 113));
+        jDOfertaFinal.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel19.add(jDOfertaFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 130, 20));
+
+        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel12.setText("Fin de la oferta:");
+        jPanel19.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jPanel4.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 350, 50));
+
+        jPanel20.setBackground(new java.awt.Color(0, 42, 113));
+        jPanel20.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel13.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel13.setText("Cantidad de productos:");
+        jPanel20.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jTOfertasCantidad.setBackground(new java.awt.Color(0, 42, 113));
+        jTOfertasCantidad.setForeground(new java.awt.Color(204, 204, 204));
+        jTOfertasCantidad.setBorder(null);
+        jTOfertasCantidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTOfertasCantidadKeyTyped(evt);
+            }
+        });
+        jPanel20.add(jTOfertasCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 120, -1));
+
+        jSeparator13.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator13.setForeground(new java.awt.Color(204, 204, 204));
+        jPanel20.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 130, 10));
+
+        jPanel4.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 350, 50));
+
+        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 0, 610, 660));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1390, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
